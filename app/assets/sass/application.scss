@@ -1,0 +1,128 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// Import GOV.UK Frontend
+@import "node_modules/govuk-frontend/all";
+
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-navigation";
+@import "patterns/task-list";
+@import "patterns/related-items";
+
+// Components that aren't in Frontend
+@import "components/cookie-banner";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+// .govuk-link, a {
+//     text-decoration: none;
+// }
+
+.govuk-link:visited, a:visited {
+    color: govuk-colour("blue");
+}
+
+.govuk-link:hover, a:hover {
+    color: govuk-colour("light-blue");
+}
+
+.main-nav {
+  // margin-bottom: 15px;
+  display: flex;
+  height: 53px;
+  margin-bottom: 0;
+  background-color: govuk-colour("grey-4");
+
+  .govuk-link, a {
+      text-decoration: none;
+      padding: 15px;
+      margin-bottom: 0;
+  }
+
+  .govuk-link:hover, a:hover {
+      border-bottom: 4px solid govuk-colour("light-blue");
+  }
+}
+
+.app-masthead {
+
+    padding: 20px;
+    // padding-top: 40px;
+    color: govuk-colour("white");
+    background-color: govuk-colour("blue");
+    margin-bottom: 30px;
+
+    .govuk-input {
+      border: 0;
+    }
+
+    .govuk-form-group {
+      display: flex;
+      margin-bottom: 0;
+
+
+        .govuk-button {
+          height: 40px;
+          width: 40px;
+          background-color: govuk-colour("black");
+          display: block;
+          background-repeat: no-repeat;
+          margin-bottom: 0;
+
+            img {
+              position: absolute;
+              clip: rect(23px, 26px, 44px, 8px);
+              top: -15px;
+              left: 0;
+            }
+        }
+    }
+
+    a {
+      color: govuk-colour("white");
+      font-weight: 600;
+      margin-top: 10px;
+      display: block;
+      text-align: right;
+    }
+
+
+}
+
+.left-alerts {
+  margin-bottom: 30px;
+}
+
+.white-text {
+  color: govuk-colour("white");
+}
+
+.border-top {
+  border-top: 1px solid $govuk-border-colour;
+  padding-top: 15px;
+  margin-bottom: 50px;
+}
+
+.red {
+  @extend .border-top;
+  border-top: 5px solid govuk-colour("red");
+}
+
+.govuk-teal {
+  color: govuk-colour("turquoise");
+}
+
+.govuk-red {
+  color: govuk-colour("red");
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.10-margin-bottom {
+  margin-bottom: 10px;
+}
+// .white-text {
+//   govuk-colour("white")
+// }
