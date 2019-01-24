@@ -89,8 +89,21 @@ $govuk-global-styles: true;
 
 }
 
-.left-alerts {
-  margin-bottom: 30px;
+.alerts {
+  margin-bottom: 50px;
+  background-color: govuk-colour("red");
+  padding: 10px; 
+
+  a, .govuk-heading-l, .govuk-heading-m, .govuk-body-s {
+    color: govuk-colour("white");
+  }
+
+}
+
+.info {
+  margin-bottom: 50px;
+
+
 }
 
 .white-text {
@@ -101,11 +114,6 @@ $govuk-global-styles: true;
   border-top: 1px solid $govuk-border-colour;
   padding-top: 15px;
   margin-bottom: 50px;
-}
-
-.red {
-  @extend .border-top;
-  border-top: 5px solid govuk-colour("red");
 }
 
 .govuk-teal {
