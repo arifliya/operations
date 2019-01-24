@@ -92,7 +92,7 @@ $govuk-global-styles: true;
 .alerts {
   margin-bottom: 50px;
   background-color: govuk-colour("red");
-  padding: 10px; 
+  padding: 10px;
 
   a, .govuk-heading-l, .govuk-heading-m, .govuk-body-s {
     color: govuk-colour("white");
@@ -100,10 +100,24 @@ $govuk-global-styles: true;
 
 }
 
+#failedBox {
+  display: none;
+}
+
+#failedBox.show {
+  display: block;
+}
+
+#overrunBox {
+  display: none;
+}
+
+#overrunBox.show {
+  display: block;
+}
+
 .info {
   margin-bottom: 50px;
-
-
 }
 
 .white-text {

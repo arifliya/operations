@@ -18,15 +18,28 @@ function showInfo(data, tabletop) {
 
                 // FOR DISPLAYING IMAGES FROM CDN INTO LANDING PAGE //
 
-                // var failed = document.getElementById("failedSubmissions");
-                // failed.innerHTML +=  [ data[0].failed ] ;
+                var failed = document.getElementById("failedSubmissions");
+                failed.innerHTML +=  [ data[0].failed ] ;
+
+                var failedBox = document.getElementById("failedBox");
+
+                if ( [ data[0].failed ] > 0 ) {
+                    failedBox.classList.add("show");
+                }
+
+
+                var overRunning = document.getElementById("overRunning");
+                overRunning.innerHTML +=  [ data[0].overrunning ] ;
+
+                var overRunning = document.getElementById("overrunBox");
+
+                if ( [ data[0].overrunning ] > 0 ) {
+                    overRunning.classList.add("show");
+                }
+
+                // document.getElementById("failedSubmissions").innerHTML = [ data[0].failed ] ;
                 //
-                // var overRunning = document.getElementById("overRunning");
-                // overRunning.innerHTML +=  [ data[0].overrunning ] ;
+                // document.getElementById("overRunning").innerHTML = [ data[0].overrunning ] ;
 
-                document.getElementById("failedSubmissions").innerHTML = [ data[0].failed ] ;
 
-                document.getElementById("overRunning").innerHTML = [ data[0].overrunning ] ;
-
-    
   }
