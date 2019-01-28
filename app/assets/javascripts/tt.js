@@ -16,8 +16,8 @@ window.addEventListener('DOMContentLoaded', init)
 
 function showInfo(data, tabletop) {
 
-                // FOR DISPLAYING IMAGES FROM CDN INTO LANDING PAGE //
-
+                // TO DISPLAY NUMBERS ON THE DASHBOARD //
+                
                 var failed = document.getElementById("failedSubmissions");
                 failed.innerHTML +=  [ data[0].failed ] ;
 
@@ -36,10 +36,7 @@ function showInfo(data, tabletop) {
                 if ( [ data[0].overrunning ] > 0 ) {
                     overRunning.classList.add("show");
                 }
-
                 // document.getElementById("failedSubmissions").innerHTML = [ data[0].failed ] ;
                 //
                 // document.getElementById("overRunning").innerHTML = [ data[0].overrunning ] ;
-
-
-  }
+}

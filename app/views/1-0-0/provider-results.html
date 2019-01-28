@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+<div class="main-nav">
+  <a class="govuk-heading-s" href="dashboard">Activity</a>
+  <a class="govuk-heading-s" href="manage-collections">Collections</a>
+  <!-- <a class="govuk-heading-s" href="#">Provider(s)</a> -->
+</div>
+<br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl"><label for="provider-search">Search
+          results <span class=
+          "govuk-visually-hidden">“Manchester”</span></label></h1>
+          <div class="govuk-form-group">
+              <!-- <input class="govuk-input govuk-!-width-two-thirds" id="provider-search" name="search-provider"
+              type="search" value="Manchester" aria-describedby="provider-search">
+              <a href="search-results.html" type="submit" class="govuk-button">Search</a> -->
+              <p>We found 3 results for "Manchester"</p>
+              <!-- <p>3 results found.</p> -->
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+              <h3 class="govuk-heading-m"><a href="provider-record.html">Provider name 1</a></h3>
+              <ul class="govuk-list">
+                  <li><span class="govuk-!-font-weight-bold">UKPRN:</span> 12345</li>
+                  <li><span class="govuk-!-font-weight-bold">Last submission:</span> Monday 14 January by Bob Franks</li>
+
+
+
+              </ul>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+               <h3 class="govuk-heading-m"><a href="provider-record.html">Provider name 2</a></h3>
+              <ul class="govuk-list">
+                  <li><span class="govuk-!-font-weight-bold">UKPRN:</span> 12345</li>
+                  <li><span class="govuk-!-font-weight-bold">Last submission:</span> Monday 7 January by Ann Franks
+                      </li>
+
+
+              </ul>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+               <h3 class="govuk-heading-m"><a href="provider-record.html">Provider name 3</a></h3>
+              <ul class="govuk-list">
+                  <li><span class="govuk-!-font-weight-bold">UKPRN:</span> 12345</li>
+                  <li><span class="govuk-!-font-weight-bold">Last submission:</span> Wednesday 9 January by Ian Franks</li>
+
+
+
+              </ul>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

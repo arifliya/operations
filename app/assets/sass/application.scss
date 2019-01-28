@@ -97,7 +97,11 @@ $govuk-global-styles: true;
   a, .govuk-heading-l, .govuk-heading-m, .govuk-body-s {
     color: govuk-colour("white");
   }
+}
 
+.alerts.warning {
+  @extend .alerts;
+  background-color: govuk-colour("orange");
 }
 
 #failedBox {
@@ -148,3 +152,23 @@ $govuk-global-styles: true;
 // .white-text {
 //   govuk-colour("white")
 // }
+
+.assignment-links {
+  display: flex;
+
+  a {
+    margin-bottom: 30px;
+    display: block;
+    margin-right: 20px;
+
+  }
+}
+
+#typeFilter.govuk-checkboxes, #yearFilter.govuk-checkboxes {
+	display: flex;
+
+	.govuk-checkboxes__item {
+		margin-right: 20px;
+	}
+
+}

@@ -10,17 +10,17 @@
 <div class="main-nav">
   <a class="govuk-heading-s" href="dashboard">Activity</a>
   <a class="govuk-heading-s" href="manage-collections">Collections</a>
-  <a class="govuk-heading-s" href="#">Provider(s)</a>
+  <!-- <a class="govuk-heading-s" href="#">Provider(s)</a> -->
 
 </div>
 <div class="app-masthead">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-heading-s govuk-!-font-size-27 white-text">Search for a provider</span>
-      <div class="govuk-form-group">
+      <form class="govuk-form-group" action="provider-results">
         <input class="govuk-input" id="name" name="name" type="text" placeholder="e.g Manchester..">
-        <button type="search" class="govuk-button"><img src="https://assets.publishing.service.gov.uk/frontend/govuk_publishing_components/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png"></img></button>
-      </div>
+        <button type="search" class="govuk-button" ><img src="https://assets.publishing.service.gov.uk/frontend/govuk_publishing_components/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png"></img></button>
+      </form>
     </div>
     <div class="govuk-grid-column-one-third">
         <a href="#">Advanced search</a>
@@ -50,7 +50,7 @@
   </div>
 
   <div id="overrunBox" class="govuk-grid-column-one-third ">
-    <section class="alerts">
+    <section class="alerts warning">
       <span class="govuk-heading-m no-margin-bottom"><a class="" href="#">Overrunning files</a></span>
       <h2 class="govuk-heading-l no-margin-bottom govuk-red"><span id="overRunning"></span></h2>
       <span class="govuk-body-s">Monday 21 January 2019</span>
