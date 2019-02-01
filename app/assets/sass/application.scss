@@ -14,9 +14,14 @@ $govuk-global-styles: true;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+
 // .govuk-link, a {
 //     text-decoration: none;
 // }
+
+.govuk-main-wrapper {
+  padding-top: 0;
+}
 
 .govuk-link:visited, a:visited {
     color: govuk-colour("blue");
@@ -154,14 +159,14 @@ $govuk-global-styles: true;
 // }
 
 .assignment-links {
-  display: flex;
+  display: block;
 
-  a {
-    margin-bottom: 30px;
-    display: block;
-    margin-right: 20px;
-
-  }
+  // a {
+  //   margin-bottom: 30px;
+  //   display: block;
+  //   margin-right: 20px;
+  //
+  // }
 }
 
 #typeFilter.govuk-checkboxes, #yearFilter.govuk-checkboxes {
@@ -170,5 +175,36 @@ $govuk-global-styles: true;
 	.govuk-checkboxes__item {
 		margin-right: 20px;
 	}
+}
 
+.filter-box-button {
+  background-color: govuk-colour("grey-4");
+  padding: 10px;
+  display: block;
+  // z-index: 1;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.filter-box {
+  border: 5px solid govuk-colour("grey-4");
+  border-top: 0;
+  padding: 10px;
+  // margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+.filter-box-button:hover {
+  background-color: govuk-colour("grey-3");
+}
+
+.filter-box-button:hover + .filter-box {
+  // display: block;
+  border-color: govuk-colour("grey-3");
+}
+
+.filter-box.hidden {
+  // display: none;
 }
