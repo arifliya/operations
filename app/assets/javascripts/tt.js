@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', init)
 function showInfo(data, tabletop) {
 
                 // TO DISPLAY NUMBERS ON THE DASHBOARD //
-                
+
                 var failed = document.getElementById("failedSubmissions");
                 failed.innerHTML +=  [ data[0].failed ] ;
 
