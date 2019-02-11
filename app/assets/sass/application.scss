@@ -349,6 +349,11 @@ $govuk-global-styles: true;
   font-weight: 700;
 }
 
+.circle-chart__subline {
+    font-size: 3px;
+    font-weight: 100;
+}
+
 @keyframes circle-chart-fill {
   to { stroke-dasharray: 0 100; }
 }
