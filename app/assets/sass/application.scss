@@ -91,14 +91,87 @@ $govuk-global-styles: true;
       display: block;
       text-align: right;
     }
-    #tt-overlay {
-      background-color: white;
-      width: 100%;
+
+    @include govuk-media-query($from: mobile) {
+
+      #tt-overlay {
+        background-color: white;
+        width: 100%;
+        // font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+        font-family: "nta", Arial, sans-serif;
+      }
+
+      .autocomplete__input--default {
+          padding:10px;
+          border: 0;
+      }
     }
 
-    .autocomplete__input--default {
-        padding: 6px;
-        border: 0;
+    @include govuk-media-query($from: tablet) {
+
+      .autocomplete__input--default {
+          padding:8px;
+
+      }
+    }
+
+}
+
+
+
+.standard-search {
+
+  .govuk-form-group {
+      display: flex;
+      margin-bottom: 0;
+
+
+        .govuk-button {
+          height: 40px;
+          width: 40px;
+          background-color: govuk-colour("black");
+          display: block;
+          background-repeat: no-repeat;
+          margin-bottom: 0;
+
+            img {
+              position: absolute;
+              clip: rect(23px, 26px, 44px, 8px);
+              top: -15px;
+              left: 0;
+            }
+        }
+    }
+
+    a {
+      color: govuk-colour("white");
+      font-weight: 600;
+      margin-top: 10px;
+      display: block;
+      text-align: right;
+    }
+
+    @include govuk-media-query($from: mobile) {
+
+      #tt-overlay {
+        background-color: white;
+        width: 100%;
+        // font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+        font-family: "nta", Arial, sans-serif;
+      }
+
+      .autocomplete__input--default {
+          padding:9px;
+
+      }
+    }
+
+    @include govuk-media-query($from: tablet) {
+
+      .autocomplete__input--default {
+          padding:6px;
+
+      }
     }
 
 }
@@ -163,6 +236,15 @@ $govuk-global-styles: true;
 .10-margin-bottom {
   margin-bottom: 10px;
 }
+
+.margin-bottom {
+  margin-bottom: 40px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
 // .white-text {
 //   govuk-colour("white")
 // }
@@ -216,4 +298,162 @@ $govuk-global-styles: true;
 
 .filter-box.hidden {
   // display: none;
+}
+
+
+
+/**
+ * 1. The `reverse` animation direction plays the animation backwards
+ *    which makes it start at the stroke offset 100 which means displaying
+ *    no stroke at all and animating it to the value defined in the SVG
+ *    via the inline `stroke-dashoffset` attribute.
+ * 2. Rotate by -90 degree to make the starting point of the
+ *    stroke the top of the circle.
+ * 3. Using CSS transforms on SVG elements is not supported by Internet Explorer
+ *    and Edge, use the transform attribute directly on the SVG element as a
+ * .  workaround (https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart/#part-4-internet-explorer-strikes-back).
+ */
+.circle-chart__circle {
+  animation: circle-chart-fill 1s reverse; /* 1 */
+  transform: rotate(-90deg); /* 2, 3 */
+  transform-origin: center; /* 4 */
+  // stroke-dasharray: 30,100;
+}
+
+.centre-text {
+  text-align: center;
+}
+
+.circle-chart {
+  width: 100%
+}
+
+/**
+ * 1. Rotate by -90 degree to make the starting point of the
+ *    stroke the top of the circle.
+ * 2. Scaling mirrors the circle to make the stroke move right
+ *    to mark a positive chart value.
+ * 3. Using CSS transforms on SVG elements is not supported by Internet Explorer
+ *    and Edge, use the transform attribute directly on the SVG element as a
+ * .  workaround (https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart/#part-4-internet-explorer-strikes-back).
+ */
+.circle-chart__circle--negative {
+  transform: rotate(-90deg) scale(1,-1); /* 1, 2, 3 */
+}
+
+.circle-chart__info {
+  animation: circle-chart-appear 1s forwards;
+  opacity: 0;
+  font-family: "nta", Arial, sans-serif;
+  transform: translateY(0.3em);
+  font-weight: 700;
+}
+
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}
+
+@keyframes circle-chart-appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Layout styles only, not needed for functionality */
+html {
+  font-family: sans-serif;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.grid {
+  display: grid;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 31em) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#first {
+  stroke: govuk-colour("turquoise");
+}
+
+#first.warning {
+  stroke: govuk-colour("orange");
+}
+
+#first.danger {
+  stroke: govuk-colour("red");
+}
+
+#second {
+  stroke: govuk-colour("turquoise");
+}
+
+#second.warning {
+  stroke: govuk-colour("orange");
+}
+
+#second.danger {
+  stroke: govuk-colour("red");
+}
+
+#third {
+  stroke: govuk-colour("turquoise");
+}
+
+#third.warning {
+  stroke: govuk-colour("orange");
+}
+
+#third.danger {
+  stroke: govuk-colour("red");
+}
+
+
+// --------provider record page------- //
+
+.align-right {
+  position: absolute;
+  right: 50px;
+}
+
+
+// ----------manage assignments page--------- //
+
+.active-assignments {
+  background-color: govuk-colour("grey-4");
+  padding: 10px;
+  display: block;
+}
+
+#activeAssignments {
+  tr {
+    display: none;
+  }
+
+  tr.show {
+    display: table-row;
+  }
+}
+
+#inactiveAssignments {
+
+  tr.hide {
+    display: none;
+  }
+}
+
+#buttonGroup {
+  display: none;
+}
+
+#noActive.hidden {
+  display: none;
 }
