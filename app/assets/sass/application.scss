@@ -462,3 +462,48 @@ html {
 #noActive.hidden {
   display: none;
 }
+
+
+.active-assignments {
+  section {
+    position: relative;
+
+    .remove-link {
+      position: absolute;
+      right: 0;
+    }
+
+  }
+
+  section.hidden {
+    display: none;
+  }
+
+}
+
+.govuk-error-message.hidden {
+  display: none;
+}
+
+//-------------other pages--------------//
+
+.see-all-providers {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  font-weight: 700;
+}
+
+.grey-button {
+  background-color: govuk-colour("grey-4");
+  padding: 15px 15px 10px 15px;
+  display: block;
+
+  h3 {
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
