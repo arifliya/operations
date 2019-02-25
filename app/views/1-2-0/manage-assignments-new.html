@@ -9,7 +9,16 @@
 
 {% include "./includes/nav.html" %}
 
-<a href="new-provider-details" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a id="backlink" href="#" class="govuk-back-link">Back</a>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <br>
+      {% include "./includes/search.html" %}
+      {% include "./includes/auto-js.html" %}
+  </div>
+</div>
 <br>
 <br>
 <div class="govuk-grid-row">
@@ -19,10 +28,7 @@
        <h2 class="govuk-heading-m">{{ data['provider-name'] }}</h2>
        <!-- <p class="assignment-links"><a class="govuk-link" href="#">Submit another file</a> <a class="govuk-link" href="#">Manage assignments</a> <a class="govuk-link" href="#">Amend Provider name</a></p> -->
   </div>
-  <div class="govuk-grid-column-one-third">
-      {% include "./includes/search.html" %}
-      {% include "./includes/auto-js.html" %}
-  </div>
+
 </div>
 
 <div class="govuk-grid-row">
@@ -155,6 +161,12 @@
         </div>
 
       </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input assignment5" id="waste-1" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+          FIS Access
+        </label>
+      </div>
 
       <!-- <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="citizen" type="checkbox" value="text message" data-aria-controls="conditional-citizenship-conditional-3">
@@ -176,14 +188,14 @@
 
 
 </div>
-<p><a href="#" id="addAssignment" class="govuk-link">Add selection</a></p>
+<p><a href="#1" id="addAssignment" class="govuk-button">Add selection</a></p>
 
 <p><a href="provider-record" class="govuk-link">Cancel</a></p>
 
   </div>
 
-  <div class="govuk-grid-column-one-third">
-    <div class="active-assignments">
+  <div class="govuk-grid-column-one-third sticky">
+    <div id="1" class="active-assignments">
       <p class="govuk-heading-s">Active assignments</p>
 
 
@@ -219,6 +231,14 @@
           <span class="start-date4"></span><br>
           <span class="end-date4">N/A</span>
         </p>
+        <hr>
+      </section>
+
+      <section class="assigned5 hidden">
+        <p class="govuk-body">FIS Access <span class="remove-link"><a class="remove5" href="#">Remove</a></span><br>
+          <!-- <span class="start-date5"></span><br>
+          <span class="end-date4">N/A</span> -->
+        </p>
       </section>
       <!-- <hr> -->
       <!-- <section>
@@ -247,9 +267,9 @@
 
 
 
-      <div id="buttonGroup">
+      <!-- <div id="buttonGroup">
         <a href="confirm-assignments"  class="govuk-button">Confirm assignments</a>
-      </div>
+      </div> -->
 
     </div>
 

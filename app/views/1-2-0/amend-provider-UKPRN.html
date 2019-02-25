@@ -28,12 +28,20 @@
 
        <h1 class="govuk-heading-xl">{{ data['input-autocomplete'] }}</h1>
 
+       <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            This change will affect other areas of the system.
+          </strong>
+        </div>
+
 
        <div class="govuk-form-group">
          <label class="govuk-label" for="name">
-           Enter the provider’s name
+           Enter the provider’s UKPRN
          </label>
-         <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text" value="{{ data['input-autocomplete'] }}">
+         <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text" value="10007798">
        </div>
 
        <!-- <div class="govuk-form-group">
@@ -52,7 +60,7 @@
 
 
 
-       <a href="confirm-provider-details" class="govuk-button">Apply changes</a>
+       <a href="amend-provider-details" class="govuk-button">Continue</a>
        <a href="provider-record" class="govuk-link">Cancel</a>
   </div>
 

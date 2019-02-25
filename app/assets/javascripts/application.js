@@ -248,6 +248,18 @@ $('#addAssignment').click(function(){
     }
 
 
+    if($('.assignment5').is(':checked')) {
+
+      $('.govuk-error-message').addClass('hidden');
+
+      $('.assigned5').removeClass('hidden');
+
+      $('#noActive').addClass('hidden');
+      $('#buttonGroup').show();
+
+    }
+
+
   if($('.active-assignments section').is(':visible')) {
     $('#addAssignment').text('Update assignments');
   }
@@ -288,4 +300,16 @@ $('.remove4').click(function(){
     $('#noActive').removeClass('hidden');
   }
   $('#buttonGroup').show();
+});
+
+$('.remove5').click(function(){
+  $('.assigned5').addClass('hidden');
+  if(!$('.active-assignments section').is(':visible')) {
+    $('#noActive').removeClass('hidden');
+  }
+  $('#buttonGroup').show();
+});
+
+$('#1 section p a').click(function(e){
+  e.preventDefault();
 });

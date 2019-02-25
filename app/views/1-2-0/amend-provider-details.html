@@ -8,8 +8,16 @@
 
 
 {% include "./includes/nav.html" %}
-
-<a href="provider-record" class="govuk-back-link">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a id="backlink" href="#" class="govuk-back-link">Back</a>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <br>
+      {% include "./includes/search.html" %}
+      {% include "./includes/auto-js.html" %}
+  </div>
+</div>
 <br>
 <br>
 <div class="govuk-grid-row">
@@ -40,10 +48,10 @@
               UKPRN
             </dt>
             <dd class="govuk-summary-list__value">
-              24681012
+              10007798
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="amend-provider-UKPRN">
                 Change
                 <span class="govuk-visually-hidden"> ukprn</span>
               </a>
@@ -70,10 +78,7 @@
        <a href="confirm-provider-details" class="govuk-button">Apply changes</a>
        <a href="provider-record" class="govuk-link">Cancel</a>
   </div>
-  <div class="govuk-grid-column-one-third">
-    {% include "./includes/search.html" %}
-    {% include "./includes/auto-js.html" %}
-  </div>
+
 </div>
 
 

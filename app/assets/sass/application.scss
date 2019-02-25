@@ -465,6 +465,9 @@ html {
 
 
 .active-assignments {
+  position: sticky;
+  top: 20px;
+
   section {
     position: relative;
 
@@ -506,4 +509,9 @@ html {
       text-decoration: none;
     }
   }
+}
+
+.govuk-grid-column-one-third.sticky {
+  position: sticky;
+  top: 20px;
 }
