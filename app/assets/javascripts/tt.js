@@ -37,28 +37,53 @@ function showInfo(data, tabletop) {
                 //     overRunning.classList.add("show");
                 // }
 
+                function animateValue(id, start, end, duration) {
+                    var range = end - start;
+                    var current = start;
+                    var increment = end > start? 1 : -1;
+                    var stepTime = Math.abs(Math.floor(duration / range));
+                    var obj = document.getElementById(id);
+                    var timer = setInterval(function() {
+                        current += increment;
+                        obj.innerHTML = current;
+                        if (current == end) {
+                            clearInterval(timer);
+                        }
+                    }, stepTime);
+                }
 
-
+                animateValue("firstDonut", 0, [ data[0].processing ], 700);
+                animateValue("secondDonut", 0, [ data[0].queued ], 700);
+                animateValue("thirdDonut", 0, [ data[0].submissions ], 700);
+                animateValue("average", 0, 14, 700);
 
 
                 var firstDonut = document.getElementById("firstDonut");
                 firstDonut.innerHTML =+  [ data[0].processing ] ;
 
+
+                // firstDonut.setAttribute('data-count', [ data[0].processing ]);
+
                 var first = document.getElementById("first");
                 first.setAttribute('stroke-dasharray', firstDonut.innerHTML + ',100');
 
-                  if ( [ data[0].processin ] > 50 ) {
+
+                  if ( [ data[0].processing ] > 50 ) {
                       first.classList.add("warning");
                   }
-                  if ( [ data[0].processin ] > 70 ) {
+                  if ( [ data[0].processing ] > 70 ) {
                       first.classList.add("danger");
+
                   }
+
 
 
 
 
                 var secondDonut = document.getElementById("secondDonut");
                 secondDonut.innerHTML =+  [ data[0].queued ] ;
+
+                // secondDonut.setAttribute('data-count', [ data[0].queued ]);
 
                 var second = document.getElementById("second");
                 second.setAttribute('stroke-dasharray', secondDonut.innerHTML + ',100');
@@ -75,6 +100,8 @@ function showInfo(data, tabletop) {
 
                 var thirdDonut = document.getElementById("thirdDonut");
                 thirdDonut.innerHTML =+  [ data[0].submissions ] ;
+
+                // thirdDonut.setAttribute('data-count', [ data[0].submissions ]);
 
                 var third = document.getElementById("third");
                 third.setAttribute('stroke-dasharray', thirdDonut.innerHTML + ',100');

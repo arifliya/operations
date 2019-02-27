@@ -314,6 +314,7 @@ $govuk-global-styles: true;
  * .  workaround (https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart/#part-4-internet-explorer-strikes-back).
  */
 .circle-chart__circle {
+  // animation-delay: 1s;
   animation: circle-chart-fill 1s reverse; /* 1 */
   transform: rotate(-90deg); /* 2, 3 */
   transform-origin: center; /* 4 */

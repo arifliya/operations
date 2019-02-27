@@ -25,10 +25,9 @@
   <div class="govuk-grid-column-two-thirds">
 
        <h1 class="govuk-heading-xl">Manage assignments</h1>
-       <h2 class="govuk-heading-m">{{ data['provider-name'] }}</h2>
+       <h2 class="govuk-heading-m">{{ data['input-autocomplete'] }}</h2>
        <!-- <p class="assignment-links"><a class="govuk-link" href="#">Submit another file</a> <a class="govuk-link" href="#">Manage assignments</a> <a class="govuk-link" href="#">Amend Provider name</a></p> -->
   </div>
-
 </div>
 
 <div class="govuk-grid-row">
@@ -47,6 +46,15 @@
     </span>
     <div class="govuk-checkboxes" data-module="checkboxes">
 
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="citizenship-conditional-0" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-0">
+        <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-0">
+          ILR 18/19
+        </label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-0">
+
+
       <div class="govuk-radios govuk-radios--conditional" data-module="radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input assignment" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="ILR Standard" data-aria-controls="conditional-how-contacted-conditional-1">
@@ -62,7 +70,7 @@
           <label class="govuk-label " for="contact-by-email" value="ilrs">
             Start date
           </label>
-          <input class="govuk-input govuk-!-width-one-third assignment-value" type="date" id="date" name="date" value="" placeholder="DD/MM/YYYY">
+          <input class="govuk-input govuk-!-width-one-third assignment-value" type="date" id="date" name="date" value="2019-01-11" disabled="disabled">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="contact-by-email" value="ilrs">
@@ -102,7 +110,7 @@
         </div>
       </div>
 </div>
-
+</div>
 
 
 
@@ -121,7 +129,7 @@
           <label class="govuk-label" for="contact-by-email" value="eas">
             Start date
           </label>
-          <input class="govuk-input govuk-!-width-one-third assignment-value3" type="date" id="date" name="date" value="" placeholder="DD/MM/YYYY">
+          <input class="govuk-input govuk-!-width-one-third assignment-value3" type="date" id="date" name="date" value="2019-01-21" placeholder="DD/MM/YYYY">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="contact-by-email" value="eas">
@@ -161,12 +169,18 @@
         </div>
 
       </div>
+
+
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input assignment5" id="waste-1" name="waste" type="checkbox" value="carcasses">
         <label class="govuk-label govuk-checkboxes__label" for="waste-1">
           FIS Access
         </label>
       </div>
+      <!-- <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-2">
+
+
+      </div> -->
 
       <!-- <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="citizen" type="checkbox" value="text message" data-aria-controls="conditional-citizenship-conditional-3">
@@ -188,24 +202,24 @@
 
 
 </div>
-<p><a href="#1" id="addAssignment" class="govuk-link">Add selection</a></p>
+<p><a href="#1" id="addAssignment" class="govuk-link">Update assignments</a></p>
 
 <p><a href="provider-record" class="govuk-link">Cancel</a></p>
 
-  </div>
+</div>
 
   <div class="govuk-grid-column-one-third sticky">
     <div id="1" class="active-assignments">
-      <p class="govuk-heading-s">Active assignments</p>
+      <p class="govuk-heading-s">Assignments</p>
 
 
-      <span id="noActive" class="govuk-body">No active assignments</span>
+      <span id="noActive" class="govuk-body hidden">No active assignments</span>
 
 
-      <section class="assigned hidden">
+      <section class="assigned">
         <p class="govuk-body">ILR Standard 18/19 <span class="remove-link"><a class="remove" href="#">Remove</a></span><br>
-          <span class="start-date"></span><br>
-          <span class="end-date">N/A</span>
+          <span class="start-date">Start date: 11-01-2019</span><br>
+          <span class="end-date">End date: N/A</span>
         </p>
         <hr>
       </section>
@@ -213,15 +227,15 @@
       <section class="assigned2 hidden">
         <p class="govuk-body">ILR Periodic 18/19 <span class="remove-link"><a class="remove2" href="#">Remove</a></span><br>
           <span class="start-date2"></span><br>
-          <span class="end-date2">N/A</span>
+          <span class="end-date2">End date: N/A</span>
         </p>
         <hr>
       </section>
 
-      <section class="assigned3 hidden">
+      <section class="assigned3 ">
         <p class="govuk-body">EAS 18/19 <span class="remove-link"><a class="remove3" href="#">Remove</a></span><br>
-          <span class="start-date3"></span><br>
-          <span class="end-date3">N/A</span>
+          <span class="start-date3">Start date: 21-01-2019</span><br>
+          <span class="end-date3">End date: N/A</span>
         </p>
         <hr>
       </section>
@@ -229,7 +243,7 @@
       <section class="assigned4 hidden">
         <p class="govuk-body">ESF 18/19 <span class="remove-link"><a class="remove4" href="#">Remove</a></span><br>
           <span class="start-date4"></span><br>
-          <span class="end-date4">N/A</span>
+          <span class="end-date4">End date: N/A</span>
         </p>
         <hr>
       </section>
@@ -240,35 +254,11 @@
           <span class="end-date4">N/A</span> -->
         </p>
       </section>
-      <!-- <hr> -->
-      <!-- <section>
-        <p class="govuk-body">ILR Standard 19/20<br>
-          <span>10/02/19</span><span class="remove-link"><a href="#">Remove</a></span>
-        </p>
-      </section>
-      <hr>
-      <section>
-        <p class="govuk-body">ILR Periodic 19/20<br>
-          <span>10/02/19</span><span class="remove-link"><a href="#">Remove</a></span>
-        </p>
-      </section>
-      <hr>
-      <section>
-        <p class="govuk-body">EAS 19/20<br>
-          <span>10/02/19</span><span class="remove-link"><a href="#">Remove</a></span>
-        </p>
-      </section>
-      <hr>
-      <section>
-        <p class="govuk-body">ESF 19/20<br>
-          <span>10/02/19</span><span class="remove-link"><a href="#">Remove</a></span>
-        </p>
-      </section> -->
 
 
 
       <div id="buttonGroup">
-        <a href="confirm-assignments"  class="govuk-button">Confirm assignments</a>
+        <a href="confirm-assignments"  class="govuk-button">Save</a>
       </div>
 
     </div>

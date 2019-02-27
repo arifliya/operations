@@ -47,6 +47,18 @@
     </span>
     <div class="govuk-checkboxes" data-module="checkboxes">
 
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="citizenship-conditional-0" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-0">
+        <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-0">
+          ILR 18/19
+        </label>
+      </div>
+      <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-0">
+
+
+
+
       <div class="govuk-radios govuk-radios--conditional" data-module="radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input assignment" id="how-contacted-conditional-1" name="how-contacted" type="radio" value="ILR Standard" data-aria-controls="conditional-how-contacted-conditional-1">
@@ -64,7 +76,7 @@
           </label>
           <input class="govuk-input govuk-!-width-one-third assignment-value" type="date" id="date" name="date" value="" placeholder="DD/MM/YYYY">
         </div>
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
           <label class="govuk-label" for="contact-by-email" value="ilrs">
             End date
           </label>
@@ -72,7 +84,7 @@
             Optional
           </span>
           <input class="govuk-input govuk-!-width-one-third assignment-end" type="date" id="date" name="date" value="" placeholder="DD/MM/YYYY">
-        </div>
+        </div> -->
 
       </div>
       <div class="govuk-radios__item">
@@ -91,7 +103,7 @@
           </label>
           <input class="govuk-input govuk-!-width-one-third assignment-value2" type="date" id="date" name="date" value="" placeholder="DD/MM/YYYY">
         </div>
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
           <label class="govuk-label" for="contact-by-email" value="ilrp">
             End date
           </label>
@@ -99,10 +111,10 @@
             Optional
           </span>
           <input class="govuk-input govuk-!-width-one-third assignment-end2" type="date" id="date" name="date" value="" placeholder="DD/MM/YYYY">
-        </div>
+        </div> -->
       </div>
-</div>
-
+    </div>
+  </div>
 
 
 
@@ -123,7 +135,7 @@
           </label>
           <input class="govuk-input govuk-!-width-one-third assignment-value3" type="date" id="date" name="date" value="" placeholder="DD/MM/YYYY">
         </div>
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
           <label class="govuk-label" for="contact-by-email" value="eas">
             End date
           </label>
@@ -131,7 +143,7 @@
             Optional
           </span>
           <input class="govuk-input govuk-!-width-one-third assignment-end3" type="date" id="date" name="date" value="" placeholder="DD/MM/YYYY">
-        </div>
+        </div> -->
 
       </div>
       <div class="govuk-checkboxes__item">
@@ -150,7 +162,7 @@
           </label>
           <input class="govuk-input govuk-!-width-one-third assignment-value4" type="date" id="date" name="date" value="" placeholder="DD/MM/YYYY">
         </div>
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
           <label class="govuk-label" for="contact-by-email" value="esf">
             End date
           </label>
@@ -158,7 +170,7 @@
             Optional
           </span>
           <input class="govuk-input govuk-!-width-one-third assignment-end4" type="date" id="date" name="date" value="" placeholder="DD/MM/YYYY">
-        </div>
+        </div> -->
 
       </div>
       <div class="govuk-checkboxes__item">
@@ -196,7 +208,7 @@
 
   <div class="govuk-grid-column-one-third sticky">
     <div id="1" class="active-assignments">
-      <p class="govuk-heading-s">Active assignments</p>
+      <p class="govuk-heading-s">Assignments</p>
 
 
       <span id="noActive" class="govuk-body">No active assignments</span>
@@ -268,7 +280,7 @@
 
 
       <div id="buttonGroup">
-        <a href="confirm-assignments"  class="govuk-button">Confirm assignments</a>
+        <a href="confirm-assignments"  class="govuk-button">Save</a>
       </div>
 
     </div>
