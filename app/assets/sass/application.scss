@@ -162,8 +162,9 @@ $govuk-global-styles: true;
 
       .autocomplete__input--default {
           padding:9px;
-
+          height: 42px;
       }
+
     }
 
     @include govuk-media-query($from: tablet) {
