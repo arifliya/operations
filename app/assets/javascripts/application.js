@@ -110,7 +110,7 @@ $('#addAssignment').click(function(){
 
 
   if($('.assignment2').is(':checked') && !$('.assignment-value2').val() == '') {
-    
+
     $('.assignment-value').removeAttr("disabled");
 
     $('.govuk-error-message').addClass('hidden');
@@ -248,4 +248,23 @@ $('.remove5').click(function(){
 
 $('#1 section p a').click(function(e){
   e.preventDefault();
+});
+
+
+$(document).ready(function () {
+    if(window.location.href.indexOf("dashboard") > -1) {
+       $('.main-nav #1').addClass('active');
+    }
+
+    if(window.location.href.indexOf("manage-collections") > -1) {
+       $('.main-nav #2').addClass('active');
+    }
+
+    if(window.location.href.indexOf("notifications") > -1) {
+       $('.main-nav #3').addClass('active');
+    }
+
+    if(window.location.href.indexOf("period-end") > -1) {
+       $('.main-nav #4').addClass('active');
+    }
 });

@@ -48,7 +48,14 @@ $govuk-global-styles: true;
   .govuk-link:hover, a:hover {
       border-bottom: 4px solid govuk-colour("light-blue");
   }
+
+  .active {
+      border-bottom: 4px solid govuk-colour("blue");
+
+  }
 }
+
+
 
 .app-masthead {
 
