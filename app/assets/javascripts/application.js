@@ -46,6 +46,12 @@ $('#bulkOrSingle').click(function() {
 });
 
 
+$('#manageOrNew').click(function() {
+   if($('#newNotification').is(':checked')) { location.href='notifications-headline'; }
+	 else if ($('#manageNotification').is(':checked')) { location.href='manage-notifications'; }
+});
+
+
 // autocomlete option select function //
 
 $(".autocomplete__menu").click(function() {
@@ -267,4 +273,58 @@ $(document).ready(function () {
     if(window.location.href.indexOf("period-end") > -1) {
        $('.main-nav #4').addClass('active');
     }
+});
+
+
+$('#startRound3').click(function(e){
+  $(this).hide();
+  $('.awaiting').text('Processing...');
+  setTimeout(function()
+  {
+    $('.awaiting-1').hide();
+    $('.hide-complete-1').show();
+
+  }, 3000);
+  setTimeout(function()
+  {
+    $('.awaiting-2').hide();
+    $('.hide-complete-2').show();
+
+  }, 5000);
+  setTimeout(function()
+  {
+    $('.awaiting-3').hide();
+    $('.hide-complete-3').show();
+    $('.period-end-complete').show();
+
+  }, 7000);
+  e.preventDefault();
+});
+
+
+$("#firstStep").change(function () {
+    if ($(this).val() == "collection-assignments") {
+        $("#grey1").addClass('show');
+    } else {
+        $("#grey1").removeClass('show');
+    }
+});
+
+$('#closeBox').click(function(){
+  $('#firstStep').val('empty').trigger('change');
+  $('#secondStep').val('empty').trigger('change');
+  $("#grey1").removeClass('show');
+  $('.button-container').removeClass('show');
+});
+
+$("#secondStep").change(function () {
+  $('.button-container').addClass('show');
+});
+
+$('#addMore').click(function(){
+  $("#grey2").addClass('show');
+});
+
+$('#closeBox2').click(function(){
+  $("#grey2").removeClass('show');
 });

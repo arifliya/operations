@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./includes/nav.html" %}
+
+<!-- <script src="/public/javascripts/tt.js"></script> -->
+
+<a id="backlink" href="#" class="govuk-back-link">Back</a>
+<br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Period end
+    <span class="govuk-caption-xl">RO6 closed 22 April 2019 at 18.05</span>
+    </h1>
+
+    <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> R06 first stage
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="eligibility-completed">
+                Stop reference data scheduler
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="eligibility-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                Generate data quality reports
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                DAS period end preparation
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="read-declaration-completed">
+                Reference data update
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="read-declaration-completed">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> R06 second stage
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
+                Summarisation
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="contact-details-completed">
+                DAS period end
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Apps summerisation
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> <span>R06 third stage <a class="govuk-button customised" id="startRound3" href="#">Start</a></span>
+          </h2>
+          <ul class="app-task-list__items">
+
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
+                Invoke FCS
+              </a>
+              <span class="awaiting awaiting-1">awaiting action</span>
+              <strong class="govuk-tag app-task-list__task-completed hide-complete-1" id="contact-details-completed">Completed</strong>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="contact-details-completed">
+                Produce reports
+              </a>
+              <span class="awaiting awaiting-2">awaiting action</span>
+              <strong class="govuk-tag app-task-list__task-completed hide-complete-2" id="contact-details-completed">Completed</strong>
+
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#">
+                Produce reports
+              </a>
+              <span class="awaiting awaiting-3">awaiting action</span>
+              <strong class="govuk-tag app-task-list__task-completed hide-complete-3" id="contact-details-completed">Completed</strong>
+
+            </li>
+          </ul>
+        </li>
+      <a class="govuk-button period-end-complete" href="#">Finish period end</a>
+      </ol>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
