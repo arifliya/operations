@@ -10,11 +10,11 @@ $(document).ready(function () {
 })
 
 
+
 $("#backlink").click(function(event) {
     event.preventDefault();
     history.back(1);
 });
-
 
 $("#typeFilter :checkbox").click(function() {
     $(".cards").hide();
@@ -327,4 +327,28 @@ $('#addMore').click(function(){
 
 $('#closeBox2').click(function(){
   $("#grey2").removeClass('show');
+});
+
+$('#allTab').click(function(){
+  $('#first').attr('stroke-dasharray', '40, 100');
+  $('#firstDonut').text('40');
+  $('#jobText').text('All jobs');
+});
+
+$('#ilrTab').click(function(){
+  $('#first').attr('stroke-dasharray', '22, 100');
+  $('#firstDonut').text('22');
+  $('#jobText').text('ILR');
+});
+
+$('#easTab').click(function(){
+  $('#first').attr('stroke-dasharray', '10, 100');
+  $('#firstDonut').text('10');
+  $('#jobText').text('EAS');
+});
+
+$('#esfTab').click(function(){
+  $('#first').attr('stroke-dasharray', '8, 100');
+  $('#firstDonut').text('8');
+  $('#jobText').text('ESF');
 });

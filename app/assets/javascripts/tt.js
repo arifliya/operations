@@ -77,9 +77,6 @@ function showInfo(data, tabletop) {
                   }
 
 
-
-
-
                 var secondDonut = document.getElementById("secondDonut");
                 secondDonut.innerHTML =+  [ data[0].queued ] ;
 
@@ -113,5 +110,9 @@ function showInfo(data, tabletop) {
                   if ( [ data[0].submissions ] > 25 ) {
                       third.classList.add("danger");
                   }
+
+
+
+
 
 }

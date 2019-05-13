@@ -79,12 +79,13 @@ $govuk-global-styles: true;
 
 
         .govuk-button {
-          height: 40px;
+          height: 41px;
           width: 40px;
           background-color: govuk-colour("black");
           display: block;
           background-repeat: no-repeat;
           margin-bottom: 0;
+          box-shadow: none;
 
             img {
               position: absolute;
@@ -144,6 +145,7 @@ $govuk-global-styles: true;
           display: block;
           background-repeat: no-repeat;
           margin-bottom: 0;
+
 
             img {
               position: absolute;
@@ -381,8 +383,8 @@ $govuk-global-styles: true;
 /* Layout styles only, not needed for functionality */
 html {
   font-family: sans-serif;
-  padding-right: 1em;
-  padding-left: 1em;
+  // padding-right: 1em;
+  // padding-left: 1em;
 }
 
 .grid {
