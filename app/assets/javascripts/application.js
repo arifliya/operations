@@ -277,27 +277,36 @@ $(document).ready(function () {
 
 
 $('#startRound3').click(function(e){
-  $(this).hide();
-  $('.awaiting').text('Processing...');
+  $(this).text('Pause');
+  $('.awaiting-1').text('in progress...');
+  $('.time-started').show();
   setTimeout(function()
   {
     $('.awaiting-1').hide();
     $('.hide-complete-1').show();
-
-  }, 3000);
+    $('.awaiting-2').html('in progress...');
+  }, 1000);
   setTimeout(function()
   {
     $('.awaiting-2').hide();
     $('.hide-complete-2').show();
-
-  }, 5000);
+    $('.awaiting-3').html('in progress...');
+  }, 2000);
   setTimeout(function()
   {
     $('.awaiting-3').hide();
     $('.hide-complete-3').show();
-    $('.period-end-complete').show();
+    $('.awaiting-4').html('in progress...');
 
+  }, 5000);
+  setTimeout(function()
+  {
+    $('.awaiting-4').hide();
+    $('.hide-complete-4').show();
+    $('.period-end-complete').css('display', 'inline-block');
+    $('#startRound3').hide();
   }, 7000);
+
   e.preventDefault();
 });
 
@@ -323,10 +332,12 @@ $("#secondStep").change(function () {
 
 $('#addMore').click(function(){
   $("#grey2").addClass('show');
+  $("#andOr").show();
 });
 
 $('#closeBox2').click(function(){
   $("#grey2").removeClass('show');
+  $("#andOr").hide();
 });
 
 $('#allTab').click(function(){
@@ -335,20 +346,69 @@ $('#allTab').click(function(){
   $('#jobText').text('All jobs');
 });
 
-$('#ilrTab').click(function(){
+$('.ilr').change(function(){
   $('#first').attr('stroke-dasharray', '22, 100');
   $('#firstDonut').text('22');
   $('#jobText').text('ILR');
 });
 
-$('#easTab').click(function(){
+$('.eas').change(function(){
   $('#first').attr('stroke-dasharray', '10, 100');
   $('#firstDonut').text('10');
   $('#jobText').text('EAS');
 });
 
-$('#esfTab').click(function(){
+$('.esf').change(function(){
   $('#first').attr('stroke-dasharray', '8, 100');
   $('#firstDonut').text('8');
   $('#jobText').text('ESF');
+});
+
+
+$("#ILR").change(function() {
+  if ($(this).is(':checked')) {
+    $('#first').attr('stroke-dasharray', '22, 100');
+    $('#firstDonut').text('22');
+    $('#jobText').text('ILR jobs');
+  } else {
+    $('#first').attr('stroke-dasharray', '40, 100');
+    $('#firstDonut').text('40');
+    $('#jobText').text('All jobs');
+  }
+});
+
+$("#EAS").change(function() {
+  if ($(this).is(':checked')) {
+    $('#first').attr('stroke-dasharray', '10, 100');
+    $('#firstDonut').text('10');
+    $('#jobText').text('EAS jobs');
+  } else {
+    $('#first').attr('stroke-dasharray', '40, 100');
+    $('#firstDonut').text('40');
+    $('#jobText').text('All jobs');
+  }
+});
+
+$("#ESF").change(function() {
+  if ($(this).is(':checked')) {
+    $('#first').attr('stroke-dasharray', '8, 100');
+    $('#firstDonut').text('8');
+    $('#jobText').text('ESF jobs');
+  } else {
+    $('#first').attr('stroke-dasharray', '40, 100');
+    $('#firstDonut').text('40');
+    $('#jobText').text('All jobs');
+  }
+});
+
+
+$("#typeFilter :checkbox").click(function() {
+    $("#submissions div").hide();
+    $("#typeFilter :checkbox:checked").each(function() {
+        $("." + $(this).val()).show();
+    });
+
+    if (!$("#typeFilter :checkbox").is(':checked')) {
+      $("#submissions div").show();
+    }
 });

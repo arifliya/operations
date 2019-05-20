@@ -20,6 +20,10 @@ $govuk-global-styles: true;
 // }
 
 
+.app-task-list__item.text-align-right {
+  border-bottom: 0;
+}
+
 .govuk-main-wrapper {
   padding-top: 0;
 }
@@ -533,14 +537,20 @@ html {
 
 .customised {
   margin-left: 20px;
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-.hide-complete-1, .hide-complete-2, .hide-complete-3 {
+.hide-complete-1, .hide-complete-2, .hide-complete-3, .hide-complete-4 {
   display: none;
+  margin-bottom: 0;
 }
 
 .period-end-complete {
+  display: none;
+  margin-bottom: 0;
+}
+
+.time-started {
   display: none;
 }
 
@@ -573,6 +583,11 @@ html {
 
 .grey-container.show {
   display: block;
+}
+
+#andOr {
+  display: none;
+  margin-top: 30px;
 }
 
 .button-container {
@@ -624,4 +639,16 @@ html {
 
 .space-between{
   justify-content: space-between;
+}
+
+#minusMargin {
+  margin-top: -30px;
+}
+
+.red-font {
+  color: $govuk-error-colour;
+}
+
+.awaiting {
+  float: right;
 }
