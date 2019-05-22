@@ -61,28 +61,24 @@ hr{
 
 @include govuk-media-query($from: tablet) {
 
-.main-nav {
-  // margin-bottom: 15px;
-  flex-direction: row;
-  height: 53px;
-  margin-bottom: 0;
+  .main-nav {
+    // margin-bottom: 15px;
+    flex-direction: row;
+    height: 53px;
+    margin-bottom: 0;
 
+    .govuk-link:hover, a:hover {
+        border-bottom: 4px solid govuk-colour("light-blue");
+    }
 
+    .active {
+        border-bottom: 4px solid govuk-colour("blue");
+    }
 
-
-  .govuk-link:hover, a:hover {
-      border-bottom: 4px solid govuk-colour("light-blue");
+    .govuk-link:focus, a:focus {
+      background-color: inherit;
+    }
   }
-
-  .active {
-      border-bottom: 4px solid govuk-colour("blue");
-
-  }
-
-  .govuk-link:focus, a:focus {
-    background-color: inherit;
-  }
-}
 
 }
 
