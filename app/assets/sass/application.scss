@@ -19,6 +19,13 @@ $govuk-global-styles: true;
 //     text-decoration: none;
 // }
 
+hr{
+  height: 1px;
+  color: $govuk-border-colour;
+  background-color: $govuk-border-colour;
+  border: none;
+}
+
 
 .app-task-list__item.text-align-right {
   border-bottom: 0;
@@ -36,18 +43,32 @@ $govuk-global-styles: true;
     color: govuk-colour("light-blue");
 }
 
+@include govuk-media-query($from: mobile) {
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: govuk-colour("grey-4");
+
+    .govuk-link, a {
+        text-decoration: none;
+        padding: 15px;
+        margin-bottom: 0;
+    }
+
+  }
+}
+
+@include govuk-media-query($from: tablet) {
+
 .main-nav {
   // margin-bottom: 15px;
-  display: flex;
+  flex-direction: row;
   height: 53px;
   margin-bottom: 0;
-  background-color: govuk-colour("grey-4");
 
-  .govuk-link, a {
-      text-decoration: none;
-      padding: 15px;
-      margin-bottom: 0;
-  }
+
+
 
   .govuk-link:hover, a:hover {
       border-bottom: 4px solid govuk-colour("light-blue");
@@ -63,7 +84,7 @@ $govuk-global-styles: true;
   }
 }
 
-
+}
 
 .app-masthead {
 
@@ -590,6 +611,10 @@ html {
   margin-top: 30px;
 }
 
+#andOr.show {
+  display: block;
+}
+
 .button-container {
   display: none;
 }
@@ -645,10 +670,29 @@ html {
   margin-top: -30px;
 }
 
+.margin-right {
+  margin-right: 40px;
+}
+
 .red-font {
   color: $govuk-error-colour;
 }
 
 .awaiting {
   float: right;
+}
+
+@include govuk-media-query($from: mobile) {
+
+  #typeFilter {
+    flex-direction: column;
+  }
+
+}
+@include govuk-media-query($from: desktop) {
+
+  #typeFilter {
+    flex-direction: row;
+  }
+
 }

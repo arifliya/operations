@@ -330,14 +330,15 @@ $("#secondStep").change(function () {
   $('.button-container').addClass('show');
 });
 
-$('#addMore').click(function(){
+$('#addMore').click(function(e){
   $("#grey2").addClass('show');
-  $("#andOr").show();
+  $("#andOr").addClass('show');
+  e.preventDefault();
 });
 
 $('#closeBox2').click(function(){
   $("#grey2").removeClass('show');
-  $("#andOr").hide();
+  $("#andOr").removeClass('show');
 });
 
 $('#allTab').click(function(){
@@ -411,4 +412,24 @@ $("#typeFilter :checkbox").click(function() {
     if (!$("#typeFilter :checkbox").is(':checked')) {
       $("#submissions div").show();
     }
+});
+
+$('#clearFromList').click(function(e){
+  $('.card-1').hide();
+
+  e.preventDefault();
+});
+
+$('.pause').click(function(e){
+  $('#Status').text('Paused');
+  $(this).text('Continue');
+  e.preventDefault();
+});
+
+$('.cancel-process').click(function(e){
+  $('#Status').text('Cancelled');
+  $(this).text('Submit again');
+  $('.pause').hide();
+
+  e.preventDefault();
 });

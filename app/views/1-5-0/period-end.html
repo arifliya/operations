@@ -44,7 +44,7 @@
 
   <div class="govuk-grid-column-one-third">
     <section class="margin-bottom">
-      <h2 class="govuk-heading-m centre-text"><a href="">Jobs processing</a></h2>
+      <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">Jobs processing</a></h2>
       <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
         <circle class="circle-chart__background" stroke="#efefef" stroke-width="2" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
         <circle id="first" class="circle-chart__circle" stroke-width="3" stroke-dasharray="10,100" stroke-linecap="" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
@@ -58,7 +58,7 @@
 
   <div class="govuk-grid-column-one-third">
     <section class="margin-bottom">
-      <h2 class="govuk-heading-m centre-text"><a href="#">Jobs queued</a></h2>
+      <h2 class="govuk-heading-m centre-text"><a href="jobs-queued">Jobs queued</a></h2>
       <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
         <circle class="circle-chart__background" stroke="#efefef" stroke-width="2" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
         <circle id="second" class="danger circle-chart__circle" stroke-width="3" stroke-dasharray="90,100" stroke-linecap="" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
@@ -83,7 +83,7 @@
     <h2 class="govuk-heading-m">Failed submissions</h2>
 
     <p >Where no successful submission for this period exists</p>
-    <table class="govuk-table">
+    <!-- <table class="govuk-table">
 
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -120,8 +120,51 @@
 
         </tr>
       </tbody>
-    </table>
+    </table> -->
 
+    <div>
+      <div class="flex space-between">
+        <strong class="govuk-!-font-size-19"><a href="#">Manchester College</a></strong>
+        <span id="Status" class="govuk-body">Processing...</span>
+      </div>
+      <div class="govuk-body flex space-between">
+        <span>22 April 2019 at 14.31 </span>
+        <div>
+          <a class="pause" href="#">Pause</a>&nbsp &nbsp &nbsp <a class="cancel-process"href="#">Cancel</a>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div>
+      <div class="flex space-between">
+        <strong class="govuk-!-font-size-19"><a href="#">Leicester College</a></strong>
+        <span class="govuk-body">Failed</span>
+      </div>
+      <div class="govuk-body flex space-between">
+        <span>22 April 2019 at 11.19 </span>
+        <div>
+          <a href="#">Submit again</a>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="card-1">
+      <div class="flex space-between">
+        <strong class="govuk-!-font-size-19"><a href="#">Coventry College</a></strong>
+        <!-- <span class="govuk-body">Complete</span> <-->
+        <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+      </div>
+      <br>
+      <div class="govuk-body flex space-between">
+        <span>22 April 2019 at 10.30 </span>
+        <div>
+          <a id="clearFromList" href="#">Clear from list</a>
+        </div>
+      </div>
+      <hr>
+    </div>
+<br>
+<br>
 
     <h2 class="govuk-heading-m">Period end preparation</h2>
 
@@ -132,6 +175,8 @@
 
           <th class="govuk-table__header" scope="col">Job ID</th>
           <th class="govuk-table__header" scope="col">Status</th>
+          <th class="govuk-table__header" scope="col">Time started</th>
+          <th class="govuk-table__header" scope="col">Time Finished</th>
 
 
         </tr>
@@ -140,6 +185,8 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Name of job 1</td>
           <td class="govuk-table__cell">Complete</td>
+          <td class="govuk-table__cell">9.00</td>
+          <td class="govuk-table__cell">10.00</td>
 
 
         </tr>
@@ -147,12 +194,16 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Name of job 2</td>
           <td class="govuk-table__cell">Complete</td>
+          <td class="govuk-table__cell">10.00</td>
+          <td class="govuk-table__cell">11.00</td>
 
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Name of job 3</td>
           <td class="govuk-table__cell">Processing...</td>
+          <td class="govuk-table__cell">11.00</td>
+          <td class="govuk-table__cell">12.00</td>
 
 
         </tr>
