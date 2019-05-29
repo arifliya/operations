@@ -47,7 +47,7 @@ $('#bulkOrSingle').click(function() {
 
 
 $('#manageOrNew').click(function() {
-   if($('#newNotification').is(':checked')) { location.href='notifications-headline'; }
+   if($('#newNotification').is(':checked')) { location.href='notifications-type'; }
 	 else if ($('#manageNotification').is(':checked')) { location.href='manage-notifications'; }
 });
 

@@ -20,30 +20,26 @@
           <h1 class="govuk-panel__title">
             You've added these assignments to {{ data['input-autocomplete'] }}
           </h1>
-          <div class="govuk-panel__body">
-            ILR standard 19/18<br>
-            Start date: 11/01/2019<br>
-            FIS access
+          <!-- <div class="govuk-panel__body"> -->
+            <span class="govuk-!-font-size-36">ILR standard 19/18</span><br>
+            <span class="govuk-!-font-size-19">Start date: 11/01/2019</span><br><br>
+            <span class="govuk-!-font-size-36">FIS access</span><br>
+            <span class="govuk-!-font-size-19">Start date: 11/01/2019</span>
+
             <!-- <br><strong>HDJ2123F</strong> -->
-          </div>
+          <!-- </div> -->
         </div>
 
         <p class="govuk-body">We have sent you a confirmation email.</p>
 
-        <h2 class="govuk-heading-m">What happens next</h2>
-
-        <p class="govuk-body">
-          We’ve sent your application to Hackney Electoral Register Office.
-        </p>
-        <p class="govuk-body">
-          They will contact you either to confirm your registration, or to ask for more information.
-        </p>
-
-        <p class="govuk-body">
-          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
-        </p>
+        <p><a href="manage-assignments">View {{ data['input-autocomplete'] }}'s assignments</a></p>
 
 
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+      {% include "./includes/search.html" %}
+      {% include "./includes/auto-js.html" %}
   </div>
 </div>
 
