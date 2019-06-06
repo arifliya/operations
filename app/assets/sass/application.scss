@@ -692,3 +692,24 @@ html {
   }
 
 }
+
+.sub-navigation {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  span {
+
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+.right-side-image {
+
+  img {
+    width: 250px;
+    margin-top: 10px;
+  }
+}

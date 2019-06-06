@@ -11,7 +11,7 @@
 
 {% include "./includes/nav.html" %}
 
-<a href="add-new-provider" class="govuk-back-link">Back</a>
+<a href="#" id="backlink" class="govuk-back-link">Back</a>
 <br>
 <br>
 <div class="govuk-grid-row">
@@ -30,10 +30,10 @@
               This is the headline of my issue
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="notifications-type">
+              <!-- <a class="govuk-link" href="notifications-type">
                 Edit
                 <span class="govuk-visually-hidden"> headline</span>
-              </a>
+              </a> -->
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -52,10 +52,24 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Display until
+              Start
             </dt>
             <dd class="govuk-summary-list__value">
-              25 August 2019
+              25 August 2019 at 9.00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="notifications-details">
+                Edit
+                <span class="govuk-visually-hidden"> contact information</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Finish
+            </dt>
+            <dd class="govuk-summary-list__value">
+              26 August 2019 at 17.00
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="notifications-details">
@@ -67,13 +81,13 @@
 
         </dl>
 
-        <div class="govuk-checkboxes__item">
+        <!-- <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
         <label class="govuk-label govuk-checkboxes__label" for="waste-1">
           I confirm that I have received all necessary sign offs from management and/or communications to display this message in the ‘Submit learner data’ service.
 
         </label>
-      </div>
+      </div> -->
       <br>
 
 

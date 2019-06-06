@@ -49,6 +49,7 @@ $('#bulkOrSingle').click(function() {
 $('#manageOrNew').click(function() {
    if($('#newNotification').is(':checked')) { location.href='notifications-type'; }
 	 else if ($('#manageNotification').is(':checked')) { location.href='manage-notifications'; }
+	 else if ($('#ilrNotification').is(':checked')) { location.href='notifications-layout-options'; }
 });
 
 
@@ -432,4 +433,46 @@ $('.cancel-process').click(function(e){
   $('.pause').hide();
 
   e.preventDefault();
+});
+
+
+$('#intExt').click(function() {
+   if($('.open-to-providers').is(':checked')) { location.href='review-ILR-changes-ext'; }
+	 else if ($('.open-internally').is(':checked')) { location.href='review-ILR-changes'; }
+});
+
+$("#typeFilter :checkbox").click(function() {
+    $("#submissions tr").hide();
+    $("#typeFilter :checkbox:checked").each(function() {
+        $("." + $(this).val()).show();
+    });
+
+    if (!$("#typeFilter :checkbox").is(':checked')) {
+      $("#submissions tr").show();
+    }
+});
+
+$("#yearFilter :checkbox").click(function() {
+    $(".year-groups").hide();
+    $("#yearFilter :checkbox:checked").each(function() {
+        $("." + $(this).val()).show();
+    });
+
+    if (!$("#yearFilter :checkbox").is(':checked')) {
+      $(".year-groups").show();
+    }
+});
+
+
+$("#first-radio").change(function() {
+  $('.right-side-image img').attr('src','/public/images/01-first.png');
+});
+$("#second-radio").change(function() {
+  $('.right-side-image img').attr('src','/public/images/02-second.png');
+});
+$("#third-radio").change(function() {
+  $('.right-side-image img').attr('src','/public/images/03-third.png');
+});
+$("#forth-radio").change(function() {
+  $('.right-side-image img').attr('src','/public/images/right-hand.png');
 });
