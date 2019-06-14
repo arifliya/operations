@@ -622,7 +622,6 @@ html {
 .govuk-button--secondary {
   background-color: govuk-colour("grey-3");
   box-shadow: 0 2px 0 govuk-colour("grey-1");
-
 }
 
 .margin-left {
@@ -635,12 +634,10 @@ html {
 
 .govuk-button--secondary:hover {
   background-color: govuk-colour("grey-2");
-
 }
 
 .govuk-button--secondary:focus {
   background-color: govuk-colour("grey-2");
-
 }
 
 .govuk-heading-m.inline {
@@ -712,4 +709,8 @@ html {
     width: 250px;
     margin-top: 10px;
   }
+}
+
+.govuk-error-summary {
+    border: 5px solid govuk-colour("blue");
 }

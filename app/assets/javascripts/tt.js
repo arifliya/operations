@@ -112,7 +112,8 @@ function showInfo(data, tabletop) {
                   }
 
 
+                var uploadReports = document.getElementById("upload-reports").href = [data[0].reports];
 
-
+                // uploadReports.href =+ [data[0].reports];
 
 }
