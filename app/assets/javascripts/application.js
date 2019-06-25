@@ -16,16 +16,20 @@ $("#backlink").click(function(event) {
     history.back(1);
 });
 
+// ---------- last 3 months filters ------------ //
+
 $("#typeFilter :checkbox").click(function() {
-    $(".cards").hide();
+    $("#submissions tr").hide();
     $("#typeFilter :checkbox:checked").each(function() {
         $("." + $(this).val()).show();
     });
 
     if (!$("#typeFilter :checkbox").is(':checked')) {
-      $(".cards").show();
+      $("#submissions tr").show();
     }
 });
+
+// ---------- history filters ------------ //
 
 $("#yearFilter :checkbox").click(function() {
     $(".year-groups").hide();
@@ -35,6 +39,19 @@ $("#yearFilter :checkbox").click(function() {
 
     if (!$("#yearFilter :checkbox").is(':checked')) {
       $(".year-groups").show();
+    }
+});
+
+// ---------- qar frm filters ------------ //
+
+$("#qarfrmFilter :checkbox").click(function() {
+    $(".qf").hide();
+    $("#qarfrmFilter :checkbox:checked").each(function() {
+        $("." + $(this).val()).show();
+    });
+
+    if (!$("#qarfrmFilter :checkbox").is(':checked')) {
+      $(".qf").show();
     }
 });
 

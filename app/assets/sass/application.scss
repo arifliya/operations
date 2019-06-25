@@ -56,6 +56,28 @@ hr{
         margin-bottom: 0;
     }
 
+    a {
+
+      .red-dot {
+        // height: 10px;
+        // width: 10px;
+        // background-color: govuk-colour("bright-red");
+        // display: block;
+        // border-radius: 5px;
+        height: 10px;
+        width: 10px;
+        background-color: #df3034;
+        display: block;
+        border-radius: 15px;
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        line-height: 12px;
+        padding: 6px;
+        margin-left: 5px;
+      }
+    }
+
   }
 }
 
@@ -295,7 +317,7 @@ hr{
   // }
 }
 
-#typeFilter.govuk-checkboxes, #yearFilter.govuk-checkboxes {
+#typeFilter.govuk-checkboxes, #yearFilter.govuk-checkboxes, #qarfrmFilter.govuk-checkboxes {
 	display: flex;
 
 	.govuk-checkboxes__item {
@@ -469,8 +491,8 @@ html {
 // ----------manage assignments page--------- //
 
 .active-assignments {
-  background-color: govuk-colour("grey-4");
-  padding: 10px;
+  // background-color: govuk-colour("grey-4");
+  // padding: 10px;
   display: block;
 }
 
