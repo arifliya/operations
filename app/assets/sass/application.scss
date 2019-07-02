@@ -745,8 +745,17 @@ html {
   }
 }
 
-.govuk-error-summary {
+.govuk-error-summary.blue {
     border: 5px solid govuk-colour("blue");
+
+    .govuk-error-summary__list a:link  {
+      color: govuk-colour("blue");
+    }
+
+    .govuk-error-summary__list a:visited  {
+      color: govuk-colour("blue");
+    }
+
 }
 
 .column {

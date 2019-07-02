@@ -298,6 +298,7 @@ $('#startRound3').click(function(e){
   $(this).text('Pause');
   $('.awaiting-1').text('in progress...');
   $('.time-started').show();
+  $('.start-period-end-text').hide();
   setTimeout(function()
   {
     $('.awaiting-1').hide();
