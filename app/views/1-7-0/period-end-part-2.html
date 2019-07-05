@@ -16,36 +16,39 @@
 <br>
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-one-third">
-    <ul class="govuk-list">
+  <div class="govuk-grid-column-one-third sticky-box">
+      <ul class="govuk-list">
+        <li>
+          <a href="app-version" class="govuk-link">Application version</a>
+        </li>
+        <li>
+          <a href="email-dist" class="govuk-link">Email distribution</a>
+        </li>
+        <li>
+          <div class="flex"><a href="#" class="govuk-link ">Reports </a><span class="red-dot hidden">1</span></div>
+        </li>
+        <!-- <li>
+          <a href="period-end-history" class="govuk-link">History</a>
+        </li> -->
+      </ul>
 
-      <li>
-        <a href="app-version" class="govuk-link">Application version</a>
-      </li>
-      <li>
-        <a href="email-dist" class="govuk-link">Email distribution</a>
-      </li>
-      <li>
-        <div class="flex"><a href="#" class="govuk-link ">Reports </a><span class="red-dot">1</span></div>
-      </li>
-      <li>
-        <a href="period-end-history" class="govuk-link">History</a>
-      </li>
-    </ul>
   </div>
 
   <div class="govuk-grid-column-two-thirds">
 
     <div class="govuk-error-summary blue" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
       <h2 class="govuk-error-summary__title" id="error-summary-title">
-        Reference data jobs are paused
+        Period end status
       </h2>
       <div class="govuk-error-summary__body">
 
         <ul class="govuk-list govuk-error-summary__list">
 
           <li>
-            <a href="period-end#pause-all-jobs">Resume all reference data jobs</a>
+            Reference data jobs are paused
+          </li>
+          <li>
+            Collections are closed
           </li>
         </ul>
       </div>
@@ -60,7 +63,7 @@
       <p class="start-period-end-text">Are you happy to start Period End?</p>  <a class="govuk-button" id="startRound3" href="#">Start</a>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> FCS Synchronisation
+            <span class="app-task-list__section-number">1. </span> Reference data jobs
           </h2>
 
 
@@ -111,14 +114,14 @@
               <span class="govuk-body govuk-!-font-size-16 hide-complete-3">Started: 16.31 </span><br class="hide-complete-4">
               <div class="flex space-between">
                 <span class="govuk-body govuk-!-font-size-16 hide-complete-4"> Finished: 17.14</span>
-                <span class="hide-complete-4"><a href="#">Rerun job</a></span>
+                <span class="hide-complete-4"></span>
               </div>
             </li>
           </ul>
         </li>
 
 
-        <p class="period-end-complete">Are you happy to release Period End jobs?  <br><br><a class="govuk-button " href="#">Yes, continue</a></p><br>
+        <p class="period-end-complete"><a class="govuk-button " href="#">Continue</a></p><br>
         <li>
           <h2 class="app-task-list__section">
             <span class="app-task-list__section-number">2. </span> Summarisation
@@ -129,24 +132,24 @@
                 DCS Summarisation
               </a>
               <!-- <strong class="govuk-tag app-task-list__task-completed" id="company-information-completed">Completed</strong> -->
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#" aria-describedby="contact-details-completed">
                 ESF Summarisation
               </a>
               <!-- <strong class="govuk-tag app-task-list__task-completed" id="contact-details-completed">Completed</strong> -->
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
-            <li class="app-task-list__item">
+            <!-- <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#">
                 DAS Period end
               </a>
-              <span>Not started</span>
-            </li>
+              <span class="awaiting">Not started</span>
+            </li> -->
           </ul>
         </li>
-        <p class="period-end-complete">Are you happy to continue following DAS Period End 1819 process submission job? <br><br><a class="govuk-button" href="#">Yes, continue</a></p><br>
+        <p class="pe-steps 3"><a class="govuk-button" href="#">Continue</a></p><br>
 
         <li>
           <h2 class="app-task-list__section">
@@ -158,12 +161,18 @@
               <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
                 Release DAS period end
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
+            </li>
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
+                Metrics
+              </a>
+              <span class="awaiting">Not started</span>
             </li>
           </ul>
         </li>
 
-        <p class="period-end-complete">Are the spot checks on the jobs above complete? <br><br><a class="govuk-button" href="#">Yes, continue</a></p><br>
+        <p class="pe-steps 4"><a class="govuk-button" href="#">Continue</a></p><br>
 
 
         <li>
@@ -176,12 +185,12 @@
               <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
                 Apps summarisation
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
           </ul>
         </li>
 
-        <p class="period-end-complete">Are you happy to move on from Apps summarisation? <br><br><a class="govuk-button" href="#">Yes, continue</a></p><br>
+        <p class="pe-steps 5"><a class="govuk-button" href="#">Continue</a></p><br>
 
 
         <li>
@@ -194,26 +203,26 @@
               <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
                 Comms FCS handover
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#" aria-describedby="contact-details-completed">
                 FCS pull / processing
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#">
                 Produce reports
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
           </ul>
         </li>
 
-        <p class="period-end-complete">Has the DC Service Manager confirmed you can start the DEDS extract? <br><br><a class="govuk-button" href="#">Yes, continue</a></p><br>
+        <p class="pe-steps 6"><a class="govuk-button" href="#">Continue</a></p><br>
 
 
         <li>
@@ -226,31 +235,31 @@
               <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
                 DEDS extract
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#" aria-describedby="contact-details-completed">
                 DCFS Full DEDS extract
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#">
                 Internal period end dta lock reports
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
           </ul>
         </li>
 
-        <p class="period-end-complete">Has the DC Manager asked DCFS Technical Support to release pipeline? <br><br><a class="govuk-button" href="#">Yes, continue</a></p><br>
+        <p class="pe-steps 7"><a class="govuk-button" href="#">Continue</a></p><br>
 
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">7. </span> <span>Pipeline release</span>
+            <span class="app-task-list__section-number">7. </span> <span>Month end reports</span>
           </h2>
           <ul class="app-task-list__items">
 
@@ -258,73 +267,62 @@
               <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
                 Pipeline released by Technical Support
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#" aria-describedby="contact-details-completed">
                 Release data extraction
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#">
                 Reporting job
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#">
                 DAS period end process reports
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#">
                 Collection stats
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#">
                 Data science AS payments data extraction jobs released
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
-
-
-          </ul>
-        </li>
-
-        <p class="period-end-complete">Have the reports been checked?  <br><br><a class="govuk-button" href="#">Yes, continue</a></p><br>
-
-
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">8. </span> <span>Reports </span>
-          </h2>
-          <ul class="app-task-list__items">
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
                 Publish reports
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
           </ul>
         </li>
 
-        <p class="period-end-complete">Do you want to release job for Data Science?  <br><br><a class="govuk-button" href="#">Yes, continue</a></p><br>
+
+        <span id="publishReports" class="pe-steps 8"><a class="govuk-button govuk-button--secondary" href="#">Publish reports</a></span> &nbsp
+        <span class="pe-steps 8"><a class="govuk-button" href="#">Continue</a></span><br>
 
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">9. </span> <span>DAS support accounts </span>
+            <span class="app-task-list__section-number">8. </span> <span>DAS support accounts </span>
           </h2>
           <ul class="app-task-list__items">
 
@@ -332,25 +330,25 @@
               <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
                 Activate DAS support accounts
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
             <li class="app-task-list__item">
               <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
                 Release jobs for Data Science
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
           </ul>
         </li>
 
-        <p class="period-end-complete">Reinstate all jobs?  <br><br><a class="govuk-button" href="#">Yes, continue</a></p><br>
+        <p class="pe-steps 9"><a class="govuk-button" href="#">Continue</a></p><br>
 
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">10. </span> <span>Reinstate </span>
+            <span class="app-task-list__section-number">9. </span> <span>Reinstate </span>
           </h2>
           <ul class="app-task-list__items">
 
@@ -358,14 +356,14 @@
               <a class="app-task-list__task-name" href="#" aria-describedby="company-information-completed">
                 Reinstate all jobs
               </a>
-              <span>Not started</span>
+              <span class="awaiting">Not started</span>
             </li>
 
 
           </ul>
         </li>
 
-        <p class="period-end-complete">Finish period end?  <br><br><a class="govuk-button" href="#">Yes, continue</a></p><br>
+        <p class="pe-steps 10">Finish period end?  <br><br><a class="govuk-button" href="#">Yes, continue</a></p><br>
 
 
       </ol>

@@ -90,7 +90,9 @@ hr{
   text-decoration: none !important;
 }
 
-
+.red-dot.hidden {
+  display: none;
+}
 
 
 @include govuk-media-query($from: tablet) {
@@ -761,4 +763,13 @@ html {
 .column {
   flex-direction: column;
   align-items: flex-end;
+}
+
+.pe-steps {
+  display: none;
+}
+
+.sticky-box {
+  position: sticky;
+  top: 20px;
 }

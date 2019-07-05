@@ -293,9 +293,9 @@ $(document).ready(function () {
     }
 });
 
-
 $('#startRound3').click(function(e){
-  $(this).text('Pause');
+  $(this).hide();
+  // $(this).text('Pause');
   $('.awaiting-1').text('in progress...');
   $('.time-started').show();
   $('.start-period-end-text').hide();
@@ -326,6 +326,60 @@ $('#startRound3').click(function(e){
     $('#startRound3').hide();
   }, 7000);
 
+  e.preventDefault();
+});
+
+$('.period-end-complete').click(function(e){
+  $(this).hide();
+  $('.pe-steps.3').show();
+  e.preventDefault();
+});
+
+$('.pe-steps.3').click(function(e){
+  $(this).hide();
+  $('.pe-steps.4').show();
+  e.preventDefault();
+});
+
+$('.pe-steps.4').click(function(e){
+  $(this).hide();
+  $('.pe-steps.5').show();
+  e.preventDefault();
+});
+
+$('.pe-steps.5').click(function(e){
+  $(this).hide();
+  $('.pe-steps.6').show();
+  e.preventDefault();
+});
+
+$('.pe-steps.6').click(function(e){
+  $(this).hide();
+  $('.pe-steps.7').show();
+  e.preventDefault();
+});
+
+$('.pe-steps.7').click(function(e){
+  $(this).hide();
+  $('.pe-steps.8').show();
+  e.preventDefault();
+});
+
+$('.pe-steps.8').click(function(e){
+  $(this).hide();
+  $('.pe-steps.9').show();
+  e.preventDefault();
+});
+
+$('.pe-steps.9').click(function(e){
+  $(this).hide();
+  $('.pe-steps.10').show();
+  e.preventDefault();
+});
+
+$('.pe-steps.10').click(function(e){
+  $(this).hide();
+  $('.pe-steps.11').show();
   e.preventDefault();
 });
 
@@ -493,4 +547,8 @@ $("#third-radio").change(function() {
 });
 $("#forth-radio").change(function() {
   $('.right-side-image img').attr('src','/public/images/right-hand.png');
+});
+
+$('#publishReports').click(function(){
+  $('.red-dot').removeClass('hidden');
 });
