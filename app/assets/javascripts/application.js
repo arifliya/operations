@@ -298,10 +298,13 @@ $('#startRound3').click(function(e){
   // $(this).text('Pause');
   $('.awaiting-1').text('in progress...');
   $('.time-started').show();
+  $('.spinner1').show();
   $('.start-period-end-text').hide();
   setTimeout(function()
   {
     $('.awaiting-1').hide();
+    $('.spinner1').hide();
+    $('.spinner2').show();
     $('.hide-complete-1').show();
     $('.awaiting-2').html('in progress...');
   }, 1000);
@@ -309,17 +312,22 @@ $('#startRound3').click(function(e){
   {
     $('.awaiting-2').hide();
     $('.hide-complete-2').show();
+    $('.spinner2').hide();
+    $('.spinner3').show();
     $('.awaiting-3').html('in progress...');
   }, 2000);
   setTimeout(function()
   {
     $('.awaiting-3').hide();
     $('.hide-complete-3').show();
+    $('.spinner3').hide();
+    $('.spinner4').show();
     $('.awaiting-4').html('in progress...');
 
   }, 5000);
   setTimeout(function()
   {
+    $('.spinner4').hide();
     $('.awaiting-4').hide();
     $('.hide-complete-4').show();
     $('.period-end-complete').css('display', 'inline-block');
