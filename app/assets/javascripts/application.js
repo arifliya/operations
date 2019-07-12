@@ -296,6 +296,7 @@ $(document).ready(function () {
 $('#startRound3').click(function(e){
   $(this).hide();
   // $(this).text('Pause');
+  $('.awaiting-1').addClass('line-height-adjustment');
   $('.awaiting-1').text('in progress...');
   $('.time-started').show();
   $('.spinner1').show();
@@ -307,26 +308,32 @@ $('#startRound3').click(function(e){
     $('.spinner2').show();
     $('.hide-complete-1').show();
     $('.awaiting-2').html('in progress...');
+    $('.awaiting-2').addClass('line-height-adjustment');
   }, 1000);
   setTimeout(function()
   {
+
     $('.awaiting-2').hide();
     $('.hide-complete-2').show();
     $('.spinner2').hide();
     $('.spinner3').show();
     $('.awaiting-3').html('in progress...');
+    $('.awaiting-3').addClass('line-height-adjustment');
   }, 2000);
   setTimeout(function()
   {
+
     $('.awaiting-3').hide();
     $('.hide-complete-3').show();
     $('.spinner3').hide();
     $('.spinner4').show();
     $('.awaiting-4').html('in progress...');
+    $('.awaiting-4').addClass('line-height-adjustment');
 
   }, 5000);
   setTimeout(function()
   {
+
     $('.spinner4').hide();
     $('.awaiting-4').hide();
     $('.hide-complete-4').show();
@@ -556,4 +563,70 @@ $("#third-radio").change(function() {
 });
 $("#forth-radio").change(function() {
   $('.right-side-image img').attr('src','/public/images/right-hand.png');
+});
+
+$("#selectAllLink").click(function(e) {
+  $(".filter-wrapper").toggleClass("hidden");
+  // $(".submit-and-clear").toggleClass("hidden");
+  // $(".wrong-file-name").toggleClass("hidden");
+
+  if((this).text == "Multi selection") {
+    $(this).text("Single selection");
+    $(".submit-clear-container").addClass("show");
+
+    // $("#typeFilter input").attr("checked", true);
+    // $(".filter-wrapper input").attr("checked", true);
+  } else {
+    $(this).text("Multi selection");
+    $(".submit-clear-container").removeClass("show");
+    $("#typeFilter input").attr("checked", false);
+    $(".filter-wrapper input").attr("checked", false);
+    $(".card-wrapper").show();
+    // $(".wrong-file-name").removeClass("hidden");
+  }
+  e.preventDefault();
+});
+
+$("#typeFilter :checkbox").click(function() {
+    $(".card-wrapper").hide();
+    $("#typeFilter :checkbox:checked").each(function() {
+        $("." + $(this).val()).show();
+    });
+
+    if (!$("#typeFilter :checkbox").is(':checked')) {
+      $(".card-wrapper").show();
+    }
+});
+
+
+$("#typeFilter .ilr-check").on("change" , function() {
+
+  if ($(".ilr-check").is(':checked')) {
+    $(".filter-wrapper :checkbox[value='ilr']").attr("checked", true);
+  } else if (!$(".ilr-check").is(':checked')) {
+      $(".filter-wrapper :checkbox[value='ilr']").attr("checked", false);
+  }
+
+});
+
+
+$("#typeFilter .eas-check").on("change" , function() {
+
+  if ($(".eas-check").is(':checked')) {
+    $(".filter-wrapper :checkbox[value='eas']").attr("checked", true);
+  } else if (!$(".eas-check").is(':checked')) {
+      $(".filter-wrapper :checkbox[value='eas']").attr("checked", false);
+  }
+
+});
+
+
+$("#typeFilter .esf-check").on("change" , function() {
+
+  if ($(".esf-check").is(':checked')) {
+    $(".filter-wrapper :checkbox[value='esf']").attr("checked", true);
+  } else if (!$(".esf-check").is(':checked')) {
+      $(".filter-wrapper :checkbox[value='esf']").attr("checked", false);
+  }
+
 });
