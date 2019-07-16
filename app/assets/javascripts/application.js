@@ -567,8 +567,8 @@ $("#forth-radio").change(function() {
 
 $("#selectAllLink").click(function(e) {
   $(".filter-wrapper").toggleClass("hidden");
-  // $(".submit-and-clear").toggleClass("hidden");
-  // $(".wrong-file-name").toggleClass("hidden");
+  $(".submit-and-clear").toggleClass("hidden");
+  $(".wrong-file-name").toggleClass("hidden");
 
   if((this).text == "Multi selection") {
     $(this).text("Single selection");
@@ -587,14 +587,16 @@ $("#selectAllLink").click(function(e) {
   e.preventDefault();
 });
 
-$("#typeFilter :checkbox").click(function() {
+$("#typeFilter :checkbox").on("change" , function() {
     $(".card-wrapper").hide();
+    $(".main-card").hide();
     $("#typeFilter :checkbox:checked").each(function() {
         $("." + $(this).val()).show();
     });
 
     if (!$("#typeFilter :checkbox").is(':checked')) {
       $(".card-wrapper").show();
+      $(".main-card").show();
     }
 });
 
@@ -604,7 +606,7 @@ $("#typeFilter .ilr-check").on("change" , function() {
   if ($(".ilr-check").is(':checked')) {
     $(".filter-wrapper :checkbox[value='ilr']").attr("checked", true);
   } else if (!$(".ilr-check").is(':checked')) {
-      $(".filter-wrapper :checkbox[value='ilr']").attr("checked", false);
+    $(".filter-wrapper :checkbox[value='ilr']").attr("checked", false);
   }
 
 });
@@ -615,7 +617,7 @@ $("#typeFilter .eas-check").on("change" , function() {
   if ($(".eas-check").is(':checked')) {
     $(".filter-wrapper :checkbox[value='eas']").attr("checked", true);
   } else if (!$(".eas-check").is(':checked')) {
-      $(".filter-wrapper :checkbox[value='eas']").attr("checked", false);
+    $(".filter-wrapper :checkbox[value='eas']").attr("checked", false);
   }
 
 });
@@ -626,7 +628,22 @@ $("#typeFilter .esf-check").on("change" , function() {
   if ($(".esf-check").is(':checked')) {
     $(".filter-wrapper :checkbox[value='esf']").attr("checked", true);
   } else if (!$(".esf-check").is(':checked')) {
-      $(".filter-wrapper :checkbox[value='esf']").attr("checked", false);
+    $(".filter-wrapper :checkbox[value='esf']").attr("checked", false);
   }
 
+});
+
+$("#submitAgain").click(function(e) {
+  if ($(".ilr-check").is(':checked')) {
+    $(".card-wrapper.ilr").hide();
+    $(".main-card.ilr").hide();
+    $("#typeFilter :checkbox[value='ilr']").attr("checked", false);
+    $(".main-card.ilr.eas").show();
+    $(".main-card.eas.esf").show();
+    $(".main-card.esf.ilr").show();
+    $(".card-wrapper.eas").show();
+    $(".card-wrapper.esf").show();
+    $("#govukPanel").removeClass("hidden");
+  }
+  e.preventDefault();
 });

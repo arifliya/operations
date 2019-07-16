@@ -865,7 +865,8 @@ html {
 }
 
 .govuk-checkboxes--small .govuk-checkboxes__label {
-    padding: 11px 15px 10px 1px;
+    // CSS was this: padding: 11px 15px 10px 1px;
+    padding: 5px 15px 10px 12px;
 }
 
 .govuk-checkboxes--small .govuk-checkboxes__label::before {
@@ -900,13 +901,13 @@ html {
   top: 0;
 }
 
-.govuk-checkboxes--small.filter-wrapper.reset .govuk-checkboxes__label::after {
-    top: 16px;
-}
-
-.govuk-checkboxes--small.filter-wrapper.reset .govuk-checkboxes__label::before {
-  top: 8px;
-}
+// .govuk-checkboxes--small.filter-wrapper.reset .govuk-checkboxes__label::after {
+//     top: 16px;
+// }
+//
+// .govuk-checkboxes--small.filter-wrapper.reset .govuk-checkboxes__label::before {
+//   top: 8px;
+// }
 
 .provider-title {
   display: inline-block;
@@ -929,6 +930,10 @@ html {
   display: none;
 }
 
+.wrong-file-check.hidden {
+  display: none;
+}
+
 .main-divider {
   color: govuk-colour("grey-2");
   background-color: govuk-colour("grey-2");
@@ -938,4 +943,13 @@ html {
 .secondary-divider {
   color: govuk-colour("grey-3");
   background-color: govuk-colour("grey-3");
+}
+
+#startRound3 {
+  margin-bottom: 0;
+  margin-left: 60px;
+}
+
+#govukPanel.hidden {
+  display: none;
 }
