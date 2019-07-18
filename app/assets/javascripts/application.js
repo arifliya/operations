@@ -365,6 +365,7 @@ $('.pe-steps.4').click(function(e){
 $('.pe-steps.5').click(function(e){
   $(this).hide();
   $('.pe-steps.6').show();
+  $('.publish-reports').removeClass('hidden');
   e.preventDefault();
 });
 
@@ -374,10 +375,15 @@ $('.pe-steps.6').click(function(e){
   e.preventDefault();
 });
 
+$('.publish-reports').click(function(e){
+  $('.red-dot').removeClass('hidden')
+  $(this).addClass('hidden');
+  e.preventDefault();
+});
+
 $('.pe-steps.7').click(function(e){
   $(this).hide();
   $('.pe-steps.8').show();
-  $('.red-dot').removeClass('hidden')
   e.preventDefault();
 });
 
@@ -582,6 +588,11 @@ $("#selectAllLink").click(function(e) {
     $("#typeFilter input").attr("checked", false);
     $(".filter-wrapper input").attr("checked", false);
     $(".card-wrapper").show();
+    $(".filter-wrapper :checkbox").attr("checked", false);
+    $("#typeFilter :checkbox").attr("checked", false);
+    $(".card-wrapper").show();
+    $(".main-card").show();
+
     // $(".wrong-file-name").removeClass("hidden");
   }
   e.preventDefault();
@@ -646,4 +657,38 @@ $("#submitAgain").click(function(e) {
     $("#govukPanel").removeClass("hidden");
   }
   e.preventDefault();
+});
+
+
+$(window).scroll(function() {
+    var windscroll = $(window).scrollTop();
+    if ($(window).width() > 640) {
+      if (windscroll >= 500) {
+          $('#nav li a').addClass('active');
+          $('.wrapper').each(function(i) {
+              if ($(this).position().top <= windscroll + 200) {
+                  $('#nav li a.active').removeClass('active');
+                  $('#nav li a').eq(i).addClass('active');
+              }
+          });
+
+      } else {
+
+          $('#nav').removeClass('active');
+          $('#nav li a.active').removeClass('active');
+          $('#nav li a:first').addClass('active');
+      }
+    }
+}).scroll();
+
+
+
+var $window = $(window);
+var distance = $('.sticky').offset().top;
+$window.scroll(function() {
+  if ( $window.scrollTop() >= distance ) {
+        $('.sticky').addClass('stuck');
+    } else {
+        $('.sticky').removeClass('stuck');
+    }
 });

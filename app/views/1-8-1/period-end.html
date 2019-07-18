@@ -80,12 +80,15 @@
   <div class="govuk-grid-column-one-third">&nbsp</div>
 
   <div class="govuk-grid-column-two-thirds">
+
     <div class="flex space-between">
       <h2 class="govuk-heading-m">Failed submissions</h2>
-      <!-- <a id="selectAllLink" class="govuk-body govuk-!-font-weight-bold" href="#">Multi selection</a> -->
+      <a id="selectAllLink" class="govuk-body govuk-!-font-weight-bold" href="#">Multi selection</a>
     </div>
 
-    <div class="govuk-form-group filter-wrapper">
+    <!-- <p >Where no successful submission for this period exists</p> -->
+
+    <div class="govuk-form-group filter-wrapper hidden">
       <fieldset class="govuk-fieldset" aria-describedby="streamType">
 
         <span class="govuk-hint">
@@ -114,7 +117,6 @@
       </fieldset>
     </div>
 
-    <!-- <p>Where no successful submission for this period exists</p> -->
     <div id="govukPanel" class="govuk-panel govuk-panel--confirmation hidden">
       <h1 class="govuk-panel__title govuk-!-font-size-27">
         ILR files resubmitted
@@ -124,7 +126,6 @@
       </div> -->
     </div>
 
-
     <div class="main-card ilr eas">
 
       <div class="flex govuk-!-margin-bottom-2">
@@ -132,7 +133,7 @@
       </div>
       <div class="govuk-body card-wrapper ilr">
         <div class="flex space-between govuk-!-margin-bottom-2">
-          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
+          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper wrong-file-check hidden">
             <div class="govuk-checkboxes__item custom">
               <input  class="govuk-checkboxes__input" id="ilr-1" name="collections" type="checkbox" value="ilr">
               <label class="govuk-label govuk-checkboxes__label" for="ilr-1">
@@ -141,7 +142,7 @@
             </div>
           </div>
 
-          <!-- <span class="wrong-file-name">ILR - Wrong file name </span> -->
+          <span class="wrong-file-name">ILR - Wrong file name </span>
           <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a href="#">Clear from list</a></div>
         </div>
         <div class="flex space-between">
@@ -152,7 +153,7 @@
 
       <div class="govuk-body card-wrapper eas">
         <div class="flex space-between govuk-!-margin-bottom-2">
-          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
+          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper wrong-file-check hidden">
             <div class="govuk-checkboxes__item custom">
               <input  class="govuk-checkboxes__input" id="eas-1" name="collections" type="checkbox" value="eas">
               <label class="govuk-label govuk-checkboxes__label" for="eas-1">
@@ -160,7 +161,7 @@
               </label>
             </div>
           </div>
-          <!-- <span>EAS - Wrong file name </span> -->
+          <span class="wrong-file-name">EAS - Wrong file name </span>
           <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a href="#">Clear from list</a></div>
         </div>
         <div class="flex space-between">
@@ -179,7 +180,7 @@
       <div class="govuk-body card-wrapper eas">
         <div class="flex space-between govuk-!-margin-bottom-2">
 
-          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
+          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper wrong-file-check hidden">
             <div class="govuk-checkboxes__item custom">
               <input  class="govuk-checkboxes__input" id="eas-2" name="collections" type="checkbox" value="eas">
               <label class="govuk-label govuk-checkboxes__label" for="eas-2">
@@ -187,7 +188,7 @@
               </label>
             </div>
           </div>
-          <!-- <span>EAS - Wrong file name </span> -->
+          <span class="wrong-file-name">EAS - Wrong file name </span>
           <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a href="#">Clear from list</a></div>
         </div>
         <div class="flex space-between">
@@ -198,7 +199,7 @@
       <div class="govuk-body card-wrapper esf">
         <div class="flex space-between govuk-!-margin-bottom-2">
 
-        <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
+        <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper wrong-file-check hidden">
           <div class="govuk-checkboxes__item custom">
             <input  class="govuk-checkboxes__input" id="esf-1" name="collections" type="checkbox" value="esf">
             <label class="govuk-label govuk-checkboxes__label" for="esf-1">
@@ -206,7 +207,7 @@
             </label>
           </div>
         </div>
-          <!-- <span>ESF - Duplicate file name </span> -->
+          <span class="wrong-file-name">ESF - Duplicate file name </span>
           <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a href="#">Clear from list</a></div>
         </div>
         <div class="flex space-between">
@@ -225,7 +226,7 @@
       <div class="govuk-body card-wrapper esf card-1">
         <div class="flex space-between govuk-!-margin-bottom-2">
 
-          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
+          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper wrong-file-check hidden">
             <div class="govuk-checkboxes__item custom">
               <input  class="govuk-checkboxes__input" id="esf-2" name="collections" type="checkbox" value="esf">
               <label class="govuk-label govuk-checkboxes__label" for="esf-2">
@@ -233,7 +234,7 @@
               </label>
             </div>
           </div>
-          <!-- <span>ESF - Wrong file name </span> -->
+          <span class="wrong-file-name">ESF - Wrong file name </span>
           <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a id="clearFromList" href="#">Clear from list</a></div>
         </div>
         <div class="flex space-between">
@@ -244,7 +245,7 @@
       <div class="govuk-body card-wrapper ilr">
         <div class="flex space-between govuk-!-margin-bottom-2">
 
-          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
+          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper wrong-file-check hidden">
             <div class="govuk-checkboxes__item custom">
               <input  class="govuk-checkboxes__input" id="ilr-2" name="collections" type="checkbox" value="ilr">
               <label class="govuk-label govuk-checkboxes__label" for="ilr-2">
@@ -252,7 +253,7 @@
               </label>
             </div>
           </div>
-          <!-- <span>ILR - Wrong file name </span> -->
+          <span class="wrong-file-name">ILR - Wrong file name </span>
           <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a id="clearFromList" href="#">Clear from list</a></div>
         </div>
         <div class="flex space-between">
@@ -262,11 +263,12 @@
       <hr class="main-divider">
     </div>
 
+
     <br>
-
+    <div class="submit-clear-container">
       <a id="submitAgain" href="#" class="govuk-button govuk-button--secondary">Submit again</a>&nbsp &nbsp
-      <a href="#" class="govuk-button govuk-button--secondary">Clear from list</a>
-
+      <a href="" class="govuk-button govuk-button--secondary">Clear from list</a>
+    </div>
 
     <!-- <div class="card-1">
       <div class="flex space-between">

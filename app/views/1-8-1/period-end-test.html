@@ -35,7 +35,7 @@
         <a href="email-dist" class="govuk-link">Email distribution</a>
       </li>
       <li>
-        <div class="flex"><a href="period-end-reports" class="govuk-link ">Reports </a></div>
+        <div class="flex"><a href="#" class="govuk-link ">Reports </a></div>
       </li>
       <li>
         <a href="period-end-history" class="govuk-link">History</a>
@@ -115,34 +115,23 @@
     </div>
 
     <!-- <p>Where no successful submission for this period exists</p> -->
-    <div id="govukPanel" class="govuk-panel govuk-panel--confirmation hidden">
-      <h1 class="govuk-panel__title govuk-!-font-size-27">
-        ILR files resubmitted
-      </h1>
-      <!-- <div class="govuk-panel__body govuk-!-font-size-24">
-        Your reference number<br><strong>HDJ2123F</strong>
-      </div> -->
-    </div>
 
 
-    <div class="main-card ilr eas">
-
+    <div class="">
       <div class="flex govuk-!-margin-bottom-2">
-        <strong class="govuk-link govuk-!-font-size-19 provider-title "><a href="#">Manchester College</a></strong>
+        <strong class="govuk-link govuk-!-font-size-19 provider-title"><a href="#">Manchester College</a></strong>
       </div>
       <div class="govuk-body card-wrapper ilr">
-        <div class="flex space-between govuk-!-margin-bottom-2">
-          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
+        <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
+          <div class="flex space-between govuk-!-margin-bottom-2">
             <div class="govuk-checkboxes__item custom">
-              <input  class="govuk-checkboxes__input" id="ilr-1" name="collections" type="checkbox" value="ilr">
-              <label class="govuk-label govuk-checkboxes__label" for="ilr-1">
+              <input  class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="ilr">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-1">
                 ILR - Wrong file name
               </label>
             </div>
+            <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a href="#">Clear from list</a></div>
           </div>
-
-          <!-- <span class="wrong-file-name">ILR - Wrong file name </span> -->
-          <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a href="#">Clear from list</a></div>
         </div>
         <div class="flex space-between">
           <span class="govuk-!-font-size-16">EAS-12345678-1819-20180806-05092018-02.XML </span>  <span class="govuk-!-font-size-16">22 April 2019 at 11.19</span>
@@ -151,121 +140,32 @@
       </div>
 
       <div class="govuk-body card-wrapper eas">
-        <div class="flex space-between govuk-!-margin-bottom-2">
-          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
-            <div class="govuk-checkboxes__item custom">
-              <input  class="govuk-checkboxes__input" id="eas-1" name="collections" type="checkbox" value="eas">
-              <label class="govuk-label govuk-checkboxes__label" for="eas-1">
-                EAS - Wrong file name
-              </label>
-            </div>
-          </div>
-          <!-- <span>EAS - Wrong file name </span> -->
-          <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a href="#">Clear from list</a></div>
-        </div>
-        <div class="flex space-between">
-          <span class="govuk-!-font-size-16">ILR-12345678-1819-20180806-05092018-02.XML </span>  <span class="govuk-!-font-size-16">22 April 2019 at 11.19</span>
-        </div>
-      </div>
-      <hr class="main-divider">
-    </div>
-
-
-    <div class="main-card eas esf">
-
-      <div class="flex govuk-!-margin-bottom-2">
-        <strong class="govuk-link govuk-!-font-size-19 provider-title "><a href="#">Coventry College</a></strong>
-      </div>
-      <div class="govuk-body card-wrapper eas">
-        <div class="flex space-between govuk-!-margin-bottom-2">
-
-          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
-            <div class="govuk-checkboxes__item custom">
-              <input  class="govuk-checkboxes__input" id="eas-2" name="collections" type="checkbox" value="eas">
-              <label class="govuk-label govuk-checkboxes__label" for="eas-2">
-                EAS - Wrong file name
-              </label>
-            </div>
-          </div>
-          <!-- <span>EAS - Wrong file name </span> -->
-          <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a href="#">Clear from list</a></div>
-        </div>
-        <div class="flex space-between">
-          <span class="govuk-!-font-size-16">ESF-12345678-1819-20180806-05092018-02.XML </span>  <span class="govuk-!-font-size-16">22 April 2019 at 11.19</span>
-        </div>
-        <hr class="secondary-divider">
-      </div>
-      <div class="govuk-body card-wrapper esf">
-        <div class="flex space-between govuk-!-margin-bottom-2">
-
         <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
           <div class="govuk-checkboxes__item custom">
-            <input  class="govuk-checkboxes__input" id="esf-1" name="collections" type="checkbox" value="esf">
-            <label class="govuk-label govuk-checkboxes__label" for="esf-1">
-              ESF - Duplicate file name
+            <input  class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="eas">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+
             </label>
           </div>
         </div>
-          <!-- <span>ESF - Duplicate file name </span> -->
-          <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a href="#">Clear from list</a></div>
-        </div>
-        <div class="flex space-between">
-          <span class="govuk-!-font-size-16">ESF-12345678-1819-20180806-05092018-02.XML </span>  <span class="govuk-!-font-size-16">22 April 2019 at 11.19</span>
-        </div>
-      </div>
-      <hr class="main-divider">
-    </div>
-
-
-    <div class="main-card esf ilr">
-
-      <div class="flex govuk-!-margin-bottom-2">
-        <strong class="govuk-link govuk-!-font-size-19 provider-title"><a href="#">Leicester College</a></strong>
-      </div>
-      <div class="govuk-body card-wrapper esf card-1">
         <div class="flex space-between govuk-!-margin-bottom-2">
-
-          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
-            <div class="govuk-checkboxes__item custom">
-              <input  class="govuk-checkboxes__input" id="esf-2" name="collections" type="checkbox" value="esf">
-              <label class="govuk-label govuk-checkboxes__label" for="esf-2">
-                ESF - Wrong file name
-              </label>
-            </div>
-          </div>
-          <!-- <span>ESF - Wrong file name </span> -->
-          <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a id="clearFromList" href="#">Clear from list</a></div>
+          <span>EAS - Wrong file name </span>
+          <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a href="#">Clear from list</a></div>
         </div>
         <div class="flex space-between">
           <span class="govuk-!-font-size-16">ILR-12345678-1819-20180806-05092018-02.XML </span>  <span class="govuk-!-font-size-16">22 April 2019 at 11.19</span>
         </div>
-        <hr class="secondary-divider">
-      </div>
-      <div class="govuk-body card-wrapper ilr">
-        <div class="flex space-between govuk-!-margin-bottom-2">
-
-          <div class="govuk-checkboxes govuk-checkboxes--small filter-wrapper">
-            <div class="govuk-checkboxes__item custom">
-              <input  class="govuk-checkboxes__input" id="ilr-2" name="collections" type="checkbox" value="ilr">
-              <label class="govuk-label govuk-checkboxes__label" for="ilr-2">
-                ILR - Wrong file name
-              </label>
-            </div>
-          </div>
-          <!-- <span>ILR - Wrong file name </span> -->
-          <div class="submit-and-clear"><a href="#">Submit again</a> &nbsp &nbsp <a id="clearFromList" href="#">Clear from list</a></div>
-        </div>
-        <div class="flex space-between">
-          <span class="govuk-!-font-size-16">EAS-12345678-1819-20180806-05092018-02.XML </span>  <span class="govuk-!-font-size-16">22 April 2019 at 11.19</span>
-        </div>
       </div>
       <hr class="main-divider">
     </div>
 
+
+
+
     <br>
 
-      <a id="submitAgain" href="#" class="govuk-button govuk-button--secondary">Submit again</a>&nbsp &nbsp
-      <a href="#" class="govuk-button govuk-button--secondary">Clear from list</a>
+      <a href="" class="govuk-button govuk-button--secondary">Submit again</a>&nbsp &nbsp
+      <a href="" class="govuk-button govuk-button--secondary">Clear from list</a>
 
 
     <!-- <div class="card-1">
