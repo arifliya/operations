@@ -334,7 +334,7 @@ hr{
 
 
 
-#typeFilter.govuk-checkboxes, #yearFilter.govuk-checkboxes, #qarfrmFilter.govuk-checkboxes {
+#typeFilter, #yearFilter.govuk-checkboxes, #qarfrmFilter.govuk-checkboxes {
 	display: flex;
 
 	.govuk-checkboxes__item {
@@ -992,4 +992,43 @@ html {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.show-hidden-check-box {
+  display: none;
+}
+
+.hide-from-list {
+  display: none;
+}
+
+.hidden-tag {
+  display: none;
+}
+
+.hidden-tag.show {
+  display: block;
+}
+
+#showFiles {
+  display: none;
+}
+#showFiles.show {
+  display: inline-block;
+}
+
+.govuk-tag.red {
+  background-color: $govuk-error-colour;
+}
+
+.confirm-pause {
+  display: none;
+}
+
+.pause-confirmation {
+  display: none;
+}
+
+.show-continue {
+  display: none;
 }

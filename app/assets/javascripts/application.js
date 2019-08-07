@@ -291,6 +291,10 @@ $(document).ready(function () {
     if(window.location.href.indexOf("period-end") > -1) {
        $('.main-nav #4').addClass('active');
     }
+
+    if(window.location.href.indexOf("upload-reports") > -1) {
+       $('.main-nav #5').addClass('active');
+    }
 });
 
 $('#startRound3').click(function(e){
@@ -337,11 +341,34 @@ $('#startRound3').click(function(e){
     $('.spinner4').hide();
     $('.awaiting-4').hide();
     $('.hide-complete-4').show();
-    $('.period-end-complete').css('display', 'inline-block');
+
     $('#startRound3').hide();
   }, 7000);
 
   e.preventDefault();
+});
+
+$(".rerun-job").click(function(e){
+  $(this).hide();
+
+  $('.spinner4').show();
+  $('.awaiting-4').show();
+  $('.hide-complete-4').hide();
+
+
+  setTimeout(function()
+  {
+
+    $('.spinner4').hide();
+    $('.awaiting-4').hide();
+    $('.hide-complete-4').show();
+    $('.govuk-tag.hide-complete-4').text("Completed");
+    $('.hide-complete-4').removeClass("red");
+    $('.period-end-complete').css('display', 'inline-block');
+    $('#startRound3').hide();
+  }, 2000);
+  e.preventDefault();
+
 });
 
 $('.period-end-complete').click(function(e){
@@ -598,6 +625,9 @@ $("#selectAllLink").click(function(e) {
   e.preventDefault();
 });
 
+
+//****************** failed files filters ********************//
+
 $("#typeFilter :checkbox").on("change" , function() {
     $(".card-wrapper").hide();
     $(".main-card").hide();
@@ -609,10 +639,18 @@ $("#typeFilter :checkbox").on("change" , function() {
       $(".card-wrapper").show();
       $(".main-card").show();
     }
+
+    if ($(".card-wrapper").hasClass("hide-from-list")) {
+      $(".hide-from-list").hide();
+    }
 });
 
 
 $("#typeFilter .ilr-check").on("change" , function() {
+
+  // if (!$(".card-wrapper").hasClass("hide-from-list")) {
+  //   alert("doesnt have hide from list");
+  // }
 
   if ($(".ilr-check").is(':checked')) {
     $(".filter-wrapper :checkbox[value='ilr']").attr("checked", true);
@@ -645,7 +683,7 @@ $("#typeFilter .esf-check").on("change" , function() {
 });
 
 $("#submitAgain").click(function(e) {
-  if ($(".ilr-check").is(':checked')) {
+  if ($(".ilr input").is(':checked')) {
     $(".card-wrapper.ilr").hide();
     $(".main-card.ilr").hide();
     $("#typeFilter :checkbox[value='ilr']").attr("checked", false);
@@ -658,6 +696,90 @@ $("#submitAgain").click(function(e) {
   }
   e.preventDefault();
 });
+
+$("#hideFiles").click(function(e) {
+  $(".custom input[type='checkbox']:checked").each(
+    function() {
+      // $(this).parentsUntil(".new-wrapper").hide();
+      $(this).parents().eq(3).addClass("hide-from-list");
+      $(this).parents().eq(1).siblings().addClass("show");
+    });
+
+  $(".show-hidden-check-box").show();
+  $("#typeFilter :checkbox").attr("checked", false);
+  $(".show-hidden-check-box :checkbox").attr("checked", false);
+  $(".custom input").attr("checked", false);
+  $(".card-wrapper").show();
+  // $(".main-card").show();
+  $(".hide-from-list").hide();
+  e.preventDefault();
+
+});
+
+
+$("#showFiles").click(function(e) {
+  $(".custom input[type='checkbox']:checked").each(
+    function() {
+      // $(this).parentsUntil(".new-wrapper").hide();
+      $(this).parents().eq(3).removeClass("hide-from-list");
+      $(this).parents().eq(1).siblings().removeClass("show");
+    });
+
+  $(".show-hidden-check-box").hide();
+  $("#typeFilter :checkbox").attr("checked", false);
+  $(".show-hidden-check-box :checkbox").attr("checked", false);
+  $(".custom input").attr("checked", false);
+  $(".card-wrapper").show();
+  $(".main-card").show();
+  $("#hideFiles").show();
+  $("#showFiles").removeClass("show");
+  e.preventDefault();
+
+});
+
+
+$(".show-hidden-check-box input").on("change" , function() {
+
+  if ($(this).is(':checked')) {
+
+    $("#hideFiles").hide();
+    $("#showFiles").addClass("show");
+    $(".card-wrapper").hide();
+    $(".hide-from-list").show();
+    $(".hide-from-list input").attr("checked", true);
+
+  } else {
+    $("#hideFiles").show();
+    $("#showFiles").removeClass("show");
+    $(".card-wrapper").show();
+    $(".hide-from-list").hide();
+    // $(".main-card").show();
+  }
+
+});
+
+$("#pause-all-jobs").click(function(e){
+  $(this).hide();
+  $(".confirm-pause").show();
+  e.preventDefault();
+});
+
+
+$(".yes-pause").click(function(e){
+  $(this).hide();
+  $(".confirm-pause").hide();
+  $(".pause-confirmation").show();
+  $(".paused-job").text("Paused");
+  $(".show-continue").show();
+  e.preventDefault();
+});
+
+$(".cancel-pause").click(function(e){
+  $(".confirm-pause").hide();
+  $("#pause-all-jobs").show();
+  e.preventDefault();
+});
+
 
 
 $(window).scroll(function() {
@@ -685,6 +807,8 @@ $(window).scroll(function() {
 
 var $window = $(window);
 var distance = $('.sticky').offset().top;
+
+// var distance = ($sticky.length) ? stickyOffset.top : 0
 $window.scroll(function() {
   if ( $window.scrollTop() >= distance ) {
         $('.sticky').addClass('stuck');
