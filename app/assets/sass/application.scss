@@ -8,6 +8,7 @@ $govuk-global-styles: true;
 @import "patterns/step-by-step-navigation";
 @import "patterns/task-list";
 @import "patterns/related-items";
+@import "patterns/bar-chart";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -278,9 +279,9 @@ hr{
   display: block;
 }
 
-.info {
-  margin-bottom: 50px;
-}
+// .info {
+//   margin-bottom: 50px;
+// }
 
 .white-text {
   color: govuk-colour("white");
@@ -610,7 +611,7 @@ html {
 .govuk-button--warning {
   background-color: govuk-colour("red");
   box-shadow: 0 2px 0 #47060c;
-  margin-left: 20px;
+  
 }
 
 .govuk-button--warning:focus {
@@ -1037,3 +1038,18 @@ html {
   margin-top: 8px;
   display: inline-block;
 }
+
+.grey-background {
+  background-color: govuk-colour("grey-4");
+  // background-color: #f2f2f2;
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+

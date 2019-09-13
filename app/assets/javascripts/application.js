@@ -781,6 +781,15 @@ $(".cancel-pause").click(function(e){
 });
 
 
+$('#returnPeriod').change(function() {
+  if($("#r14").is(':selected')) {
+    $(".fade-in").height("100%");
+    $(".fade-in-b").height("100%");
+    $(".fade-in.two").height("50%");
+    $(".fade-in-b.two").height("50%");
+  }
+});
+
 
 $(window).scroll(function() {
     var windscroll = $(window).scrollTop();
