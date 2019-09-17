@@ -782,11 +782,49 @@ $(".cancel-pause").click(function(e){
 
 
 $('#returnPeriod').change(function() {
+  if($("#r01").is(':selected')) {
+    $(".fade-in.one").animate({height: "89%"}, 200);
+    $(".fade-in-b.one").animate({height: "83%"}, 200);
+    $(".fade-in.two").animate({height: "77%"}, 200);
+    $(".fade-in-b.two").animate({height: "82%"}, 200);
+    $(".fade-in.three").animate({height: "75%"}, 200);
+    $(".fade-in-b.three").animate({height: "12%"}, 200);
+    $(".fade-in.four").animate({height: "70%"}, 200);
+    $(".fade-in-b.four").animate({height: "9%"}, 200);
+    $(".fade-in.five").animate({height: "81%"}, 200);
+    $(".fade-in-b.five").animate({height: "55%"}, 200);
+    $(".fade-in.six").animate({height: "7%"}, 200);
+    $(".fade-in-b.six").animate({height: "66%"}, 200);
+    $(".fade-in.seven").animate({height: "8%"}, 200);
+    $(".fade-in-b.seven").animate({height: "69%"}, 200);
+    $(".fade-in.eight").animate({height: "73%"}, 200);
+    $(".fade-in-b.eight").animate({height: "77%"}, 200);
+    $(".fade-in.nine").animate({height: "88%"}, 200);
+    $(".fade-in-b.nine").animate({height: "89%"}, 200);
+    $(".fade-in.ten").animate({height: "92%"}, 200);
+    $(".fade-in-b.ten").animate({height: "99%"}, 200);
+  }
   if($("#r14").is(':selected')) {
-    $(".fade-in").height("100%");
-    $(".fade-in-b").height("100%");
-    $(".fade-in.two").height("50%");
-    $(".fade-in-b.two").height("50%");
+    $(".fade-in.one").animate({height: "99%"}, 200);
+    $(".fade-in-b.one").animate({height: "81%"}, 200);
+    $(".fade-in.two").animate({height: "13%"}, 200);
+    $(".fade-in-b.two").animate({height: "11%"}, 200);
+    $(".fade-in.three").animate({height: "5%"}, 200);
+    $(".fade-in-b.three").animate({height: "3%"}, 200);
+    $(".fade-in.four").animate({height: "59%"}, 200);
+    $(".fade-in-b.four").animate({height: "77%"}, 200);
+    $(".fade-in.five").animate({height: "65%"}, 200);
+    $(".fade-in-b.five").animate({height: "63%"}, 200);
+    $(".fade-in.six").animate({height: "66%"}, 200);
+    $(".fade-in-b.six").animate({height: "77%"}, 200);
+    $(".fade-in.seven").animate({height: "67%"}, 200);
+    $(".fade-in-b.seven").animate({height: "88%"}, 200);
+    $(".fade-in.eight").animate({height: "91%"}, 200);
+    $(".fade-in-b.eight").animate({height: "97%"}, 200);
+    $(".fade-in.nine").animate({height: "100%"}, 200);
+    $(".fade-in-b.nine").animate({height: "94%"}, 200);
+    $(".fade-in.ten").animate({height: "85%"}, 200);
+    $(".fade-in-b.ten").animate({height: "89%"}, 200);
   }
 });
 

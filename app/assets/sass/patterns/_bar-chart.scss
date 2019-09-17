@@ -164,16 +164,49 @@ $height:300px;
   align-items: baseline;
   overflow: hidden;
   justify-content: space-between;
+  padding-top: 20px;
+  margin-bottom: 4px;
+}
 
-  
+.provider-figures-line {
+  height: 268px;
+  width: 2px;
+  display: block;
+  background-color: govuk-colour("grey-1");
+  margin-right: 8px;
+}
+
+.provider-figures {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 270px;
+
+  span {
+    display: flex;
+    line-height: 4px;
+  }
+
+  span:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 2px;
+    background-color: govuk-colour("grey-1");
+    margin-left: 5px;
+  }
 }
 
 .numbers-before-close {
   justify-content: space-around;
   height: auto;
-  margin-top: 10px;
+  padding-top: 10px;
   margin-left: -8px;
   // border-top: 1px solid govuk-colour("grey-2");
+  // border-top: 2px solid grey;
+  // margin-top: -4px;
+  // z-index: 1;
 
   span {
     // text-align: center;
@@ -207,7 +240,7 @@ $height:300px;
   // animation-direction: reverse;
   animation-fill-mode: forwards;
   width: 26px;
-  height: 89%;
+  
   // -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
   // -moz-animation-fill-mode:forwards;
   // animation-fill-mode:forwards;
@@ -215,6 +248,24 @@ $height:300px;
   -webkit-animation-duration:1s;
   -moz-animation-duration:1s;
   animation-duration:.5s;
+  margin-right: 3px;
+
+  &:before {
+    position: absolute;
+    content: "168";
+    top: -20px;
+    text-align: center;
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    margin-left: 2px;
+  }
+
+}
+
+.fade-in.one {
+  height: 89%;
 }
 
 .fade-in-reverse {
@@ -225,51 +276,93 @@ $height:300px;
 
 .fade-in-b {
   @extend .fade-in;
-  height: 83%;
   background-color: govuk-colour("purple");
   margin-right: 12px;
+
+  &:before {
+    content: "155"
+  }
+}
+
+.fade-in-b.one {
+  height: 83%;
 }
 
 .fade-in.two { 
   @extend .fade-in;
   height: 77%;
   animation-delay: .1s;
+
+  &:before {
+    content: "145"
+  }
+
 }
 
 .fade-in-b.two { 
   @extend .fade-in-b;
   height: 82%;
   animation-delay: .2s;
+
+  &:before {
+    content: "152"
+  }
+
 }
 
 .fade-in.three { 
   @extend .fade-in;
   height: 75%;
   animation-delay: .2s;
+
+  &:before {
+    content: "142"
+  }
+
 }
 
 .fade-in-b.three { 
   @extend .fade-in-b;
   height: 12%;
   animation-delay: .3s;
+
+  &:before {
+    content: "23"
+  }
+
 }
 
 .fade-in.four { 
   @extend .fade-in;
   height: 70%;
   animation-delay: .3s;
+
+  &:before {
+    content: "132"
+  }
+
 }
 
 .fade-in-b.four { 
   @extend .fade-in-b;
   height: 9%;
   animation-delay: .4s;
+
+  &:before {
+    content: "20"
+  }
+
 }
 
 .fade-in.five { 
   @extend .fade-in;
   height: 81%;
   animation-delay: .4s;
+
+  &:before {
+    content: "155"
+  }
+
 }
 
 .fade-in-b.five { 
@@ -282,59 +375,107 @@ $height:300px;
   @extend .fade-in;
   height: 7%;
   animation-delay: .5s;
+
+  &:before {
+    content: "17"
+  }
+
 }
 
 .fade-in-b.six { 
   @extend .fade-in-b;
   height: 66%;
   animation-delay: .6s;
+
+  &:before {
+    content: "130"
+  }
 }
 
 .fade-in.seven { 
   @extend .fade-in;
   height: 8%;
   animation-delay: .6s;
+
+  &:before {
+    content: "19"
+  }
+
 }
 
 .fade-in-b.seven { 
   @extend .fade-in-b;
   height: 69%;
   animation-delay: .7s;
+
+  &:before {
+    content: "137"
+  }
+
 }
 
 .fade-in.eight { 
   @extend .fade-in;
   height: 73%;
   animation-delay: .7s;
+
+  &:before {
+    content: "142"
+  }
+
 }
 
 .fade-in-b.eight { 
   @extend .fade-in-b;
   height: 77%;
   animation-delay: .8s;
+
+  &:before {
+    content: "147"
+  }
+
 }
 
 .fade-in.nine { 
   @extend .fade-in;
   height: 88%;
   animation-delay: .8s;
+
+  &:before {
+    content: "170"
+  }
+
 }
 
 .fade-in-b.nine { 
   @extend .fade-in-b;
   height: 89%;
   animation-delay: .9s;
+
+  &:before {
+    content: "171"
+  }
 }
 
 .fade-in.ten { 
   @extend .fade-in;
   height: 92%;
   animation-delay: .9s;
+
+  &:before {
+    content: "174"
+  }
+
 }
 
 .fade-in-b.ten { 
   @extend .fade-in-b;
   height: 99%;
   animation-delay: .9s;
+
+  &:before {
+    content: "180"
+  }
+
 }
 
