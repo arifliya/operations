@@ -295,6 +295,10 @@ $(document).ready(function () {
     if(window.location.href.indexOf("upload-reports") > -1) {
        $('.main-nav #5').addClass('active');
     }
+
+    if(window.location.href.indexOf("rule-validation") > -1) {
+      $('.main-nav #6').addClass('active');
+   }
 });
 
 $('#startRound3').click(function(e){
