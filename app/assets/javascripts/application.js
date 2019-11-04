@@ -304,6 +304,7 @@ $(document).ready(function () {
 $('#startRound3').click(function(e){
   $(this).hide();
   // $(this).text('Pause');
+  $('.green-dot').removeClass('hidden');
   $('.awaiting-1').addClass('line-height-adjustment');
   $('.awaiting-1').text('in progress...');
   $('.time-started').show();
@@ -345,8 +346,9 @@ $('#startRound3').click(function(e){
     $('.spinner4').hide();
     $('.awaiting-4').hide();
     $('.hide-complete-4').show();
-
     $('#startRound3').hide();
+    $('.green-dot').hide();
+    $('.govuk-warning-text__icon').removeClass('custom');
   }, 7000);
 
   e.preventDefault();
@@ -358,7 +360,8 @@ $(".rerun-job").click(function(e){
   $('.spinner4').show();
   $('.awaiting-4').show();
   $('.hide-complete-4').hide();
-
+  $('.green-dot').show();
+  $('.govuk-warning-text__icon').addClass('custom');
 
   setTimeout(function()
   {
@@ -370,6 +373,7 @@ $(".rerun-job").click(function(e){
     $('.hide-complete-4').removeClass("red");
     $('.period-end-complete').css('display', 'inline-block');
     $('#startRound3').hide();
+    $('.green-dot').hide();
   }, 2000);
   e.preventDefault();
 
@@ -784,6 +788,15 @@ $(".cancel-pause").click(function(e){
   e.preventDefault();
 });
 
+$('#sort').change(function() {
+  if($('#firstTime').is(':selected')) {
+    $('#interactiveHeading').text('Providers returning for the first time');
+  }
+
+  if($('#perDay').is(':selected')) {
+    $('#interactiveHeading').text('Provider submissions per day');
+  }
+})
 
 $('#returnPeriod').change(function() {
   if($("#r01").is(':selected')) {

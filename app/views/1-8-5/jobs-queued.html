@@ -16,7 +16,11 @@
   <div class="govuk-grid-column-two-thirds">
     <a id="backlink" href="#" class="govuk-back-link">Back</a>
   </div>
-  
+  <div class="govuk-grid-column-one-third">
+    <br>
+      {% include "./includes/search.html" %}
+      {% include "./includes/auto-js.html" %}
+  </div>
 </div>
 <br>
 <br>
@@ -28,31 +32,48 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Providers who triggered {{ data['input-autocomplete'] }}</h1>
+    <h1 class="govuk-heading-xl">Jobs queued</h1>
 
     <div id="typeFilter" class="govuk-checkboxes">
-      
-      
-    
-
-
-      <div class="govuk-form-group margin-right">
-        <label class="govuk-label" for="sort">
-          Academic year
+      <!-- <div class="govuk-checkboxes__item">
+        <input id="All" class="govuk-checkboxes__input" id="waste-0" name="waste" type="checkbox" value="all">
+        <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+          All
         </label>
-        <select class="govuk-select">
-          <option selected>2019 to 2020</option>
-          <option >2018 to 2019</option>
-          <option >2017 to 2018</option>
-          <option >2016 to 2017</option>
-          <option >2015 to 2016</option>
-          
-          
-          
+      </div> -->
+      <div id="minusMargin" class="govuk-form-group margin-right">
+        <label class="govuk-label" for="sort">
+          Sort by
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+          <option value="published" selected>Longest time in the queue</option>
+          <option value="published">Shortest time in the queue</option>
+          <option value="views">Alphabetical</option>
+          <option value="comments">UKPRN</option>
         </select>
       </div>
       <!-- <div>&nbsp &nbsp &nbsp &nbsp &nbsp</div> -->
-      
+      <div class="flex">
+        <div class="govuk-checkboxes__item">
+          <input id="ILR" class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="ilr">
+          <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+            ILR
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input id="EAS" class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="eas">
+          <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+            EAS
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input id="ESF" class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="esf">
+          <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+            ESF
+          </label>
+        </div>
+      </div>
+
 
     </div>
     <br>
@@ -61,15 +82,25 @@
 
   </div>
 
-  
+  <div class="govuk-grid-column-one-third">
+    <section class="margin-bottom">
+      <!-- <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">Jobs processing</a></h2> -->
+      <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <circle class="circle-chart__background" stroke="#efefef" stroke-width="2" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
+        <circle id="first" class="circle-chart__circle" stroke-width="3" stroke-dasharray="40,100" stroke-linecap="" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
+        <g class="circle-chart__info">
+          <text id="firstDonut" class="circle-chart__percent counter" x="16.91549431" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="8" data-count="40">40</text>
+          <text id="jobText" class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">All jobs</text>
+        </g>
+      </svg>
+    </section>
+  </div>
 
 </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <dl id="submissions" class="govuk-summary-list govuk-!-margin-bottom-9">
-
-      <h3 class="govuk-heading-m">R14</h3>
 
       <div class="govuk-summary-list__row ilr eas esf">
         <dt class="govuk-summary-list__value govuk-!-width-one-third">
@@ -81,16 +112,10 @@
         </dd>
 
         <dd class="govuk-summary-list__value">
-          <strong>Errors</strong>
+          <strong>Time in queue</strong>
         </dd>
 
-        <dd class="govuk-summary-list__value">
-          <strong>Warnings</strong>
-        </dd>
 
-        <dd class="govuk-summary-list__value">
-          <strong>Submission date</strong>
-        </dd>
 
 
       </div>
@@ -105,15 +130,9 @@
           12345678
         </dd>
         <dd class="govuk-summary-list__value">
-          22
+          12 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          30/07/2019 
-          <!-- 16:17:47 -->
-        </dd>
+
 
       </div>
 
@@ -125,14 +144,9 @@
           86476577
         </dd>
         <dd class="govuk-summary-list__value">
-          79
+          7 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          24/07/2019
-        </dd>
+
       </div>
 
       <div class="govuk-summary-list__row esf">
@@ -143,14 +157,10 @@
           00028424
         </dd>
         <dd class="govuk-summary-list__value">
-          13
+          <strong class="red-font">22 minutes</strong>
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          27/07/2019
-        </dd>
+
+
       </div>
 
 
@@ -163,14 +173,10 @@
           00646878
         </dd>
         <dd class="govuk-summary-list__value">
-          5
+          5 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          29/07/2019
-        </dd>
+
+
       </div>
 
       <div class="govuk-summary-list__row ilr">
@@ -181,18 +187,12 @@
           00058382
         </dd>
         <dd class="govuk-summary-list__value">
-          3
+          3 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          30/07/2019
-        </dd>
+
+
       </div>
 
-      <br>
-      <h3 class="govuk-heading-m">R13</h3>
       <div class="govuk-summary-list__row ilr">
         <dt class="govuk-summary-list__value">
           <a href="#">Sheffield</a>
@@ -201,14 +201,10 @@
           00048242
         </dd>
         <dd class="govuk-summary-list__value">
-          1
+          1 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          21/07/2019
-        </dd>
+
+
       </div>
 
       <div class="govuk-summary-list__row esf">
@@ -219,14 +215,10 @@
           00085829
         </dd>
         <dd class="govuk-summary-list__value">
-          9
+          9 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          26/07/2019
-        </dd>
+
+
       </div>
 
       <div class="govuk-summary-list__row eas">
@@ -237,17 +229,12 @@
           00123456
         </dd>
         <dd class="govuk-summary-list__value">
-          8
+          8 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          29/07/2019
-        </dd>
+
+
       </div>
-      <br>
-      <h3 class="govuk-heading-m">R12</h3>
+
       <div class="govuk-summary-list__row esf">
         <dt class="govuk-summary-list__value">
           <a href="#">Luton</a>
@@ -256,14 +243,10 @@
           87654321
         </dd>
         <dd class="govuk-summary-list__value">
-          5
+          5 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          22/07/2019
-        </dd>
+
+
       </div>
       <div class="govuk-summary-list__row ilr">
         <dt class="govuk-summary-list__value">
@@ -273,14 +256,10 @@
           34920428
         </dd>
         <dd class="govuk-summary-list__value">
-          12
+          12 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          30/07/2019
-        </dd>
+
+
       </div>
 
       <div class="govuk-summary-list__row eas">
@@ -291,14 +270,10 @@
           00942248
         </dd>
         <dd class="govuk-summary-list__value">
-          7
+          7 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          30/07/2019
-        </dd>
+
+
       </div>
 
       <div class="govuk-summary-list__row esf">
@@ -309,18 +284,13 @@
           00135928
         </dd>
         <dd class="govuk-summary-list__value">
-          2
+          2 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          29/07/2019
-        </dd>
+
+
       </div>
 
-      <br>
-      <h3 class="govuk-heading-m">R11</h3>
+
 
       <div class="govuk-summary-list__row ilr">
         <dt class="govuk-summary-list__value">
@@ -330,14 +300,10 @@
           35290343
         </dd>
         <dd class="govuk-summary-list__value">
-          5
+          5 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          27/07/2019
-        </dd>
+
+
       </div>
 
       <div class="govuk-summary-list__row ilr">
@@ -348,14 +314,10 @@
           87126534
         </dd>
         <dd class="govuk-summary-list__value">
-          3
+          3 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          25/07/2019
-        </dd>
+
+
       </div>
 
       <div class="govuk-summary-list__row ilr">
@@ -366,14 +328,10 @@
           00992312
         </dd>
         <dd class="govuk-summary-list__value">
-          1
+          1 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          24/07/2019
-        </dd>
+
+
       </div>
 
       <div class="govuk-summary-list__row esf">
@@ -384,14 +342,10 @@
           34534920
         </dd>
         <dd class="govuk-summary-list__value">
-          19
+          9 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          30/07/2019
-        </dd>
+        
+
       </div>
 
       <div class="govuk-summary-list__row eas">
@@ -402,14 +356,10 @@
           11242093
         </dd>
         <dd class="govuk-summary-list__value">
-          8
+          8 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          21/07/2019
-        </dd>
+        
+
       </div>
 
       <div class="govuk-summary-list__row esf">
@@ -420,14 +370,10 @@
           00914782
         </dd>
         <dd class="govuk-summary-list__value">
-          5
+          5 minutes
         </dd>
-        <dd class="govuk-summary-list__value">
-          0
-        </dd>
-        <dd class="govuk-summary-list__value">
-          28/07/2019
-        </dd>
+        
+
       </div>
     </dl>
 
