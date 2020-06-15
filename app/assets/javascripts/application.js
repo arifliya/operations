@@ -1,12 +1,15 @@
 /* global $ */
-
 // Warn about using the kit in production
 if (window.console && window.console.info) {
   window.console.info('GOV.UK Prototype Kit - do not use for production')
 }
 
 $(document).ready(function () {
-  window.GOVUKFrontend.initAll()
+  window.GOVUKFrontend.initAll();
+
+
+
+
 })
 
 
@@ -228,6 +231,40 @@ $('#addAssignment').click(function(){
 
 });
 
+$("#MLselectAll").bind('click', function () {
+    $('input:checkbox').not(this).prop('checked', this.checked);
+});
+
+
+$('#deleteSelected').on('click', function(e) {
+var allVals = [];
+		$(".mailing-list .govuk-checkboxes__input:checked").each(function() {
+			allVals.push($(this).attr('data-id'));
+		});
+		//alert(allVals.length); return false;
+		if(allVals.length <=0)
+		{
+      $('.govuk-banner--success').addClass('govuk-visually-hidden');
+			$('.govuk-banner--warning').removeClass('govuk-visually-hidden');
+		}
+		else {
+			//$("#loading").show();
+			//WRN_PROFILE_DELETE = "Are you sure you want to delete selected emails?";
+			//var check = confirm(WRN_PROFILE_DELETE);
+			//if(check == true){
+              //for client side
+			  $.each(allVals, function( index, value ) {
+				  $('table.mailing-list tr').filter("[data-row-id='" + value + "']").remove();
+			  });
+        $('.govuk-banner--warning').addClass('govuk-visually-hidden');
+        $('.govuk-banner--success').removeClass('govuk-visually-hidden');
+			//}
+		}
+	});
+
+
+
+
 
 
 $('.remove').click(function(){
@@ -276,33 +313,382 @@ $('#1 section p a').click(function(e){
 
 
 $(document).ready(function () {
-    if(window.location.href.indexOf("dashboard") > -1) {
+  $('#frm-continue').click(function() {
+     $('#unpublish-confirmation').removeClass('govuk-visually-hidden');
+  });
+
+  $("#upload-csv").click(function() {
+      location.href="campus-identifiers-upload#reference-data-report";
+      $('#new-csv-upload-row').hide();
+  });
+  $("#upload-csv-validation").click(function() {
+      //location.href="validation-messages-1920#file-upload";
+      $('#new-upload').show();
+      setTimeout(function()
+      {
+        $('#new-upload span.spinner-uploading').hide();
+        $('#new-upload span.status-message').show();
+      }, 2500);
+  });
+
+  $('#new-csv-upload-row').hide();
+  //$('#new-csv-upload-spinner').fadeOut(3000);
+
+  $('#new-csv-upload-spinner').fadeOut(2000, function(){$('#new-csv-upload-row').fadeIn(0)});
+
+  $("#frm-button").click(function() {
+    if ($('#unpublish').is(':checked')) {
+                    window.location.replace("frm-report-choice-sel-unpublish");
+                }
+                else if ($('#publish').is(':checked')) {
+                    window.location.replace("frm-report-choice-sel-publish");
+                }
+
+  });
+
+      var l1 = $('#email-list-1').val();
+      var l2 = $('#email-list-2').val();
+      var l3 = $('#email-list-3').val();
+      var l4 = $('#email-list-4').val();
+      var l5 = $('#email-list-5').val();
+      var l6 = $('#email-list-6').val();
+      var l7 = $('#email-list-7').val();
+      var l8 = $('#email-list-8').val();
+      var l9 = $('#email-list-9').val();
+
+      if(!l1) {$('#email-list-data-1').hide()}
+      if(!l2) {$('#email-list-data-2').hide()}
+      if(!l3) {$('#email-list-data-3').hide()}
+      if(!l4) {$('#email-list-data-4').hide()}
+      if(!l5) {$('#email-list-data-5').hide()}
+      if(!l6) {$('#email-list-data-6').hide()}
+      if(!l7) {$('#email-list-data-7').hide()}
+      if(!l8) {$('#email-list-data-8').hide()}
+      if(!l9) {$('#email-list-data-9').hide()}
+
+
+    if(window.location.href.indexOf
+      ("dashboard") > -1) {
        $('.main-nav #1').addClass('active');
     }
 
-    if(window.location.href.indexOf("manage-collections") > -1) {
+    if(window.location.href.indexOf("provider") > -1) {
        $('.main-nav #2').addClass('active');
     }
 
-    if(window.location.href.indexOf("notifications") > -1) {
+    if(window.location.href.indexOf("manage-collections") > -1) {
        $('.main-nav #3').addClass('active');
     }
 
-    if(window.location.href.indexOf("period-end") > -1) {
+    if(window.location.href.indexOf("notifications") > -1) {
        $('.main-nav #4').addClass('active');
     }
 
-    if(window.location.href.indexOf("upload-reports") > -1) {
+    if(window.location.href.indexOf("period-end") > -1) {
        $('.main-nav #5').addClass('active');
     }
 
+    if( window.location.href.indexOf("frm") > -1) {
+       $('.main-nav #6').addClass('active');
+    }
+
     if(window.location.href.indexOf("rule-validation") > -1) {
-      $('.main-nav #6').addClass('active');
+      $('.main-nav #7').addClass('active');
    }
+   if(window.location.href.indexOf("report") > -1) {
+     $('.main-nav #7').addClass('active');
+  }
+
+   /************************************************************
+   *                      BARCHART One - Queues                       *
+   ***********************************************************
+
+   const chart1 = document.getElementById('chart-queues');
+   const data1 = [
+     ['auditing', 10],
+     ['failedjob', 42],
+     ['fundingclaim', 4],
+  ['jobstatus', 3]
+   ];
+   const options1 = {
+
+     title: '',
+
+     titleBG: 'none',
+     chartBG: 'none',
+     valColors: ['white', 'white', 'white', 'white', 'yellow'],
+     barColors: ['red'],
+     labelColors: ['black'],
+     labelPos: 'bottom',
+     axisColor: 'orange',
+     axisWidth: 1,
+     barSpacing: .9,
+     ticks: 5,
+     width:300
+   };
+
+ createBarChart(data1, chart1, options1);*/
+
+ /************************************************************
+ *                      BARCHART Two - Topics                       *
+ ***********************************************************
+
+ const chart2 = document.getElementById('chart-topics');
+ const data2 = [
+   ['datamatch', 0],
+   ['eas1819', 0],
+   ['eas1920', 0],
+ ['esf', 0],
+ ['ILR1819', 0],
+ ['ilr1920', 0],
+ ['ncs', 0],
+ ['periodend', 250],
+ ['referencedata', 0],
+ ['summarisation', 0]
+ ];
+ const options2 = {
+
+   title: '',
+
+   titleBG: 'none',
+   chartBG: 'none',
+   valColors: ['white', 'white', 'white', 'white', 'yellow'],
+   barColors: ['green'],
+   labelColors: ['black'],
+   labelPos: 'bottom',
+   axisColor: 'orange',
+   axisWidth: 1,
+   barSpacing: .9,
+   ticks: 5,
+   width:290
+ };
+
+ createBarChart(data2, chart2, options2);*/
+
+ /************************************************************
+ *                      BARCHART three - ILR                       *
+ ***********************************************************
+
+ const chart3 = document.getElementById('chart-ILR');
+ const data3 = [
+   ['Deds', 21],
+   ['ESFV1', 0],
+   ['ESFV2', 11],
+ ['FileValidation', 0],
+ ['Funding', 0],
+ ['Payments', 0],
+ ['Ref Data', 0],
+ ['Reports', 0.1],
+ ['Validation', 0]
+ ];
+ const options3 = {
+
+   title: '',
+   titleBG: 'none',
+   chartBG: 'none',
+   valColors: ['white', 'white', 'white', 'white', 'yellow'],
+   barColors: ['red','green'],
+   labelColors: ['black'],
+   labelPos: 'bottom',
+   axisColor: 'orange',
+   axisWidth: 1,
+   barSpacing: .5  ,
+   ticks: 9,
+   width:290
+ };
+
+ createBarChart(data3, chart3, options3);*/
+
+
+
+     var TASKS = ['auditing', 'failedjob', 'fundingclaim', 'jobstatus'];
+     var color = Chart.helpers.color;
+     var barChartData = {
+       labels: ['auditing', 'failedjob', 'fundingclaim', 'jobstatus'],
+       datasets: [{
+         label: '# of Messages',
+         backgroundColor: color(window.chartColors.red).alpha(1).rgbString(),
+         borderColor: window.chartColors.red,
+         borderWidth: 1,
+         data: [
+           45, 12, 34, 50
+         ]
+       }, {
+         label: '# of Dead Letters',
+         backgroundColor: color(window.chartColors.lawngreen).alpha(1).rgbString(),
+         borderColor: window.chartColors.lawngreen,
+         borderWidth: 1,
+         data: [
+           60, 45, 65, 70
+         ]
+       }]
+
+     };
+
+     var topicData = {
+       labels: ['datamatch', 'eas1819', 'eas1920', 'est', 'ilr1819', 'ilr1920', 'ncs', 'periodend', 'referencedata', 'summarisation'],
+       datasets: [{
+         label: '# of Messages',
+         backgroundColor: color(window.chartColors.red).alpha(1).rgbString(),
+         borderColor: window.chartColors.red,
+         borderWidth: 1,
+         data: [
+           45, 12, 34, 50
+         ]
+       }, {
+         label: '# of Dead Letters',
+         backgroundColor: color(window.chartColors.lawngreen).alpha(1).rgbString(),
+         borderColor: window.chartColors.lawngreen,
+         borderWidth: 1,
+         data: [
+           60, 45, 65, 70
+         ]
+       }]
+
+     };
+
+     var ilrData = {
+       labels: ['Deds', 'ESFV1', 'ESFV2', 'FileValidation', 'Funding', 'Payments', 'Ref Data', 'Reports', 'Validation'],
+       datasets: [{
+         label: '# of Messages',
+         backgroundColor: color(window.chartColors.lawngreen).alpha(1).rgbString(),
+         borderColor: window.chartColors.lawngreen,
+         borderWidth: 1,
+         data: [
+           45, 12, 34, 50
+         ]
+       }, {
+         label: '# of Dead Letters',
+         backgroundColor: color(window.chartColors.lawngreen).alpha(1).rgbString(),
+         borderColor: window.chartColors.lawngreen,
+         borderWidth: 1,
+         data: [
+           60, 45, 65, 70
+         ]
+       }]
+
+     };
+
+     window.onload = function() {
+       var ctx = document.getElementById('canvas-queue').getContext('2d');
+       window.myBar = new Chart(ctx, {
+         type: 'bar',
+         data: barChartData,
+         options: {
+           responsive: true,
+           legend: {
+             position: 'top',
+           },
+           title: {
+             display: false,
+             text: 'Chart.js Bar Chart'
+           }
+         }
+       });
+
+
+       var ctx = document.getElementById('canvas-topics').getContext('2d');
+       window.myBar = new Chart(ctx, {
+         type: 'bar',
+         data: topicData,
+         options: {
+           responsive: true,
+           legend: {
+             position: 'top',
+           },
+           title: {
+             display: false,
+             text: 'Chart.js Bar Chart'
+           }
+         }
+       });
+
+
+       var ctx = document.getElementById('canvas-ILR').getContext('2d');
+       window.myBar = new Chart(ctx, {
+         type: 'bar',
+         data: ilrData,
+         options: {
+           responsive: true,
+           legend: {
+             position: 'top',
+           },
+           title: {
+             display: false,
+             text: 'Chart.js Bar Chart'
+           }
+         }
+       });
+
+     };
+
+     document.getElementById('randomizeData').addEventListener('click', function() {
+       var zero = Math.random() < 0.2 ? true : false;
+       barChartData.datasets.forEach(function(dataset) {
+         dataset.data = dataset.data.map(function() {
+           return zero ? 0.0 : randomScalingFactor();
+         });
+
+       });
+       window.myBar.update();
+     });
+
+     var colorNames = Object.keys(window.chartColors);
+     document.getElementById('addDataset').addEventListener('click', function() {
+       var colorName = colorNames[barChartData.datasets.length % colorNames.length];
+       var dsColor = window.chartColors[colorName];
+       var newDataset = {
+         label: 'Dataset ' + (barChartData.datasets.length + 1),
+         backgroundColor: color(dsColor).alpha(1).rgbString(),
+         borderColor: dsColor,
+         borderWidth: 0,
+         data: []
+       };
+
+       for (var index = 0; index < barChartData.labels.length; ++index) {
+         newDataset.data.push(randomScalingFactor());
+       }
+
+       barChartData.datasets.push(newDataset);
+       window.myBar.update();
+     });
+
+     document.getElementById('addData').addEventListener('click', function() {
+       if (barChartData.datasets.length > 0) {
+         var month = TASKS[barChartData.labels.length % TASKS.length];
+         barChartData.labels.push(month);
+
+         for (var index = 0; index < barChartData.datasets.length; ++index) {
+           // window.myBar.addData(randomScalingFactor(), index);
+           barChartData.datasets[index].data.push(randomScalingFactor());
+         }
+
+         window.myBar.update();
+       }
+     });
+
+     document.getElementById('removeDataset').addEventListener('click', function() {
+       barChartData.datasets.pop();
+       window.myBar.update();
+     });
+
+     document.getElementById('removeData').addEventListener('click', function() {
+       barChartData.labels.splice(-1, 1); // remove the label first
+
+       barChartData.datasets.forEach(function(dataset) {
+         dataset.data.pop();
+       });
+
+       window.myBar.update();
+     });
+
+
+
 });
 
 $('#startRound3').click(function(e){
-  $(this).hide();
+  //$(this).hide();
+  $(this).addClass('govuk-button--disabled');
   // $(this).text('Pause');
   $('.green-dot').removeClass('hidden');
   $('.awaiting-1').addClass('line-height-adjustment');
@@ -310,6 +696,8 @@ $('#startRound3').click(function(e){
   $('.time-started').show();
   $('.spinner1').show();
   $('.start-period-end-text').hide();
+  $('#continueState').removeClass('govuk-!-font-weight-bold');
+  $('#toBeContinued').addClass('govuk-!-font-weight-bold');
   setTimeout(function()
   {
     $('.awaiting-1').hide();
@@ -318,7 +706,7 @@ $('#startRound3').click(function(e){
     $('.hide-complete-1').show();
     $('.awaiting-2').html('in progress...');
     $('.awaiting-2').addClass('line-height-adjustment');
-  }, 1000);
+  }, 0);
   setTimeout(function()
   {
 
@@ -353,6 +741,83 @@ $('#startRound3').click(function(e){
 
   e.preventDefault();
 });
+
+$('#startPeriodEnd').click(function(e){
+  var processingContainer = $('#start-internal-report-sub-path span.status-processing-hide');
+  var statusHide = $('#start-internal-report-sub-path span.status-hide');
+
+  $(this).addClass('govuk-button--disabled');
+  processingContainer.removeClass('status-processing-hide');
+  $('.spinner1').show();
+  setTimeout(function()
+  {
+    processingContainer.addClass('status-processing-hide');
+    $('.spinner1').hide();
+    statusHide.removeClass('status-hide');
+    $('#start-internal-report-sub-path-button').removeClass('app-proceed-button-hide');
+  }, 2000);
+  e.preventDefault();
+});
+
+
+$('.proceedButton').click(function(e){
+  var proceedToNext = $(this).closest('li.wrapper').next('li.wrapper');
+  proceedToNext.find('span#continueState:first').css('font-weight','bold');
+  proceedToNext.find('ul.status-hide:first').removeClass('status-hide');
+
+  proceedToNext.find('ul.status-hide:first li span.status-processing-hide').removeClass('status-processing-hide');
+  $('.spinner1').show();
+  setTimeout(function()
+  {
+    proceedToNext.find('ul.status-hide:first li span.status-processing-hide').addClass('status-processing-hide');
+    proceedToNext.find('ul.status-hide:first li span.status-hide').removeClass('status-hide');
+    $('.spinner1').hide();
+    //statusHide.removeClass('status-hide');
+    $('#start-internal-report-sub-path-button').removeClass('app-proceed-button-hide');
+  }, 2000);
+
+});
+
+
+$('#add-new-claim-dates').click(function(e){
+  $('#add-table-row').show();
+})
+$('#save-table-row').click(function(e){
+  $('.banner-success-without-action').hide()
+  $(this).closest('tr').hide();
+  $('#saved-table-row').show();
+  $('#add-message').show();
+  setTimeout(function()
+  {
+    $('#add-message').hide();
+  }, 3000);
+})
+
+$('.modify-table-row').click(function(e){
+  $('#modify-added-table-row').show();
+  $(this).closest('tr').hide();
+})
+
+$('#update-table-row').click(function(e){
+  $('.banner-success-without-action').hide()
+  $(this).closest('tr').hide();
+  $('#saved-table-row').show();
+  $('#update-message').show();
+  setTimeout(function()
+  {
+    $('#update-message').hide();
+  }, 3000);
+})
+
+$('#modify-rule').click(function(e){
+  $(this).closest('tr').hide();
+  $('#edit-row').show();
+})
+
+$('#save-rule').click(function(e){
+  $(this).closest('tr').hide();
+  $('#modify-row').show();
+})
 
 $(".rerun-job").click(function(e){
   $(this).hide();
@@ -766,7 +1231,7 @@ $(".show-hidden-check-box input").on("change" , function() {
 
 });
 
-$("#pause-all-jobs").click(function(e){
+$("#pause-all-jobs").bind('click',function(e){
   $(this).hide();
   $(".confirm-pause").show();
   e.preventDefault();
@@ -779,9 +1244,18 @@ $(".yes-pause").click(function(e){
   $(".pause-confirmation").show();
   $(".paused-job").text("Paused");
   $(".show-continue").show();
+  $("#sendCollectionClosedEmail").removeClass("govuk-button--disabled");
   e.preventDefault();
 });
-
+$("#sendCollectionClosedEmail").bind('click', function(e){
+  $("#periodEndContinue").removeClass("govuk-button--disabled").attr("href", "period-end-part-1");
+  e.preventDefault();
+});
+$("#NCSsendCollectionClosedEmail").bind('click', function(e){
+  $(this).addClass("govuk-button--disabled")
+  $("#NCSperiodEndContinue").removeClass("govuk-button--disabled").attr("href", "ncs-period-end-part-2");
+  e.preventDefault();
+});
 $(".cancel-pause").click(function(e){
   $(".confirm-pause").hide();
   $("#pause-all-jobs").show();

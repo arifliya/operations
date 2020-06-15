@@ -187,8 +187,17 @@ hr{
 
 }
 
-
-
+#autocomplete-overlay-rules {
+  border-right:0px;
+}
+#validation-message-period { border-left:0px; height:42px;  }
+.vertical-divider {
+  width:1px;
+  border-right:1px solid #707070;
+  height:20px;
+  margin-left:-2px;
+  margin-top:10px;
+}
 .standard-search {
 
   .govuk-form-group {
@@ -316,6 +325,24 @@ hr{
 
 .margin-top-20 {
   margin-top: 20px;
+}
+
+
+// width
+.govuk-width-5 {
+  width: 5% !important;
+}
+.govuk-width-10 {
+  width: 10% !important;
+}
+.govuk-width-15 {
+  width: 15% !important;
+}
+.govuk-width-17 {
+  width: 17% !important;
+}
+.govuk-width-20 {
+  width: 20% !important;
 }
 
 // .white-text {
@@ -611,7 +638,7 @@ html {
 .govuk-button--warning {
   background-color: govuk-colour("red");
   box-shadow: 0 2px 0 #47060c;
-  
+
 }
 
 .govuk-button--warning:focus {
@@ -720,6 +747,9 @@ html {
 .red-font {
   color: $govuk-error-colour;
 }
+.green-font {
+  color: #00703c;
+}
 
 .awaiting {
   // float: right;
@@ -805,7 +835,16 @@ html {
   display: none;
   float: right;
 }
-
+.position-right {
+  float:right;
+}
+.govuk-input--width-6 {
+    max-width: 13.8ex;
+  }
+  .govuk-input--width-7 {
+      max-width: 15ex;
+      font-size: 15px;
+    }
 
 // @include govuk-media-query($from: mobile) {
 //   .signed-in-user {
@@ -1056,7 +1095,7 @@ html {
 }
 
 .show-continue {
-  display: none;
+  // display: none;
 }
 
 .cancel-pause {
@@ -1076,5 +1115,724 @@ html {
     text-decoration: none;
   }
 }
+/************************************************************
+ *                                                         *
+ *                      BARCHARTJS                         *
+ *                                                         *
+************************************************************/
+
+/* Reset if not done already */
 
 
+/* Entire Container */
+.chart-container {
+  position: relative;
+  background: #fff;
+}
+
+/* Title Below Chart */
+.chart-container .chart-title {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  line-height: 100%;
+}
+
+/* Area Ticks Along the Left of Chart Take Up */
+.chart-container .chart-ticks {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Individual Ticks */
+.chart-container .chart-ticks .chart-tick {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  text-align: right;
+}
+
+/* Span used to offset position of tick value */
+.chart-container .chart-ticks span {
+  position: relative;
+  top: 0.35em;
+}
+
+/* Labels Section Along Bottom of Chart */
+.chart-container .chart-labels {
+  position: absolute;
+  right: 0;
+}
+
+/* Individual Labels */
+.chart-container .chart-labels .chart-label {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  white-space: nowrap;
+  transform: rotate(-25deg);
+  top:16px;
+  font-size: 12px !important;
+}
+
+/* Chart */
+.chart {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Individual Bars */
+.chart .chart-bar {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hover Effect On Bars */
+.chart .chart-bar:hover {
+  box-shadow: 0 0 5px rgb(89, 94, 95);
+}
+
+.chart-container {
+      font-family: 'GDS Transport Web', sans-serif;
+      background-color: #fafafa;
+}
+.bar-chart-container p {
+  position: relative;
+  margin:0;
+  font-size:14px;
+  text-align: center;
+  margin:5px 14px;
+}
+.bar-chart-container span.red,
+.bar-chart-container span.green, {
+  padding:1px 20px;
+  margin-right:5px;
+  font-size: 11px;
+}
+.bar-chart-container span.red {
+  background: red;
+}
+.bar-chart-container span.green {
+  background: lawngreen;
+}
+
+.standard-search {
+
+	.govuk-form-group {
+		display: flex;
+		margin-bottom: 0;
+
+
+		  .govuk-button {
+			height: 40px;
+			width: 40px;
+			background-color: govuk-colour("black");
+			display: block;
+			background-repeat: no-repeat;
+			margin-bottom: 0;
+
+
+			  img {
+				position: absolute;
+				clip: rect(23px, 26px, 44px, 8px);
+				top: -15px;
+				left: 0;
+			  }
+		  }
+	  }
+
+	  a {
+		color: govuk-colour("white");
+		font-weight: 600;
+		margin-top: 10px;
+		display: block;
+		text-align: right;
+	  }
+
+	  @include govuk-media-query($from: mobile) {
+
+		#tt-overlay {
+		  background-color: white;
+		  width: 100%;
+		  // font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+		  font-family: "nta", Arial, sans-serif;
+		}
+
+		.autocomplete__input--default {
+			padding:9px;
+			height: 42px;
+		}
+
+	  }
+
+	  @include govuk-media-query($from: tablet) {
+
+		.autocomplete__input--default {
+			padding:6px;
+
+		}
+	  }
+
+  }
+
+
+/* MODAL DIALOG
+   ============================================================================*/
+
+   #modal-dialogue-example #modal {
+       position: absolute;
+       z-index: 10;
+       top: 30.6px;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+     }
+     #modal-dialogue-example #modal-content {
+       position: relative;
+       background: #fff;
+       font-weight: bold;
+       font-size: 16px;
+       line-height: 20px;
+       color: #000;
+       padding: 15px;
+       box-shadow: 0 5px 0 rgba(0,0,0,0.1);
+       max-width: 380px;
+       box-sizing: border-box;
+     }
+     #modal-dialogue-example .close-modal {
+       position: absolute;
+       overflow: hidden;
+       width: 40px;
+       height: 30px;
+       padding: 9px 0 1px;
+       top: 0;
+       right: 0;
+       color: #000;
+       font-size: 30px;
+       text-decoration: none;
+       text-align: center;
+       line-height: 30px;
+     }
+     #modal-dialogue-example #modal-content h2 {
+       font-size: 24px;
+       line-height: 30px;
+       margin: 10px 0;
+       font-weight: bold;
+     }
+     #modal-dialogue-example #modal-content p {
+       margin: 0;
+     }
+     #modal-dialogue-example #modal-content .actions {
+       margin-top: 15px;
+     }
+     #modal-dialogue-example #modal-content .actions button {
+       color: #000;
+       background: white;
+       border: none;
+       font-family: inherit;
+       font-weight: bold;
+       line-height: 30px;
+       padding: 6px 10px 4px;
+       margin-right: 10px;
+       font-size: 16px;
+       cursor: pointer;
+     }
+     #modal-dialogue-example #modal-content .actions a {
+       color: white;
+       text-decoration: underline;
+     }
+     #modal-dialogue-example .close-modal:hover {
+       background: #4C2C92;
+     }
+     #modal-dialogue-example .close-modal:focus {
+       background: orange;
+       outline: none;
+     }
+     #modal-dialogue-example .close-modal span {
+       position: absolute;
+       top: -100px;
+       left: -1000%;
+     }
+     #modal-dialogue-example:target #modal-content {
+       display: none;
+     }
+
+
+  /* CUSTOM BANNERS
+     ========================================================================== */
+     .govuk-banner {
+       border: 5px solid #1d70b8;
+       color: #1d70b8;
+       font-size: 0;
+       margin-bottom: 30px;
+       padding: 10px;
+     }
+  .govuk-banner--success {
+    border-color: #00703c;
+    color: #00703c;
+  }
+  .govuk-banner--success {
+    border-color: #00703c;
+    color: #00703c;
+  }
+
+  .govuk-banner--warning {
+    border-color: #d4351c;
+    color: #d4351c;
+  }
+  .govuk-banner__message {
+    font-family: "GDS Transport", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #0b0c0c;
+    display: block;
+    overflow: hidden;
+  }
+  /* ==========================================================================
+     #ALERT
+     ========================================================================== */
+
+
+  .govuk-banner__icon {
+    fill: currentColor;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .govuk-banner__message {
+    font-family: "GDS Transport", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #0b0c0c;
+    display: block;
+    overflow: hidden;
+  }
+  .govuk-banner--warning {
+    border-color: #d4351c;
+    color: #d4351c;
+  }
+  .govuk-banner__message h2 {
+    margin-bottom: 10px;
+  }
+
+  .govuk-banner__message h2:last-child {
+    margin-bottom: 0;
+  }
+
+  .govuk-banner__message p:last-child {
+    margin-bottom: 0;
+  }
+
+  .govuk-banner__assistive {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  #left-nav-wrapper {
+
+	ul {
+
+	  margin-left: -11px;
+
+	  .dashboard-link  {
+		margin-bottom: 10px;
+
+		a {
+		  text-decoration: none;
+		}
+
+		a:hover {
+		  text-decoration: underline;
+		  color: govuk-colour("light-blue");
+		}
+	  }
+
+	  .left-navigation-0 {
+
+		li {
+		  margin-bottom: 16px;
+
+
+		  a {
+			text-decoration: none;
+			display: block;
+			// padding: 6px 0 6px 11px;
+		  }
+
+		  // a.active {
+		  //   // border-left: 5px solid govuk-colour("light-blue");
+		  //   // margin-left: -4px;
+		  // }
+
+		  a:hover {
+			text-decoration: underline;
+			color: govuk-colour("blue");
+		  }
+
+		  // a:visited {
+		  //   color: $govuk-link-colour;
+		  // }
+
+		}
+	  }
+
+	  .left-navigation {
+
+		li {
+		  // margin-bottom: 16px;
+
+
+		  a {
+			text-decoration: none;
+			display: block;
+			padding: 6px 0 6px 11px;
+		  }
+
+		  a.active {
+			border-left: 5px solid govuk-colour("blue");
+			margin-left: -4px;
+		  }
+
+		  a:hover {
+			text-decoration: underline;
+			color: govuk-colour("light-blue");
+		  }
+
+		  // a:visited {
+		  //   color: $govuk-link-colour;
+		  // }
+
+		}
+	  }
+
+	  .left-navigation-2 {
+
+		li {
+		  // margin-bottom: 16px;
+
+
+		  a {
+			text-decoration: none;
+			display: block;
+			padding: 6px 0 6px 11px;
+		  }
+
+		  a.active {
+			border-left: 5px solid govuk-colour("blue");
+			margin-left: -4px;
+		  }
+
+		  a:hover {
+			text-decoration: underline;
+			color: govuk-colour("light-blue");
+		  }
+
+		  // a:visited {
+		  //   color: $govuk-link-colour;
+		  // }
+
+		}
+	  }
+	}
+
+
+	.app-back-to-top__icon, a:visited {
+	  color: $govuk-link-colour;
+	}
+
+	.sticky-top {
+	  a.app-back-to-top:hover {
+		text-decoration: underline;
+		color: govuk-colour("light-blue");
+	  }
+	}
+
+	.app-back-to-top__icon {
+		display: inline-block;
+		width: .8em;
+		height: 1em;
+		margin-top: -5px;
+		margin-right: 10px;
+		vertical-align: middle;
+	}
+
+	.sticky-top {
+	  position: sticky;
+	  top: 30px;
+	  margin-bottom: 30px;
+	}
+}
+
+.home-services {
+    padding-top: 25px
+}
+
+.home-services__heading {
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.25;
+    margin: 0 0 5px 0
+}
+.triangle-right {
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-left: 12px solid #000;
+    border-bottom: 6px solid transparent
+}
+.triangle-down {
+    float: right;
+    margin-top: 3px;
+    margin-left: 5px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 9px solid #000;
+}
+.status-hide, .status-processing-hide, .app-proceed-button-hide, .row-hide {
+  display: none;
+}
+
+.banner-destructive-without-action, .banner-destructive-with-action, .banner-warning-with-action, .banner-warning-without-action, .banner-success-with-action, .banner-success-without-action, .banner-information-with-action, .banner-information-without-action, .banner-temporary-message-without-action {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    padding: 20px;
+    margin-top: 15px;
+    border-width: 5px;
+    border-style: solid;
+}
+
+
+
+@media (min-width: 641px) {
+    .banner-destructive-without-action .banner-content, .banner-destructive-with-action .banner-content, .banner-warning-with-action .banner-content, .banner-warning-without-action .banner-content, .banner-success-with-action .banner-content, .banner-success-without-action .banner-content, .banner-information-with-action .banner-content, .banner-information-without-action .banner-content, .banner-temporary-message-without-action .banner-content {
+        font-size: 19px;
+        line-height: 1.31579;
+    }
+}
+
+.banner-destructive-without-action .banner-content ul, .banner-destructive-with-action .banner-content ul, .banner-warning-with-action .banner-content ul, .banner-warning-without-action .banner-content ul, .banner-success-with-action .banner-content ul, .banner-success-without-action .banner-content ul, .banner-information-with-action .banner-content ul, .banner-information-without-action .banner-content ul, .banner-temporary-message-without-action .banner-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.banner-destructive-without-action .banner-content ul li, .banner-destructive-with-action .banner-content ul li, .banner-warning-with-action .banner-content ul li, .banner-warning-without-action .banner-content ul li, .banner-success-with-action .banner-content ul li, .banner-success-without-action .banner-content ul li, .banner-information-with-action .banner-content ul li, .banner-information-without-action .banner-content ul li, .banner-temporary-message-without-action .banner-content ul li {
+    margin-bottom: 5px;
+}
+
+.banner-destructive-without-action, .banner-destructive-with-action {
+    color: #b10e1e;
+}
+
+.banner-warning-with-action, .banner-warning-without-action {
+    color: #cd4c0b;
+}
+
+.banner-success-with-action, .banner-success-with-action p,  .banner-success-without-action, .banner-success-without-action p  {
+    color: #00823b;
+}
+
+.banner-action {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.banner-message {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+
+
+@media print {
+    .home-services__heading {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .home-services__heading {
+        font-size:19px;
+        line-height: 1.3157894737
+    }
+}
+
+@media print {
+    .home-services__heading {
+        font-size: 14pt;
+        line-height: 1.15
+    }
+}
+
+.home-services__para {
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    margin: 0 0 15px 0;
+    min-height: 40px
+}
+
+@media print {
+    .home-services__para {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .home-services__para {
+        font-size:16px;
+        line-height: 1.25
+    }
+}
+
+@media print {
+    .home-services__para {
+        font-size: 14pt;
+        line-height: 1.2
+    }
+}
+
+/* ==========================================================================
+   #TAG
+   ========================================================================== */
+   .govuk-tag {
+
+       display: inline;
+
+       // When a user customises their colours often the background is removed,
+       // by adding a outline we ensure that the tag component still keeps it's meaning.
+       // https://accessibility.blog.gov.uk/2017/03/27/how-users-change-colours-on-websites/
+       outline: 2px solid transparent;
+       outline-offset: -2px;
+
+       color: govuk-colour("white");
+       background-color: govuk-colour("blue");
+       letter-spacing: 1px;
+
+       text-decoration: none;
+       text-transform: uppercase;
+     }
+
+
+
+.govuk-tag {
+  border: 2px solid govuk-colour("blue");
+  background-color: govuk-colour("blue");
+  color: govuk-colour("white");
+}
+.govuk-tag--purple {
+  border: 2px solid govuk-colour("purple");
+  background-color: govuk-colour("purple");
+  color: govuk-colour("white");
+}
+
+.govuk-tag--bright-purple {
+  border: 2px solid govuk-colour("bright-purple");
+  background-color: govuk-colour("bright-purple");
+  color: govuk-colour("white");
+}
+
+.govuk-tag--red,
+.govuk-tag--error {
+  border: 2px solid govuk-colour("red");
+  background-color: govuk-colour("red");
+  color: govuk-colour("white");
+}
+
+.govuk-tag--green,
+.govuk-tag--success {
+  border: 2px solid govuk-colour("green");
+  background-color: govuk-colour("green");
+  color: govuk-colour("white");
+}
+
+.govuk-tag--blue,
+.govuk-tag--information {
+  border: 2px solid govuk-colour("blue");
+  background-color: govuk-colour("blue");
+  color: govuk-colour("white");
+}
+
+.govuk-tag--black {
+  border: 2px solid govuk-colour("black");
+  background-color: govuk-colour("black");
+  color: govuk-colour("white");
+}
+
+.govuk-tag--grey {
+  border: 2px solid govuk-colour("grey-1");
+  background-color: govuk-colour("grey-1");
+  color: govuk-colour("white");
+}
+.extra-padding {
+  margin-top: govuk-spacing(2);
+}
+#heading-section h3.govuk-heading-xl {
+  display: inline !important;
+}
+.inline-display {
+  display: inline !important; float: left;
+}
+.govuk-checkboxes__input-custom {
+  width: 22px; height:22px;
+  border: 2px solid #000;
+}
+
+.checkbox123 {border: 1px solid red}
+.checkbox #checkbox_1[type="checkbox"] {
+    opacity: 0; display:none;
+}

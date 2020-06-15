@@ -1,0 +1,263 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./includes/nav.html" %}
+
+<!-- <script src="/public/javascripts/tt.js"></script> -->
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="period-end-dashboard">Period end</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="email-dist">Email distribution</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage emails</li>
+  </ol>
+</div>
+<br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <div class="govuk-banner govuk-banner--success">
+        <svg class="govuk-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+        <div class="govuk-banner__message">
+          <span class="govuk-banner__assistive">Success</span>
+          You have successfully updated <strong>Period end started email</strong> template.
+        </div>
+    </div>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Manage emails</h1>
+
+    <!-- <p><a class="govuk-button govuk-button--secondary" href="new-mailing-list">Add a new mailing list</a></p> -->
+
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email template
+            </dt>
+            <dt class="govuk-summary-list__key">
+                Trigger point
+              </dt>
+            <dt class="govuk-summary-list__key">
+                Mailing list
+              </dt>
+              <dt class="govuk-summary-list__key govuk-summary-list__actions">
+                 Action
+                </dt>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Period end started email
+            </dd>
+            <dd class="govuk-summary-list__value">
+              Period end started
+            </dd>
+            <dd class="govuk-summary-list__value">
+              PE Comms All
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="email-collection-closed">
+                Edit<span class="govuk-visually-hidden"> email</span>
+              </a>
+            </dd>
+          </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Data Warehouse 1 Email
+        </dd>
+        <dd class="govuk-summary-list__value">
+          Data Warehouse 1
+        </dd>
+        <dd class="govuk-summary-list__value">
+          MI Team
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Edit<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+
+
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          DAS Start Email DAS Start
+        </dd>
+        <dd class="govuk-summary-list__value">
+          DAS Start
+        </dd>
+        <dd class="govuk-summary-list__value">
+          PE Comms All
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Edit<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          FCS Handover Email
+        </dd>
+        <dd class="govuk-summary-list__value">
+          FCS Handover
+        </dd>
+        <dd class="govuk-summary-list__value">
+          PE Comms All
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Edit<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Extract Available Email
+        </dd>
+        <dd class="govuk-summary-list__value">
+          Extract Available
+        </dd>
+        <dd class="govuk-summary-list__value">
+          PETest01
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Edit<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Standard File Email
+        </dd>
+        <dd class="govuk-summary-list__value">
+          Standard File Email
+        </dd>
+        <dd class="govuk-summary-list__value">
+          PETest01
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Edit<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Month End Sample Email
+        </dd>
+        <dd class="govuk-summary-list__value">
+          Month End Sample
+        </dd>
+        <dd class="govuk-summary-list__value">
+          PETest01
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Edit<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Data Warehouse 2 Email
+        </dd>
+        <dd class="govuk-summary-list__value">
+          Data Warehouse 2
+        </dd>
+        <dd class="govuk-summary-list__value">
+          MI Team
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Edit<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Reports Published Email
+        </dd>
+        <dd class="govuk-summary-list__value">
+          Reports Published
+        </dd>
+        <dd class="govuk-summary-list__value">
+          PE Comms All
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Edit<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Reference Data Completed Email
+        </dd>
+        <dd class="govuk-summary-list__value">
+          Reference Data Completed
+        </dd>
+        <dd class="govuk-summary-list__value">
+          PETest01
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Edit<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          FCS Team Handover Email
+        </dd>
+        <dd class="govuk-summary-list__value">
+          FCS Team Handover
+        </dd>
+        <dd class="govuk-summary-list__value">
+          FCS
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Edit<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+
+
+    </dl>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
