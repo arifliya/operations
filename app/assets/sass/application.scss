@@ -398,9 +398,7 @@ hr{
   border-color: govuk-colour("grey-3");
 }
 
-.filter-box.hidden {
-  // display: none;
-}
+
 
 
 
@@ -751,21 +749,14 @@ html {
   color: #00703c;
 }
 
-.awaiting {
-  // float: right;
-  // display: block;
-  // text-align: right;
 
-}
 
 .line-height-adjustment {
   line-height: 45px;
   margin-right: 20px;
 }
 
-.awaiting-1 {
 
-}
 
 @include govuk-media-query($from: mobile) {
 
@@ -1094,9 +1085,7 @@ html {
   display: none;
 }
 
-.show-continue {
-  // display: none;
-}
+
 
 .cancel-pause {
   margin-top: 8px;
@@ -1835,4 +1824,8 @@ html {
 .checkbox123 {border: 1px solid red}
 .checkbox #checkbox_1[type="checkbox"] {
     opacity: 0; display:none;
+}
+
+.edit-esf, .edit-frm, .add-ilr, .add-eas {
+  display: none;
 }

@@ -1320,6 +1320,68 @@ $('#returnPeriod').change(function() {
 });
 
 
+
+$("#saveChanges").click(function(e) {
+
+  // if($('#addTable input').is(':hidden')) {
+  //   $('#addTable').hide();
+  // }
+  
+  if ($('.add-esf-start').val()!='' && $('.add-frm-start').val()!='') {
+    $('#addTable').hide();
+  }
+
+  
+  if ($('.add-ilr-start').val()!='') {
+    $('.add-ilr').hide();
+    $('.edit-ilr').show();
+  }
+
+  if ($('.add-eas-start').val()!='') {
+    $('.add-eas').hide();
+    $('.edit-eas').show();
+  }
+
+  if ($('.add-esf-start').val()!='') {
+    $('.add-esf').hide();
+    $('.edit-esf').show();
+  }
+  
+  if ($('.add-frm-start').val()!='') {
+    $('.add-frm').hide();
+    $('.edit-frm').show();
+  }
+
+  e.preventDefault();
+});
+
+$('.clear-ilr').click(function(){
+  $('.edit-ilr').hide();
+  $('.add-ilr').show();
+  $('#addTable').show();
+});
+
+$('.clear-eas').click(function(){
+  $('.edit-eas').hide();
+  $('.add-eas').show();
+  $('#addTable').show();
+});
+
+$('.clear-esf').click(function(){
+  $('.edit-esf').hide();
+  $('.add-esf').show();
+  $('#addTable').show();
+});
+
+$('.clear-frm').click(function(){
+  $('.edit-frm').hide();
+  $('.add-frm').show();
+  $('#addTable').show();
+});
+
+
+
+
 $(window).scroll(function() {
     var windscroll = $(window).scrollTop();
     if ($(window).width() > 640) {
@@ -1354,3 +1416,6 @@ $window.scroll(function() {
         $('.sticky').removeClass('stuck');
     }
 });
+
+
+

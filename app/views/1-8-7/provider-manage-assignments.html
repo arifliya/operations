@@ -30,41 +30,76 @@
     <form action="manage-provider-assignments" method="post" class="form">
 <div class="govuk-form-group">
 
-  <table class="govuk-table">
-    <tbody class="govuk-table__body">
+<table id="editTable" class="govuk-table">
+    <caption class="govuk-table__caption">Edit active assignments</caption>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="row">Collection</th>
+      <th class="govuk-table__cell">Start date</th>
+      <th class="govuk-table__cell">End date</th>
+      <th class="govuk-table__cell"> </th>
+    </tr>
+    <tr class="govuk-table__row edit-ilr">
+      <td class="govuk-table__cell">IRL1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-ilr-start" id="width-10" name="IRL1920-start-date" type="text" placeholder="mm/dd/yyyy" value="15/09/2019"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-ilr-end" id="width-10" name="IRL1920-end-date" type="text" placeholder="mm/dd/yyyy" value="30/08/2020"></td>
+      <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 clear-ilr" href="#">Clear</a> </td>
+    </tr>
+    <tr class="govuk-table__row edit-eas">
+      <td class="govuk-table__cell" scope="row">EAS1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-eas-start" id="width-10" name="EAS1920-start-date" type="text" placeholder="mm/dd/yyyy" value="15/09/2019"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-eas-start" id="width-10" name="EAS1920-end-date" type="text" placeholder="mm/dd/yyyy" value="30/08/2020"></td>
+      <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 clear-eas" href="#">Clear</a> </td>      
+    </tr>
+    <tr class="govuk-table__row edit-esf">
+      <td class="govuk-table__cell">ESFR2-1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-esf-start" id="width-10" name="ESFR2-1920-start-date" type="text" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-esf-start" id="width-10" name="ESFR2-1920-end-date" type="text" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 clear-esf" href="#">Clear</a> </td>
+    </tr>
+    <tr class="govuk-table__row edit-frm">
+      <td class="govuk-table__cell">FRM-reports1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-frm-start" id="width-10" name="FRM-reports1920-start-date" type="text" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-frm-start" id="width-10" name="FRM-reports1920-end-date" type="text" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 clear-frm" href="#">Clear</a> </td>      
+    </tr>
+  </tbody>
+</table>
 
-      <tr class="govuk-table__row">
-        <th class="govuk-table__header" scope="row">Collection</th>
-        <th class="govuk-table__cell">Start date</th>
-        <th class="govuk-table__cell">End date</th>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">IRL1920</td>
-        <td class="govuk-table__cell">
-          <input class="govuk-input govuk-input--width-10" id="width-10" name="IRL1920-start-date" type="text" placeholder="mm/dd/yyyy" ></td>
-        <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10" id="width-10" name="IRL1920-end-date" type="text" placeholder="mm/dd/yyyy"></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell" scope="row">EAS1920</td>
-        <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10" id="width-10" name="EAS1920-start-date" type="text" placeholder="mm/dd/yyyy"></td>
-        <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10" id="width-10" name="EAS1920-end-date" type="text" placeholder="mm/dd/yyyy"></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">ESFR2-1920</td>
-        <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10" id="width-10" name="ESFR2-1920-start-date" type="text" placeholder="mm/dd/yyyy"></td>
-        <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10" id="width-10" name="ESFR2-1920-end-date" type="text" placeholder="mm/dd/yyyy"></td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell">FRM-reports1920</td>
-        <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10" id="width-10" name="FRM-reports1920-start-date" type="text" placeholder="mm/dd/yyyy"></td>
-        <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10" id="width-10" name="FRM-reports1920-end-date" type="text" placeholder="mm/dd/yyyy"></td>
-      </tr>
-    </tbody>
-  </table>
-  {{ govukButton({
-  text: "Save",
-  href: ""
-  }) }}
+<table id="addTable" class="govuk-table">
+    <caption class="govuk-table__caption">Add assignments</caption>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="row">Collection</th>
+      <th class="govuk-table__cell">Start date</th>
+      <th class="govuk-table__cell">End date</th>
+    </tr>
+    <tr class="govuk-table__row add-ilr">
+      <td class="govuk-table__cell">IRL1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-ilr-start" id="width-10" name="IRL1920-start-date" type="text" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-ilr-end" id="width-10" name="IRL1920-end-date" type="text" placeholder="mm/dd/yyyy"></td>
+    </tr>
+    <tr class="govuk-table__row add-eas">
+      <td class="govuk-table__cell" scope="row">EAS1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-eas-start" id="width-10" name="EAS1920-start-date" type="text" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-eas-end" id="width-10" name="EAS1920-end-date" type="text" placeholder="mm/dd/yyyy"></td>
+    </tr>
+    <tr class="govuk-table__row add-esf">
+      <td class="govuk-table__cell">ESFR2-1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-esf-start" id="width-10" name="ESFR2-1920-start-date" type="text" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-esf-end" id="width-10" name="ESFR2-1920-end-date" type="text" placeholder="mm/dd/yyyy"></td>
+    </tr>
+    <tr class="govuk-table__row add-frm">
+      <td class="govuk-table__cell">FRM-reports1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-frm-start" id="width-10" name="FRM-reports1920-start-date" type="text" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-frm-end" id="width-10" name="FRM-reports1920-end-date" type="text" placeholder="mm/dd/yyyy"></td>
+    </tr>
+  </tbody>
+</table>
+
+<a id="saveChanges" href="#" class="govuk-button">
+    Save changes
+</a>
 
   <a href="dashboard" class="govuk-link govuk-!-padding-left-3 govuk-!-margin-top-3">Cancel</a>
 
