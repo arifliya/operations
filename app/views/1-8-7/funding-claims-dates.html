@@ -42,6 +42,17 @@
       <div class="govuk-grid-column-full govuk-!-margin-top-6">
         <h1 class="govuk-heading-xl">Funding claim dates 
           <!-- <button class="govuk-button position-right " data-module="govuk-button" id="add-new-claim-dates">Add new claim dates</button> -->
+          <div class="govuk-form-group position-right">
+              <label class="govuk-label" for="sort">
+                Filter by year
+              </label>
+              <select class="govuk-select" id="sort" name="sort">
+                <option value="published" selected>2020 to 2021</option>
+                <option value="updated">2019 to 2020</option>
+                <option value="views">2018 to 2019</option>
+                <option value="comments">2017 to 2018</option>
+              </select>
+            </div>
         </h1>
       </div>
     </div>
