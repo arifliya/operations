@@ -798,6 +798,11 @@ $('.modify-table-row').click(function(e){
   $(this).closest('tr').hide();
 })
 
+$('#cancel-modify').click(function(e){
+  $('#modify-added-table-row').hide();
+  $('#saved-table-row').show();
+})
+
 $('#update-table-row').click(function(e){
   $('.banner-success-without-action').hide()
   $(this).closest('tr').hide();
