@@ -1326,64 +1326,126 @@ $('#returnPeriod').change(function() {
 
 
 
-$("#saveChanges").click(function(e) {
+// $("#saveChanges").click(function(e) {
 
-  // if($('#addTable input').is(':hidden')) {
-  //   $('#addTable').hide();
-  // }
+//   // if($('#addTable input').is(':hidden')) {
+//   //   $('#addTable').hide();
+//   // }
   
-  if ($('.add-esf-start').val()!='' && $('.add-frm-start').val()!='') {
-    $('#addTable').hide();
-  }
+//   if ($('.add-esf-start').val()!='' && $('.add-frm-start').val()!='') {
+//     $('#addTable').hide();
+//   }
 
   
-  if ($('.add-ilr-start').val()!='') {
-    $('.add-ilr').hide();
-    $('.edit-ilr').show();
-  }
+//   if ($('.add-ilr-start').val()!='') {
+//     $('.add-ilr').hide();
+//     $('.edit-ilr').show();
+//   }
 
-  if ($('.add-eas-start').val()!='') {
-    $('.add-eas').hide();
-    $('.edit-eas').show();
-  }
+//   if ($('.add-eas-start').val()!='') {
+//     $('.add-eas').hide();
+//     $('.edit-eas').show();
+//   }
 
-  if ($('.add-esf-start').val()!='') {
-    $('.add-esf').hide();
-    $('.edit-esf').show();
-  }
+//   if ($('.add-esf-start').val()!='') {
+//     $('.add-esf').hide();
+//     $('.edit-esf').show();
+//   }
   
-  if ($('.add-frm-start').val()!='') {
-    $('.add-frm').hide();
-    $('.edit-frm').show();
-  }
+//   if ($('.add-frm-start').val()!='') {
+//     $('.add-frm').hide();
+//     $('.edit-frm').show();
+//   }
 
+//   e.preventDefault();
+// });
+
+$('.add-ilr-button').click(function(e){
+  $('.add-ilr').hide();
+  $('.edit-ilr').show();
+  var ilrStartAdd = $('.add-ilr-start').val();
+  $('.edit-ilr-start').val(ilrStartAdd);
+  var ilrEndAdd = $('.add-ilr-end').val();
+  $('.edit-ilr-end').val(ilrEndAdd);
+  $('#saveChanges').attr("disabled", false);
   e.preventDefault();
 });
 
-$('.clear-ilr').click(function(){
+$('.add-eas-button').click(function(e){
+  $('.add-eas').hide();
+  $('.edit-eas').show();
+  var easStartAdd = $('.add-eas-start').val();
+  $('.edit-eas-start').val(easStartAdd);
+  var easEndAdd = $('.add-eas-end').val();
+  $('.edit-eas-end').val(easEndAdd);
+  $('#saveChanges').attr("disabled", false);
+  e.preventDefault();
+});
+
+$('.add-esf-button').click(function(e){
+  $('.add-esf').hide();
+  $('.edit-esf').show();
+  var esfStartAdd = $('.add-esf-start').val();
+  $('.edit-esf-start').val(esfStartAdd);
+  var esfEndAdd = $('.add-esf-end').val();
+  $('.edit-esf-end').val(esfEndAdd);
+  $('#saveChanges').attr("disabled", false);
+  e.preventDefault();
+});
+
+$('.add-frm-button').click(function(e){
+  $('.add-frm').hide();
+  $('.edit-frm').show();
+  var frmStartAdd = $('.add-frm-start').val();
+  $('.edit-frm-start').val(frmStartAdd);
+  var frmEndAdd = $('.add-frm-end').val();
+  $('.edit-frm-end').val(frmEndAdd);
+  $('#saveChanges').attr("disabled", false);
+  e.preventDefault();
+});
+
+//for removing collections
+
+$('.clear-ilr').click(function(e){
   $('.edit-ilr').hide();
   $('.add-ilr').show();
   $('#addTable').show();
+  $('#saveChanges').attr("disabled", false);
+  e.preventDefault();
 });
 
-$('.clear-eas').click(function(){
+$('.clear-eas').click(function(e){
   $('.edit-eas').hide();
   $('.add-eas').show();
   $('#addTable').show();
+  $('#saveChanges').attr("disabled", false);
+  e.preventDefault();
 });
 
-$('.clear-esf').click(function(){
+$('.clear-esf').click(function(e){
   $('.edit-esf').hide();
   $('.add-esf').show();
   $('#addTable').show();
+  $('#saveChanges').attr("disabled", false);
+  e.preventDefault();
 });
 
-$('.clear-frm').click(function(){
+$('.clear-frm').click(function(e){
   $('.edit-frm').hide();
   $('.add-frm').show();
   $('#addTable').show();
+  $('#saveChanges').attr("disabled", false);
+  e.preventDefault();
 });
 
+$('#editTable input').change(function() {
+  var date = $('.edit-ilr-start').val();
+  $('#saveChanges').attr("disabled", false);
+});
+
+$("#saveChanges").click(function(e) {
+  e.preventDefault();
+});
 
 
 
