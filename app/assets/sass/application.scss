@@ -1104,6 +1104,19 @@ html {
     text-decoration: none;
   }
 }
+
+#errorSummary {
+  display: none;
+}
+
+.padding-left {
+  padding-left: 15px;
+}
+
+#areYouSureWrapper {
+  display: none;
+}
+
 /************************************************************
  *                                                         *
  *                      BARCHARTJS                         *

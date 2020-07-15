@@ -11,43 +11,40 @@
 
 {% include "./includes/nav.html" %}
 
-<a href="#" id="backlink" class="govuk-back-link">Back</a>
+<!-- <a href="#" id="backlink" class="govuk-back-link">Back</a> -->
 <br>
 <br>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Check your details</h1>
+    <h1 class="govuk-heading-xl">Notification details</h1>
 
-        <h2 class="govuk-heading-m">Notification summary</h2>
+       
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <dl id="notificationGroup" class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Notification type
+              Headline
             </dt>
             <dd class="govuk-summary-list__value">
-              This is the headline of my issue
+              <input class="govuk-input" type="text">
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <!-- <a class="govuk-link" href="notifications-type">
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="notifications-type">
                 Edit
                 <span class="govuk-visually-hidden"> headline</span>
-              </a> -->
-            </dd>
+              </a>
+            </dd> -->
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Full details
+              Message
             </dt>
             <dd class="govuk-summary-list__value">
-              These are the full details. These are the full details. These are the full details. These are the full details. These are the full details. These are the full details. These are the full details. These are the full details.
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
             </dd>
             <dd class="govuk-summary-list__actions">
-              <!-- <a class="govuk-link" href="notifications-content">
-                Edit
-                <span class="govuk-visually-hidden"> full details</span>
-              </a> -->
+              
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -55,43 +52,27 @@
               Start
             </dt>
             <dd class="govuk-summary-list__value">
-              25 August 2019 at 9.00
+              <input class="govuk-input govuk-!-width-one-half" type="date">
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="notifications-details">
-                Edit
-                <span class="govuk-visually-hidden"> contact information</span>
-              </a>
-            </dd>
+            
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Finish
             </dt>
             <dd class="govuk-summary-list__value">
-              26 August 2019 at 17.00
+              <input class="govuk-input govuk-!-width-one-half" type="date">
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="notifications-details">
-                Edit
-                <span class="govuk-visually-hidden"> contact information</span>
-              </a>
-            </dd>
+            
           </div>
 
         </dl>
 
-        <!-- <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
-        <label class="govuk-label govuk-checkboxes__label" for="waste-1">
-          I confirm that I have received all necessary sign offs from management and/or communications to display this message in the ‘Submit learner data’ service.
-
-        </label>
-      </div> -->
-      <br>
+        
+      
 
 
-       <a href="notifications-confirmation" class="govuk-button">Confirm</a>
+       <a id="saveNotification" href="manage-notifications.html" class="govuk-button" disabled>Save</a>
        <p><a href="dashboard" class="govuk-link">Cancel</a></p>
   </div>
 </div>

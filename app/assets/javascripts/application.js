@@ -1360,53 +1360,145 @@ $('#returnPeriod').change(function() {
 //   e.preventDefault();
 // });
 
+
+// $('.add-ilr-button').click(function(e){
+//   $('.add-ilr').hide();
+//   $('.edit-ilr').show();
+//   var ilrStartAdd = $('.add-ilr-start').val();
+//   $('.edit-ilr-start').val(ilrStartAdd);
+//   var ilrEndAdd = $('.add-ilr-end').val();
+//   $('.edit-ilr-end').val(ilrEndAdd);
+//   $('#saveChanges').attr("disabled", false);
+//   e.preventDefault();
+// });
+
+
 $('.add-ilr-button').click(function(e){
-  $('.add-ilr').hide();
-  $('.edit-ilr').show();
+  
   var ilrStartAdd = $('.add-ilr-start').val();
-  $('.edit-ilr-start').val(ilrStartAdd);
   var ilrEndAdd = $('.add-ilr-end').val();
-  $('.edit-ilr-end').val(ilrEndAdd);
-  $('#saveChanges').attr("disabled", false);
+  
+  if (ilrStartAdd !== '') {
+    $('.edit-ilr-start').val(ilrStartAdd);
+    $('.add-ilr').hide();
+    $('.edit-ilr').show();
+    $('#saveChanges').attr("disabled", false);
+  }
+  
+  if (ilrEndAdd !== '') {
+    $('.edit-ilr-end').val(ilrEndAdd);
+    $('.add-ilr').hide();
+    $('.edit-ilr').show();
+    $('#saveChanges').attr("disabled", false);
+  }
+  
+  if (ilrStartAdd === '') {
+    $('#errorSummary').show();
+    $('.add-ilr').addClass('govuk-form-group--error');
+    $('.add-ilr-start').addClass('govuk-input--error');
+    return false;
+  }
+
   e.preventDefault();
 });
 
+
 $('.add-eas-button').click(function(e){
-  $('.add-eas').hide();
-  $('.edit-eas').show();
+
   var easStartAdd = $('.add-eas-start').val();
-  $('.edit-eas-start').val(easStartAdd);
   var easEndAdd = $('.add-eas-end').val();
-  $('.edit-eas-end').val(easEndAdd);
-  $('#saveChanges').attr("disabled", false);
+  
+  if (easStartAdd !== '') {
+    $('.edit-eas-start').val(easStartAdd);
+    $('.add-eas').hide();
+    $('.edit-eas').show();
+    $('#saveChanges').attr("disabled", false);
+  }
+  
+  if (easEndAdd !== '') {
+    $('.edit-eas-end').val(easEndAdd);
+    $('.add-eas').hide();
+    $('.edit-eas').show();
+    $('#saveChanges').attr("disabled", false);
+  }
+  
+  if (easStartAdd === '') {
+    $('#errorSummary').show();
+    $('.add-eas').addClass('govuk-form-group--error');
+    $('.add-eas-start').addClass('govuk-input--error');
+    return false;
+  }
+
   e.preventDefault();
+  
 });
 
 $('.add-esf-button').click(function(e){
-  $('.add-esf').hide();
-  $('.edit-esf').show();
+  
   var esfStartAdd = $('.add-esf-start').val();
-  $('.edit-esf-start').val(esfStartAdd);
   var esfEndAdd = $('.add-esf-end').val();
-  $('.edit-esf-end').val(esfEndAdd);
-  $('#saveChanges').attr("disabled", false);
+  
+  if (esfStartAdd !== '') {
+    $('.edit-esf-start').val(esfStartAdd);
+    $('.add-esf').hide();
+    $('.edit-esf').show();
+    $('#saveChanges').attr("disabled", false);
+  }
+  
+  if (esfEndAdd !== '') {
+    $('.edit-esf-end').val(esfEndAdd);
+    $('.add-esf').hide();
+    $('.edit-esf').show();
+    $('#saveChanges').attr("disabled", false);
+  }
+  
+  if (esfStartAdd == '') {
+    $('#errorSummary').show();
+    $('.add-esf').addClass('govuk-form-group--error');
+    // $('.add-esf td:first-child').addClass('padding-left');
+    $('.add-esf-start').addClass('govuk-input--error');
+    return false;
+  }
+
   e.preventDefault();
+
 });
 
 $('.add-frm-button').click(function(e){
-  $('.add-frm').hide();
-  $('.edit-frm').show();
+
   var frmStartAdd = $('.add-frm-start').val();
-  $('.edit-frm-start').val(frmStartAdd);
   var frmEndAdd = $('.add-frm-end').val();
-  $('.edit-frm-end').val(frmEndAdd);
-  $('#saveChanges').attr("disabled", false);
+  
+  if (frmStartAdd !== '') {
+    $('.edit-frm-start').val(frmStartAdd);
+    $('.add-frm').hide();
+    $('.edit-frm').show();
+    $('#saveChanges').attr("disabled", false);
+  }
+  
+  if (frmEndAdd !== '') {
+    $('.edit-frm-end').val(frmEndAdd);
+    $('.add-frm').hide();
+    $('.edit-frm').show();
+    $('#saveChanges').attr("disabled", false);
+  }
+  
+  if (frmStartAdd == '') {
+    $('#errorSummary').show();
+    $('.add-frm').addClass('govuk-form-group--error');
+    $('.add-frm-start').addClass('govuk-input--error');
+    return false;
+  }
+
   e.preventDefault();
+
 });
 
 //for removing collections
 
 $('.clear-ilr').click(function(e){
+  $('.edit-ilr input').val('');
+  $('.add-ilr input').val('');
   $('.edit-ilr').hide();
   $('.add-ilr').show();
   $('#addTable').show();
@@ -1415,6 +1507,8 @@ $('.clear-ilr').click(function(e){
 });
 
 $('.clear-eas').click(function(e){
+  $('.edit-eas input').val('');
+  $('.add-eas input').val('');
   $('.edit-eas').hide();
   $('.add-eas').show();
   $('#addTable').show();
@@ -1423,6 +1517,8 @@ $('.clear-eas').click(function(e){
 });
 
 $('.clear-esf').click(function(e){
+  $('.edit-esf input').val('');
+  $('.add-esf input').val('');
   $('.edit-esf').hide();
   $('.add-esf').show();
   $('#addTable').show();
@@ -1431,6 +1527,8 @@ $('.clear-esf').click(function(e){
 });
 
 $('.clear-frm').click(function(e){
+  $('.edit-frm input').val('');
+  $('.add-frm input').val('');
   $('.edit-frm').hide();
   $('.add-frm').show();
   $('#addTable').show();
@@ -1443,7 +1541,30 @@ $('#editTable input').change(function() {
   $('#saveChanges').attr("disabled", false);
 });
 
+$('#addTable input').change(function() {
+  $('#errorSummary').hide();
+  $(this).closest('tr').removeClass('govuk-form-group--error');
+  $(this).removeClass('govuk-input--error');
+});
+
 $("#saveChanges").click(function(e) {
+  e.preventDefault();
+});
+
+
+$('#notificationGroup').change(function(){
+  $('#saveNotification').attr("disabled", false);
+});
+
+$('#deleteNotification').click(function(e){
+  $('#NotificationButtonGroup').hide();
+  $('#areYouSureWrapper').show();
+  e.preventDefault();
+});
+
+$('#cancelDelete').click(function(e){
+  $('#NotificationButtonGroup').show();
+  $('#areYouSureWrapper').hide();
   e.preventDefault();
 });
 
