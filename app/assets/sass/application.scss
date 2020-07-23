@@ -1842,3 +1842,9 @@ html {
 .edit-esf, .edit-frm, .add-ilr, .add-eas {
   display: none;
 }
+
+.no-border-bottom {
+  .govuk-summary-list__value, .govuk-summary-list__actions {
+    border-bottom: none;
+  }
+}
