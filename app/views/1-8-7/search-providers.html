@@ -16,21 +16,58 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-heading-s govuk-!-font-size-27 white-text">Search for a provider</span>
-      <form class="govuk-form-group" action="providers">
+      <form class="govuk-form-group" action="manage-provider">
         <!-- <input class="govuk-input" id="name" name="name" type="text" placeholder="e.g. Manchester or 123456"> -->
         <div id="tt-overlay" class="autocomplete-wrapper"></div>
         <button id="searchProviders" type="search" class="govuk-button" >
           <img src="https://assets.publishing.service.gov.uk/frontend/govuk_publishing_components/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png"></img></button>
       </form>
+
+      
     </div>
 
   </div>
 </div>
-<div class="govuk-grid-row">
 
+
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l"></h2>
+
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                Add a single provider or multiple providers / collection assignments?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="oneProvider" name="where-do-you-live" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="oneProvider">
+                Add one provider
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="multiProviders" name="where-do-you-live" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="multiProviders"> 
+                Add multiple providers 
+              </label>
+            </div>
+            
+          </div>
+        </fieldset>
+      </div>
+
+      <a id="providers" href="#" class="govuk-button" data-module="govuk-button">
+          Continue
+        </a>
 
         </div>
-
+</div>
 
 
 

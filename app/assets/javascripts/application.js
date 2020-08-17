@@ -73,6 +73,11 @@ $('#manageOrNew').click(function() {
 });
 
 
+$('#providers').click(function() {
+  if($('#oneProvider').is(':checked')) { location.href='new-provider-details'; }
+  else if ($('#multiProviders').is(':checked')) { location.href='upload-provider-list'; }
+});
+
 // autocomlete option select function //
 
 $(".autocomplete__menu").click(function() {
