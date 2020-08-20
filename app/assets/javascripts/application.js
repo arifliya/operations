@@ -81,6 +81,16 @@ $('#providers').click(function() {
 // autocomlete option select function //
 
 $(".autocomplete__menu").click(function() {
+  
+  
+  if ($(".autocomplete__input").val().indexOf('Active') !== -1) {
+    
+    $('#formAction').attr('action', 'manage-provider');
+  } else if ($(".autocomplete__input").val().indexOf('Active') == -1) {
+    
+    $('#formAction').attr('action', 'add-new-provider');
+  }
+
   $("#searchProviders").trigger("click");
 });
 

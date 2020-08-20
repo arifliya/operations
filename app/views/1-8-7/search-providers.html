@@ -16,7 +16,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-heading-s govuk-!-font-size-27 white-text">Search for a provider</span>
-      <form class="govuk-form-group" action="manage-provider">
+      <form id="formAction" class="govuk-form-group" action="">
+          <!-- action="manage-provider" -->
         <!-- <input class="govuk-input" id="name" name="name" type="text" placeholder="e.g. Manchester or 123456"> -->
         <div id="tt-overlay" class="autocomplete-wrapper"></div>
         <button id="searchProviders" type="search" class="govuk-button" >
@@ -34,39 +35,37 @@
 
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l"></h2>
+  <div class="govuk-grid-column-two-thirds">
+    
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                Upload multiple providers
+            </span>
+          </summary>
+          <div class="govuk-details__text">
 
-    <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-                Add a single provider or multiple providers / collection assignments?
-            </h1>
-          </legend>
-          <div class="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="oneProvider" name="where-do-you-live" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="oneProvider">
-                Add one provider
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="multiProviders" name="where-do-you-live" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="multiProviders"> 
-                Add multiple providers 
-              </label>
-            </div>
+              <p><a href="#">Download CSV template</a></p>
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="file-upload-1">
+                    <strong>Upload a file</strong>
+                  </label>
+                  <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                 </div>
+                 
+                       <a href="providers-list-created" class="govuk-button">Upload file</a>
+                       <a href="dashboard" class="govuk-link">Cancel</a>
             
           </div>
-        </fieldset>
-      </div>
+        </details>
 
-      <a id="providers" href="#" class="govuk-button" data-module="govuk-button">
-          Continue
-        </a>
 
-        </div>
+
+      
+      
+
+
+  </div>
 </div>
 
 
@@ -90,11 +89,7 @@
 
 
 
-<div class="govuk-grid-row">
 
-
-
-</div>
 
 
   <!-- <div class="govuk-grid-column-one-third">
