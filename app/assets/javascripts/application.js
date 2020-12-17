@@ -1585,6 +1585,41 @@ $('#cancelDelete').click(function(e){
 
 
 
+
+
+if(window.location.href.indexOf("dist") > -1) {
+    $('.left-navigation li #01').addClass('active');
+    $('.left-navigation li #01').addClass('govuk-!-font-weight-bold');     
+ }
+ 
+if(window.location.href.indexOf("new-mailing-list") > -1) {
+    $('.left-navigation li #02').addClass('active');
+    $('.left-navigation li #02').addClass('govuk-!-font-weight-bold');     
+ }
+
+if(window.location.href.indexOf("add-recipient") > -1) {
+    $('.left-navigation li #03').addClass('active');
+    $('.left-navigation li #03').addClass('govuk-!-font-weight-bold');     
+ }
+ 
+if(window.location.href.indexOf("manage-emails") > -1) {
+    $('.left-navigation li #04').addClass('active');
+    $('.left-navigation li #04').addClass('govuk-!-font-weight-bold');     
+ }
+
+
+// More navgation JS //
+
+$(document).click(function() {
+  $('.nav-dropdown').addClass('hidden');
+});
+
+$("#more").click(function(event) {
+  $('.nav-dropdown').removeClass('hidden');
+  event.stopPropagation();
+});
+
+
 $(window).scroll(function() {
     var windscroll = $(window).scrollTop();
     if ($(window).width() > 640) {

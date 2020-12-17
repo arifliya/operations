@@ -1,0 +1,414 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DC Operations - Email list
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./includes/nav.html" %}
+
+<!-- <script src="/public/javascripts/tt.js"></script> -->
+
+<!-- <a id="backlink" href="#" class="govuk-back-link">Back</a> -->
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="period-end-dashboard">Period end</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="email-dist">Email distribution</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Manage list</li>
+  </ol>
+</div>
+<br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <div class="govuk-banner govuk-banner--success govuk-visually-hidden">
+        <svg class="govuk-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+        <div class="govuk-banner__message">
+          <span class="govuk-banner__assistive">Success</span>
+          You have successfully deleted selected email(s).
+        </div>
+    </div>
+    <div class="govuk-banner govuk-banner--warning  govuk-visually-hidden">
+      <svg class="govuk-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+      <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+      <div class="govuk-banner__message">
+        <span class="govuk-banner__assistive">Success</span>
+        Select atleast one email to delete
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">DCT mailing list</h1>
+  </div>
+  <div class="govuk-grid-column-one-third govuk-!-margin-top-1">
+    <span class="govuk-!-font-size-19" ><a class="govuk-button govuk-button--warning" href="remove-mailing-list">Delete mailing list</a></span>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-one-third govuk-!-padding-left-0">
+        <span class="govuk-!-font-size-19" ><a class="govuk-button govuk-button--secondary" href="#" id="deleteSelected">Delete</a></span>
+      </div>
+  <table class="govuk-table mailing-list">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="MLselectAll" name="MLselectAll" type="checkbox" value="">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold govuk-!-margin-top-1 govuk-!-margin-bottom-1" for="">Email address</label>
+          </div></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row" data-row-id="1">
+        <td scope="row" class="govuk-table__header">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email1" name="email1" type="checkbox" value="" data-id="1">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email1">lynne.burdon@education.gov.uk</label>
+          </div>
+        </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="2">
+        <td scope="row" class="govuk-table__header">
+          <div class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email2" name="email2" type="checkbox" value="" data-id="2">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email2">jane.ludlow@education.gov.uk</label>
+          </div>
+        </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="3">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email3" name="email3" type="checkbox" data-id="3">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email3">John.YOUREN@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="4">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email4" name="email4" type="checkbox" data-id="4">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email4">Alex.gendle@education.gov.uk
+</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="5">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email5" name="email5" type="checkbox" data-id="5">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email5">Arpita.kapur@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="6">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email6" name="email6" type="checkbox" data-id="6">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email6">andrewpdeacon-capgem@hotmail.com</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="7">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email7" name="email7" type="checkbox" data-id="7">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email7">Anita.holcroft@education.gov.uk
+</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="8">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email8" name="email8" type="checkbox" data-id="8">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email8">Bernie.odonnell@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="9">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email9" name="email9" type="checkbox" data-id="9">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email9">Carl.berisford-murray@digital.education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="10">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email10" name="email10" type="checkbox" data-id="10">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email10">carole.morley@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="11">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email11" name="email11" type="checkbox" data-id="11">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email11">David.steele@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="12">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email12" name="email12" type="checkbox" data-id="12">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email12">dominic.leelodharry@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="13">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email13" name="email13" type="checkbox" data-id="13">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email13">Ella.latchem@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="14">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email14" name="email14" type="checkbox" data-id="14">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email14">ESFA.DATAOPSCOMMS@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="15">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email15" name="email15" type="checkbox" data-id="15">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email15">ESFADataScienceDataWarehouse@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="16">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email16" name="email16" type="checkbox" data-id="16">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email16">Ewan.noble@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="17">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email17" name="email17" type="checkbox" data-id="17">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email17">FundingDevOps@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="18">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email18" name="email18" type="checkbox" data-id="18">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email18">richard.bryant@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="19">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email19" name="email19" type="checkbox" data-id="19">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email19">gary.tucker@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="20">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email20" name="email20" type="checkbox" data-id="20">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email20">graham.cook@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="21">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email21" name="email21" type="checkbox" data-id="21">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email21">Hal.angseesing@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="22">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email22" name="email22" type="checkbox" data-id="22">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email22">john.barr-hall@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="23">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email23" name="email23" type="checkbox" data-id="23">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email23">John.livesey@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="24">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email24" name="email24" type="checkbox" data-id="24">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email24">kam.thandi@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="25">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email25" name="email25" type="checkbox" data-id="25">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email25">kath.courtney@education.gov.uk</label>
+          </td>
+      </tr><tr class="govuk-table__row" data-row-id="26">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email26" name="email26" type="checkbox" data-id="26">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email26">Kevin.carney@education.gov.uk</label>
+          </td>
+      </tr><tr class="govuk-table__row" data-row-id="27">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email27" name="email27" type="checkbox" data-id="27">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email27">Kranti.kumar@education.gov.uk</label>
+          </td>
+      </tr><tr class="govuk-table__row" data-row-id="28">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email28" name="email28" type="checkbox" data-id="28">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email28">Mark.shield@education.gov.uk</label>
+          </td>
+      </tr><tr class="govuk-table__row" data-row-id="29">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email29" name="email29" type="checkbox" data-id="29">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email29">michael.young@digital.education.gov.uk</label>
+          </td>
+      </tr><tr class="govuk-table__row" data-row-id="30">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email30" name="email30" type="checkbox" data-id="30">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email30">Monesh.devarajulu@education.gov.uk</label>
+          </td>
+      </tr><tr class="govuk-table__row" data-row-id="31">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email31" name="email31" type="checkbox" data-id="31">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email31">Paul.rushton@education.gov.uk</label>
+          </td>
+      </tr><tr class="govuk-table__row" data-row-id="32">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email32" name="email32" type="checkbox" data-id="32">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email32">pete.chamley@education.gov.uk</label>
+          </td>
+      </tr><tr class="govuk-table__row" data-row-id="33">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email33" name="email33" type="checkbox" data-id="33">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email33">Peter.huggett@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="34">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email34" name="email34" type="checkbox" data-id="34">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email34">Preetpal.singh@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="35">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email35" name="email35" type="checkbox" data-id="35">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email35">Ryan.skinner@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="36">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email36" name="email36" type="checkbox" data-id="36">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email36">Sampanna.mohite@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="37">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email37" name="email37" type="checkbox" data-id="37">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email37">Srikanth.bakki@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="38">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email38" name="email38" type="checkbox" data-id="38">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email38">Steve.feary@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="39">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email39" name="email39" type="checkbox" data-id="39">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email39">stuart.baillie@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="40">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email40" name="email40" type="checkbox" data-id="40">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email40">Toby.macalister@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="41">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email34" name="email41" type="checkbox" data-id="41">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email41">Ushma.gill@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="42">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email34" name="email42" type="checkbox" data-id="42">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email42">Vijay3.pal@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="43">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email43" name="email43" type="checkbox" data-id="43">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email43">zain.osman@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="44">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email44" name="email44" type="checkbox" data-id="44">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email44">denise.neighbour@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="45">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email45" name="email45" type="checkbox" data-id="45">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email45">Sonia.jandu@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="46">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email46" name="email46" type="checkbox" data-id="46">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email46">David.young@education.gov.uk</label>
+          </td>
+      </tr>
+      <tr class="govuk-table__row" data-row-id="47">
+        <td scope="row" class="govuk-table__header">
+          <span class="govuk-checkboxes__item govuk-checkboxes--small">
+            <input class="govuk-checkboxes__input" id="email47" name="email47" type="checkbox" data-id="47">
+            <label class="govuk-label govuk-checkboxes__label govuk-!-margin-top-1" for="email47">jason.poole@education.gov.uk</label>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+{% include "./includes/nav.html" %}
+
+<!-- <a href="#" id="backlink" class="govuk-back-link">Back</a> -->
+<br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Notification details</h1>
+
+       
+
+        <dl id="notificationGroup" class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Headline
+              <span class="govuk-caption-m">optional</span>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <input class="govuk-input" type="text">
+            </dd>
+            <!-- <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="notifications-type">
+                Edit
+                <span class="govuk-visually-hidden"> headline</span>
+              </a>
+            </dd> -->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Message
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Start date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <input class="govuk-input govuk-!-width-one-half" type="date">
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Start time
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <input class="govuk-input govuk-!-width-one-half" type="time">
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Finish date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <input class="govuk-input govuk-!-width-one-half" type="date">
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Finish time
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <input class="govuk-input govuk-!-width-one-half" type="time">
+                </dd>
+             </div>
+
+        </dl>
+
+       <a id="saveNotification" href="manage-notifications.html" class="govuk-button" disabled>Save</a> &nbsp; &nbsp; 
+       <a href="manage-notifications.html" class="govuk-button govuk-button--secondary">Cancel</a>
+  </div>
+</div>
+
+
+{% endblock %}

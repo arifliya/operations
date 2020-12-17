@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Data Collections Operations
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./includes/nav.html" %}
+
+<div class="govuk-grid-row">
+  <!-- <div class="govuk-grid-column-two-thirds">
+    <a id="backlink" href="#" class="govuk-back-link">Back</a>
+  </div> -->
+  <br>
+  <br>
+  <div id="errorSummary" class="govuk-grid-column-full">
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        Add a start date
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#passport-issued-error">The start date is missing</a>
+          </li>
+          <li>
+            <a href="#postcode-error">Enter or select a date, like 21/08/2020</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+       <h1 class="govuk-heading-xl">Manage assignments <span class="govuk-caption-l">University of Wolverhampton, 10007166</span></h1>
+
+       <!-- <p class="assignment-links"><a class="govuk-link" href="#">Submit another file</a> <a class="govuk-link" href="#">Manage assignments</a> <a class="govuk-link" href="#">Amend Provider name</a></p> -->
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="manage-provider-assignments" method="post" class="form">
+<div class="govuk-form-group">
+
+<table id="editTable" class="govuk-table">
+    <caption class="govuk-table__caption govuk-!-font-size-27">Edit active assignments</caption>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Collection</td>
+      <td class="govuk-table__cell">Start date</td>
+      <td class="govuk-table__cell">End date</td>
+      <td class="govuk-table__cell"> </td>
+    </tr>
+    <tr class="govuk-table__row edit-ilr">
+      <td class="govuk-table__cell">IRL1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-ilr-start" id="width-10" name="IRL1920-start-date" type="date" placeholder="mm/dd/yyyy" value="2019-09-15"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-ilr-end" id="width-10" name="IRL1920-end-date" type="date" placeholder="mm/dd/yyyy" value="2020-08-30"></td>
+      <!-- <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 clear-ilr" href="#">Remove</a> </td> -->
+    </tr>
+    <tr class="govuk-table__row edit-eas">
+      <td class="govuk-table__cell" scope="row">EAS1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-eas-start" id="width-10" name="EAS1920-start-date" type="date" placeholder="mm/dd/yyyy" value="2019-09-15"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-eas-end" id="width-10" name="EAS1920-end-date" type="date" placeholder="mm/dd/yyyy" value="2020-08-30"></td>
+      <!-- <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 clear-eas" href="#">Remove</a> </td>       -->
+    </tr>
+    <tr class="govuk-table__row edit-esf">
+      <td class="govuk-table__cell">ESFR2-1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-esf-start" id="width-10" name="ESFR2-1920-start-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-esf-end" id="width-10" name="ESFR2-1920-end-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <!-- <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 clear-esf" href="#">Remove</a> </td> -->
+    </tr>
+    <tr class="govuk-table__row edit-frm">
+      <td class="govuk-table__cell">FRM-reports1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-frm-start" id="width-10" name="FRM-reports1920-start-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 edit-frm-end" id="width-10" name="FRM-reports1920-end-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <!-- <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 clear-frm" href="#">Remove</a> </td>       -->
+    </tr>
+  </tbody>
+</table>
+
+<table id="addTable" class="govuk-table">
+    <caption class="govuk-table__caption govuk-!-font-size-27">Add assignments</caption>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" scope="row">Collection</td>
+      <td class="govuk-table__cell">Start date</td>
+      <td class="govuk-table__cell">End date</td>
+      <td class="govuk-table__cell"> </td>
+    </tr>
+    <tr class="govuk-table__row add-ilr">
+      <td class="govuk-table__cell">IRL1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-ilr-start" id="width-10" name="IRL1920-start-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-ilr-end" id="width-10" name="IRL1920-end-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 add-ilr-button" href="#">Add</a> </td>
+    </tr>
+    <tr class="govuk-table__row add-eas">
+      <td class="govuk-table__cell" scope="row">EAS1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-eas-start" id="width-10" name="EAS1920-start-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-eas-end" id="width-10" name="EAS1920-end-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 add-eas-button" href="#">Add</a> </td>
+    </tr>
+    <tr class="govuk-table__row add-esf">
+      <td class="govuk-table__cell">ESFR2-1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-esf-start" id="width-10" name="ESFR2-1920-start-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-esf-end" id="width-10" name="ESFR2-1920-end-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 add-esf-button" href="#">Add</a> </td>
+    </tr>
+    <tr class="govuk-table__row add-frm">
+      <td class="govuk-table__cell">FRM-reports1920</td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-frm-start" id="width-10" name="FRM-reports1920-start-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"><input class="govuk-input govuk-input--width-10 add-frm-end" id="width-10" name="FRM-reports1920-end-date" type="date" placeholder="mm/dd/yyyy"></td>
+      <td class="govuk-table__cell"> <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 add-frm-button" href="#">Add</a> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+        <!-- <p><a href="manage-assignments-new"  class="govuk-link">Add more assignments</a></p> -->
+
+
+    </div>
+
+    </form>
+
+    </div>  
+    <div class="govuk-grid-column-one-third">
+        <div class="flex">
+            <a id="saveChanges" href="#" class="govuk-button" disabled>Save changes</a>
+            
+            <a href="dashboard" class="govuk-link govuk-!-margin-left-6 govuk-!-margin-top-2">Cancel</a>
+            </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

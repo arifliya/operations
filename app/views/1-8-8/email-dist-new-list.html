@@ -1,0 +1,219 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DC Operations - Email list
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./includes/nav.html" %}
+
+<!-- <script src="/public/javascripts/tt.js"></script> -->
+
+<!-- <a id="backlink" href="#" class="govuk-back-link">Back</a> -->
+<div class="govuk-breadcrumbs ">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="period-end-dashboard">Period end</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">Email distribution</li>
+  </ol>
+</div>
+<br>
+<form action="" method="post"  id="emailDistributionList">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+      <div class="govuk-banner govuk-banner--success">
+        <svg class="govuk-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" /></svg>
+        <div class="govuk-banner__message">
+          <span class="govuk-banner__assistive">Success</span>
+          You have successfully added <strong>{{ data['mailing-list'] }}</strong> email distribution list.
+        </div>
+    </div>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Manage email distribution list</h1>
+
+
+    <div class="flex space-between">
+      <p><a class="govuk-button govuk-button--secondary" href="new-mailing-list">Add new list</a>&nbsp &nbsp &nbsp
+         <a class="govuk-button govuk-button--secondary" href="add-recipient">Add a new recipient</a>&nbsp &nbsp &nbsp
+         <a class="govuk-button govuk-button--secondary" href="manage-emails">Manage emails</a>
+      </p>
+    <div>
+
+      <!-- <a class="govuk-link govuk-!-font-size-19" href="manage-mailing-list">Manage lists</a> -->
+    </div>
+  </div>
+
+  <!-- <h2 class="govuk-heading-m">DCT mailing list</h2> -->
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+      <dd class="govuk-summary-list__value">
+        PETest01
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="DCT-mail-list">
+          Manage list<span class="govuk-visually-hidden"> Manage DCT list</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dd class="govuk-summary-list__value">
+        PETest02
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="DCT-mail-list">
+          Manage list<span class="govuk-visually-hidden"> Manage DCT list</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dd class="govuk-summary-list__value">
+        PETest03
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="DCT-mail-list">
+          Manage list<span class="govuk-visually-hidden"> Manage DCT list</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dd class="govuk-summary-list__value">
+        PETest04
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="DCT-mail-list">
+          Manage list<span class="govuk-visually-hidden"> Manage DCT list</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dd class="govuk-summary-list__value">
+        PETest05
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="DCT-mail-list">
+          Manage list<span class="govuk-visually-hidden"> Manage DCT list</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dd class="govuk-summary-list__value">
+        MI Team
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="">
+          Manage list<span class="govuk-visually-hidden"> Manage management list</span>
+        </a>
+      </dd>
+    </div>
+
+    <div class="govuk-summary-list__row">
+      <dd class="govuk-summary-list__value">
+        FCS
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="">
+          Manage list<span class="govuk-visually-hidden"> Manage apprenticeship list</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dd class="govuk-summary-list__value">
+        PE Comms All
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="">
+          Manage list<span class="govuk-visually-hidden"> Manage apprenticeship list</span>
+        </a>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dd class="govuk-summary-list__value">
+        {{ data['mailing-list'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="">
+          Manage list<span class="govuk-visually-hidden"> Manage apprenticeship list</span>
+        </a>
+      </dd>
+    </div>
+
+
+  </dl>
+</form>
+
+
+
+
+    <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          name.surname@education.gov.uk
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="remove-recipient">
+            Remove<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          ian.tress@education.gov.uk
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Remove<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          karyn.reidy@education.gov.uk
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Remove<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          lynne.burdon@education.gov.uk
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Remove<span class="govuk-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+
+
+    </dl> -->
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
