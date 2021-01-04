@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+{% include "./includes/nav.html" %}
+
+<!-- <a href="#" id="backlink" class="govuk-back-link">Back</a> -->
+<br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    
+
+    <h1 class="govuk-heading-xl">Notification details</h1>
+
+       
+
+    <dl id="notificationGroup" class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Headline
+          <span class="govuk-caption-m">optional</span>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <input class="govuk-input" type="text" value="Headline here for this message">
+        </dd>
+        <!-- <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="notifications-type">
+            Edit
+            <span class="govuk-visually-hidden"> headline</span>
+          </a>
+        </dd> -->
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Message
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint">The last message entered here can be edited and saved. Delete will give you an are you sure option.</textarea>
+        </dd>
+        <dd class="govuk-summary-list__actions"> 
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <input class="govuk-input govuk-!-width-one-half" type="date" value="2020-04-15">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Start time
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <input class="govuk-input govuk-!-width-one-half" type="time" value="14:00">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Finish date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <input class="govuk-input govuk-!-width-one-half" type="date" value="2020-10-15">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Finish time
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-one-half" type="time" value="17:00">
+          </dd>
+       </div>
+
+    </dl>
+
+        
+
+    <div id="NotificationButtonGroup">
+       <a id="saveNotification" href="manage-notifications.html" class="govuk-button" disabled>Save</a> &nbsp; &nbsp;
+       <a id="deleteNotification" href="#" class="govuk-button govuk-button--warning">Delete</a> &nbsp; &nbsp; 
+       <a href="manage-notifications.html" class="govuk-button govuk-button--secondary">Cancel</a>
+    </div>
+       
+    <div id="areYouSureWrapper">
+      <p>Are you sure you want to delete this message? <a id="confirmDelete" class="govuk-button" href="manage-notifications">Yes</a> &nbsp; &nbsp; <a id="cancelDelete" class="govuk-button govuk-button--secondary" href="#">No</a> </p>
+    </div>  
+       
+  </div>
+</div>
+
+
+{% endblock %}

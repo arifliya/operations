@@ -1,0 +1,220 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+
+
+{% include "./includes/nav.html" %}
+
+<!-- <a href="#" id="backlink" class="govuk-back-link">Back</a> -->
+<br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <h1 class="govuk-heading-xl">Manage notifications</h1>
+
+    <a href="notifications-summary" class="govuk-button" >
+      Add a new message
+    </a>
+  
+    <!-- <table class="govuk-table">
+      <caption class="govuk-table__caption">Notifications</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class">Headline</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Start date</th>
+          <th scope="col" class="govuk-table__header app-custom-class">End date</th>
+          <th scope="col" class="govuk-table__header app-custom-class"> </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">First 6 weeks</th>
+          <td class="govuk-table__cell">£109.80 per week <strong class="govuk-tag govuk-tag--grey">
+            Inactive
+          </strong></td>
+          <td class="govuk-table__cell">£59.10 per week</td>
+          <td class="govuk-table__cell">£59.10 per week</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+          <td class="govuk-table__cell">£159.80 per week</td>
+          <td class="govuk-table__cell">£89.10 per week</td>
+          <td class="govuk-table__cell">£89.10 per week</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Total estimated pay</th>
+          <td class="govuk-table__cell">£4,282.20</td>
+          <td class="govuk-table__cell">£2,182.20</td>
+          <td class="govuk-table__cell">£2,182.20</td>
+        </tr>
+      </tbody>
+    </table> -->
+
+    <div class="govuk-body">
+      <section>
+        <strong class="govuk-!-font-size-24">Headline for the story here 
+          <strong class="govuk-tag">
+            Active
+          </strong>
+        </strong>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row no-border-bottom">
+            <dt class="govuk-summary-list__value">
+              <strong> Start date</strong>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              15/04/2020
+            </dd>
+            <dt class="govuk-summary-list__value">
+              <strong> Start time</strong>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              14:00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="notifications-summary-delete">
+                Manage<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__value">
+              <strong> Finish date</strong>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              15/05/2020
+            </dd>
+            <dt class="govuk-summary-list__value">
+              <strong> Finish time</strong>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              17:00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!-- <a class="govuk-link" href="notifications-summary-delete">
+                Manage<span class="govuk-visually-hidden"> name</span>
+              </a> -->
+               
+            </dd>
+          </div>
+          </dl>
+      </section>
+
+      <section>
+        <strong class="govuk-!-font-size-24">Headline for the story here 
+          <!-- <strong class="govuk-tag">
+            Active
+          </strong> -->
+      </strong>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row no-border-bottom">
+            <dt class="govuk-summary-list__value">
+              <strong> Start date</strong>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              15/06/2020
+            </dd>
+            <dt class="govuk-summary-list__value">
+              <strong> Start time</strong>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              14:00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="notifications-summary-delete">
+                Manage<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__value">
+              <strong> End date</strong>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              15/07/2020
+            </dd>
+            <dt class="govuk-summary-list__value">
+              <strong> End time</strong>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              17:00
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!-- <a class="govuk-link" href="notifications-summary-delete">
+                Manage<span class="govuk-visually-hidden"> name</span>
+              </a> -->
+               
+            </dd>
+          </div>
+          </dl>
+      </section>
+
+      <section>
+        <strong class="govuk-!-font-size-24">Headline for the story here
+          <!-- <strong class="govuk-tag govuk-tag--grey">
+            Inactive
+          </strong> -->
+        </strong>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row no-border-bottom">
+              <dt class="govuk-summary-list__value">
+                <strong> Start date</strong>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                15/08/2020
+              </dd>
+              <dt class="govuk-summary-list__value">
+                <strong> Start time</strong>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                14:00
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="notifications-summary-delete">
+                  Manage<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                <strong> End date</strong>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                15/09/2020
+              </dd>
+              <dt class="govuk-summary-list__value">
+                <strong> End time</strong>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                17:00
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <!-- <a class="govuk-link" href="notifications-summary-delete">
+                  Manage<span class="govuk-visually-hidden"> name</span>
+                </a> -->
+                 
+              </dd>
+            </div>
+            </dl>
+      </section>
+    </div>    
+
+
+
+
+
+
+
+       <!-- <p><a href="dashboard" class="govuk-link">Cancel</a></p> -->
+  </div>
+</div>
+
+
+{% endblock %}

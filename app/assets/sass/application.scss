@@ -9,6 +9,7 @@ $govuk-global-styles: true;
 @import "patterns/task-list";
 @import "patterns/related-items";
 @import "patterns/bar-chart";
+@import "patterns/barchart2020";
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
@@ -74,6 +75,11 @@ hr{
     }
 
   }
+
+  .nav-wrap {
+    flex-wrap: wrap;
+  } 
+  
 }
 
 .nav-dropdown {
@@ -128,6 +134,10 @@ hr{
     .govuk-link:focus, a:focus {
       background-color: inherit;
     }
+  }
+
+  .auto-height {
+    height: auto;
   }
 
 }
@@ -1907,3 +1917,11 @@ html {
 .padding-top-30 {
   padding-top: 30px;
 }
+
+ .padding-top-30 {
+   padding-top: 30px;
+ }
+
+ .width-10 {
+   width: 10%;
+ }

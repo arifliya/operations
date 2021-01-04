@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DC Operations
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./includes/nav.html" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <a id="backlink" href="#" class="govuk-back-link">Back</a>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <br>
+      {% include "./includes/search.html" %}
+      {% include "./includes/auto-js.html" %}
+  </div>
+</div>
+<br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Internal Applications</h1>
+    <br><br>
+  </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <div class="border-top ">
+      <h2 class="govuk-heading-m "><a class="" href="easy-opa">Easy OPA</a></h2>
+      <span class="govuk-body-s">Version 1.0.5</span><br>
+      <span class="govuk-body-s">Uploaded on 24 May 2020</span><br>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <div class="border-top ">
+      <h2 class="govuk-heading-m "><a class="" href="withdraw-learner">Withdraw Learner</a></h2>
+      <span class="govuk-body-s">Version 2.0.3</span><br>
+      <span class="govuk-body-s">Uploaded on 14 May 2020</span><br>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <div class="border-top">
+      <h2 class="govuk-heading-m"><a class="" href="ilr-roll-forward">ILR Roll Forward</a></h2>
+      <span class="govuk-body-s">Version 2.0.0</span><br>
+      <span class="govuk-body-s">Uploaded on 7 January 2020</span><br>
+    </div>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <div class="border-top ">
+        <h2 class="govuk-heading-m "><a class="" href="reference-data-loader.html">Reference Data Loader</a></h2>
+        <span class="govuk-body-s">Version 1.5.9</span><br>
+      <span class="govuk-body-s">Uploaded on 17 April 2020</span><br>
+      </div>
+    </div>
+  </div>
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <div class="border-top">
+      <h2 class="govuk-heading-m"><a class="" href="#">ESF 18/19</a></h2>
+      
+      <span class="govuk-body-s">Submissions enabled</span><br>
+      <span class="govuk-body-s">Current period R06</span><br>
+      <span class="govuk-body-s">Closing on 10 February</span>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <div class="border-top ">
+      <h2 class="govuk-heading-m"><a class="" href="#">EAS 18/19</a></h2>
+      
+      <span class="govuk-body-s">Submissions enabled</span><br>
+      <span class="govuk-body-s">Current period R06</span><br>
+      <span class="govuk-body-s">Closing on 10 February</span>
+    </div>
+  </div>
+ </div> -->
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

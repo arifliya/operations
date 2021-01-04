@@ -10,6 +10,8 @@
 {% include "./includes/nav.html" %}
 
 <script src="/public/javascripts/tt.js"></script>
+
+
 <div class="app-masthead">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -27,30 +29,24 @@
   </div>
 </div>
 
+<!-- <label for="autocomplete-overlay">Select your country</label> -->
 
-<div class="govuk-grid-row" >
-  <div class="govuk-grid-column-one-half">
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       <span class="govuk-caption-m">Data Collections</span>
       Health check
     </h1>
   </div>
 
-  <div class="govuk-grid-column-one-half" id="heading-section">
+  <div class="govuk-grid-column-one-third">
     <section class="info">
-      <div class="govuk-heading-s no-margin-bottom">Average processing time</div>
-      <span class="inline-display">
-        <h3 class="govuk-heading-xl no-margin-bottom govuk-teal"><span id="average">0</span>m 34s
-          <text style="color: orange;font-size: 20px">⟷</text>
-        </h3>
-        <br><span class="govuk-body-s">09:24:26</span>
-      </span>
-      <span class="inline-display govuk-!-margin-left-5">
-        <h3 class="govuk-heading-xl no-margin-bottom"><span id="average">17</span>m 45s
-          <text style="color: red;font-size: 20px">&#9650;</text>
-        </h3>
-        <br><span class="govuk-body-s">Last hour</span>
-      </span>
+      <span class="govuk-heading-m no-margin-bottom">Average processing time</span>
+      <h2 class="govuk-heading-xl no-margin-bottom govuk-teal"><span id="average">0</span> mins</h2>
+      <span class="govuk-body-s">9:24am</span>
     </section>
   </div>
 </div>
@@ -105,13 +101,13 @@
     </section>
   </div>
 
-
-
   <div class="govuk-grid-column-one-third">
     <section class="margin-bottom">
       <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">Queues</a></h2>
       <div class="bar-chart-container">
-        <canvas id="canvas-queue" style="width:100%; height:300px"></canvas>
+        <p><span class="green"></span># of Messages</p>
+        <p><span class="red"></span># of Dead Letters</p>
+        <div id="chart-queues"></div>
       </div>
     </section>
   </div>
@@ -120,7 +116,9 @@
     <section class="margin-bottom">
       <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">Topics</a></h2>
       <div class="bar-chart-container">
-        <canvas id="canvas-topics" style="width:100%; height:335px"></canvas>
+        <p><span class="green"></span># of Messages</p>
+        <p><span class="red"></span># of Dead Letters</p>
+        <div id="chart-topics"></div>
       </div>
     </section>
   </div>
@@ -129,7 +127,9 @@
     <section class="margin-bottom">
       <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">ILR</a></h2>
       <div class="bar-chart-container">
-        <canvas id="canvas-ILR" style="width:100%; height:330px"></canvas>
+        <p><span class="green"></span># of Messages</p>
+        <p><span class="red"></span># of Dead Letters</p>
+        <div id="chart-ILR"></div>
       </div>
     </section>
   </div>
@@ -216,29 +216,7 @@
 </div>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <div class="border-top">
-      <h2 class="govuk-heading-m"><a class="" href="#">ILR returners in current period</a></h2>
-      <span class="govuk-heading-l no-margin-bottom">1479</span>
-      <!-- <span class="govuk-body-s">Expected reports not generated</span> -->
-    </div>
-  </div>
 
-  <div class="govuk-grid-column-one-third">
-    <div class="border-top ">
-      <h2 class="govuk-heading-m"><a class="" href="#">Failed files in current period</a></h2>
-      <span class="govuk-heading-l no-margin-bottom">7</span>
-      <!-- <span class="govuk-body-s">51 jobs on hold</span> -->
-    </div>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <div class="border-top ">
-      <h2 class="govuk-heading-m"><a class="" href="#">SLD/DAS mismatches</a></h2>
-      <span class="govuk-heading-l no-margin-bottom padding-top-30">18</span>
-      <!-- <span class="govuk-body-s">51 jobs on hold</span> -->
-    </div>
-  </div>
 
 
 </div>

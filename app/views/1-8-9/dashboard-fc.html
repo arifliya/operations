@@ -10,33 +10,22 @@
 {% include "./includes/nav.html" %}
 
 <script src="/public/javascripts/tt.js"></script>
-<div class="app-masthead">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-heading-s govuk-!-font-size-27 white-text">Search for a provider</span>
-      <form class="govuk-form-group" action="provider-record">
-        <!-- <input class="govuk-input" id="name" name="name" type="text" placeholder="e.g. Manchester or 123456"> -->
-        <div id="tt-overlay" class="autocomplete-wrapper"></div>
-        <button id="searchProviders" type="search" class="govuk-button" ><img src="https://assets.publishing.service.gov.uk/frontend/govuk_publishing_components/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png"></img></button>
-      </form>
-    </div>
-    <div class="govuk-grid-column-one-third">
-        <a href="advanced-search-v2">Advanced search</a>
-        <a href="add-new-provider">Add a new provider</a>
-    </div>
-  </div>
-</div>
 
+<br>
+<br>
 
 <div class="govuk-grid-row" >
   <div class="govuk-grid-column-one-half">
     <h1 class="govuk-heading-xl">
-      <span class="govuk-caption-m">Data Collections</span>
-      Health check
+      <!-- <span class="govuk-caption-m">Data Collections</span> -->
+      Funding claims
+      <span class="govuk-caption-l">Mid year (R06) Funding Claim 2020 to 2021</span>
     </h1>
+    
+    <!-- <h2 class="govuk-heading-m"></h2> -->
   </div>
 
-  <div class="govuk-grid-column-one-half" id="heading-section">
+  <!-- <div class="govuk-grid-column-one-half" id="heading-section">
     <section class="info">
       <div class="govuk-heading-s no-margin-bottom">Average processing time</div>
       <span class="inline-display">
@@ -52,9 +41,32 @@
         <br><span class="govuk-body-s">Last hour</span>
       </span>
     </section>
-  </div>
+  </div> -->
 </div>
 
+
+<div class="govuk-grid-row blue-background">
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-l govuk-!-font-size-27">
+        <span class="govuk-caption-l">Open date</span>
+      13 October 2020 <br> at 08:00
+    </h3>
+  </div>
+  
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-l govuk-!-font-size-27">
+        <span class="govuk-caption-l">Close date</span>
+      18 October 2020 <br> at 12:20
+    </h3>
+  </div>
+  
+  <div class="govuk-grid-column-one-third">
+    <h3 class="govuk-heading-l govuk-!-font-size-27">
+        <span class="govuk-caption-l">Signature close date</span>
+      20 October 2020 <br> at 16:00
+    </h3>
+  </div>
+</div>
 
 
 <div class="govuk-grid-row grey-background" >
@@ -62,14 +74,14 @@
 
   <div class="govuk-grid-column-one-third">
     <section class="margin-bottom">
-      <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">Jobs processing</a></h2>
-      <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">Providers submitted</a></h2>
+      <svg class="circle-chart padding-top-30" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
         <circle class="circle-chart__background" stroke="#ffffff" stroke-width="2" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
         <circle id="first" class="circle-chart__circle" stroke-width="3" stroke-dasharray="30,100" stroke-linecap="" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
         <!-- was stroke="#efefef" -->
         <g class="circle-chart__info">
           <text class="circle-chart__percent counter" x="16.91549431" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="8" id="firstDonut" data-count="">0</text>
-          <text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">Looking good</text>
+          <text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">out of 100</text>
         </g>
       </svg>
     </section>
@@ -77,14 +89,14 @@
 
   <div class="govuk-grid-column-one-third">
     <section class="margin-bottom">
-      <h2 class="govuk-heading-m centre-text"><a href="jobs-queued">Jobs queued</a></h2>
+      <h2 class="govuk-heading-m centre-text"><a href="jobs-queued">Providers saved but not submitted</a></h2>
       <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
         <circle class="circle-chart__background" stroke="#ffffff" stroke-width="2" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
         <circle id="second" class="circle-chart__circle" stroke-width="3" stroke-dasharray="30,100" stroke-linecap="" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
         <!-- was stroke="#efefef" -->
         <g class="circle-chart__info">
           <text class="circle-chart__percent counter" x="16.91549431" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="8" id="secondDonut" data-count="">0</text>
-          <text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">Needs attention</text>
+          <text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">out of 100</text>
         </g>
       </svg>
     </section>
@@ -92,96 +104,67 @@
 
   <div class="govuk-grid-column-one-third">
     <section class="margin-bottom">
-      <h2 class="govuk-heading-m centre-text"><a href="submissions-v2">Submissions</a></h2>
-      <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <h2 class="govuk-heading-m centre-text"><a href="submissions-v2">Still to return any data</a></h2>
+      <svg class="circle-chart padding-top-30" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
         <circle class="circle-chart__background" stroke="#ffffff" stroke-width="2" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
         <circle id="third" class="circle-chart__circle" stroke-width="3" stroke-dasharray="30,100" stroke-linecap="" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
         <!-- was stroke="#efefef" -->
         <g class="circle-chart__info">
           <text class="circle-chart__percent counter" x="16.91549431" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="8" id="thirdDonut" data-count="">0</text>
-          <text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">Urgent attention</text>
+          <text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">out of 100</text>
         </g>
       </svg>
     </section>
   </div>
 
 
+  <div class="govuk-grid-column-one-third">
+    <section class="margin-bottom">
+      <h2 class="govuk-heading-m centre-text"><a href="submissions-v2">Amount claimed</a></h2>
+      <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <circle class="circle-chart__background" stroke="#ffffff" stroke-width="2" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
+        <circle id="third" class="circle-chart__circle" stroke-width="3" stroke-dasharray="30,100" stroke-linecap="" fill="none" cx="16.91549431" cy="16.91549431" r="15" />
+        <!-- was stroke="#efefef" -->
+        <g class="circle-chart__info">
+          <text class="circle-chart__percent counter" x="16.91549431" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="6" id="thirdDonut" data-count="">£1000</text>
+          <text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">out of £1,000,000</text>
+        </g>
+      </svg>
+    </section>
+  </div>
+
 
   <div class="govuk-grid-column-one-third">
     <section class="margin-bottom">
-      <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">Queues</a></h2>
+      <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">Claimed vs Contract</a></h2>
       <div class="bar-chart-container">
         <canvas id="canvas-queue" style="width:100%; height:300px"></canvas>
       </div>
     </section>
   </div>
 
-  <div class="govuk-grid-column-one-third">
+  <!-- <div class="govuk-grid-column-one-third">
     <section class="margin-bottom">
       <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">Topics</a></h2>
       <div class="bar-chart-container">
         <canvas id="canvas-topics" style="width:100%; height:335px"></canvas>
       </div>
     </section>
-  </div>
+  </div> -->
 
-  <div class="govuk-grid-column-one-third">
+  <!-- <div class="govuk-grid-column-one-third">
     <section class="margin-bottom">
       <h2 class="govuk-heading-m centre-text"><a href="jobs-processing">ILR</a></h2>
       <div class="bar-chart-container">
         <canvas id="canvas-ILR" style="width:100%; height:330px"></canvas>
       </div>
     </section>
-  </div>
-
-    <!-- <div class="govuk-grid-column-one-third">
-    <section>
-      <h2>Positive chart value</h2>
-      <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-        <circle class="circle-chart__background" stroke="#efefef" stroke-width="2" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-        <circle class="circle-chart__circle" stroke="#00acc1" stroke-width="2" stroke-dasharray="30,100" stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
-        <g class="circle-chart__info">
-          <text class="circle-chart__percent" x="16.91549431" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="8">30%</text>
-          <text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">Yay 30% progress!</text>
-        </g>
-      </svg>
-    </section>
-
-
   </div> -->
+
+    
 </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l">Red zone</h2>
-  </div>
-</div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <div class="border-top">
-      <h2 class="govuk-heading-m"><a class="" href="failed-today">Failed today</a></h2>
-      <span class="govuk-heading-l no-margin-bottom">4</span>
-      <!-- <span class="govuk-body-s">Expected reports not generated</span> -->
-    </div>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <div class="border-top">
-      <h2 class="govuk-heading-m"><a class="" href="slow-files">Slow files</a></h2>
-      <span class="govuk-heading-l no-margin-bottom">16</span>
-      <span class="govuk-body-s">Taking 20% longer than usual</span>
-    </div>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <div class="border-top">
-      <h2 class="govuk-heading-m"><a class="" href="concerns">Concerns</a></h2>
-      <span class="govuk-heading-l no-margin-bottom">3</span>
-      <span class="govuk-body-s">Providers with rejected files and no successful submission this period</span>
-    </div>
-  </div>
-</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -194,7 +177,6 @@
     <div class="border-top">
       <h2 class="govuk-heading-m"><a class="" href="#">Today</a></h2>
       <span class="govuk-heading-l no-margin-bottom">40</span>
-      <!-- <span class="govuk-body-s">Expected reports not generated</span> -->
     </div>
   </div>
 
@@ -202,7 +184,6 @@
     <div class="border-top ">
       <h2 class="govuk-heading-m"><a class="" href="#">Last hour</a></h2>
       <span class="govuk-heading-l no-margin-bottom">7</span>
-      <!-- <span class="govuk-body-s">51 jobs on hold</span> -->
     </div>
   </div>
 
@@ -210,38 +191,10 @@
     <div class="border-top ">
       <h2 class="govuk-heading-m"><a class="" href="#">Jobs on hold</a></h2>
       <span class="govuk-heading-l no-margin-bottom">18</span>
-      <!-- <span class="govuk-body-s">51 jobs on hold</span> -->
     </div>
   </div>
 </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <div class="border-top">
-      <h2 class="govuk-heading-m"><a class="" href="#">ILR returners in current period</a></h2>
-      <span class="govuk-heading-l no-margin-bottom">1479</span>
-      <!-- <span class="govuk-body-s">Expected reports not generated</span> -->
-    </div>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <div class="border-top ">
-      <h2 class="govuk-heading-m"><a class="" href="#">Failed files in current period</a></h2>
-      <span class="govuk-heading-l no-margin-bottom">7</span>
-      <!-- <span class="govuk-body-s">51 jobs on hold</span> -->
-    </div>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <div class="border-top ">
-      <h2 class="govuk-heading-m"><a class="" href="#">SLD/DAS mismatches</a></h2>
-      <span class="govuk-heading-l no-margin-bottom padding-top-30">18</span>
-      <!-- <span class="govuk-body-s">51 jobs on hold</span> -->
-    </div>
-  </div>
-
-
-</div>
 
 
   <!-- <div class="govuk-grid-column-one-third">

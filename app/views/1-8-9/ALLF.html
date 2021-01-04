@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DC Operations - Home
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./includes/nav.html" %}
+<!-- <label for="autocomplete-overlay">Select your country</label> -->
+
+
+
+
+<div class="govuk-width-container">
+
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="dashboard">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">
+        <a class="govuk-breadcrumbs__link" href="period-end-dashboard">Period end</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">
+        ALLF
+      </li>
+    </ol>
+  </div>
+
+  <main class="govuk-main-wrapper app-main-class" id="main-content"  role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
+        <h1 class="govuk-heading-xl">ALLF reference data<span class="govuk-caption-m">Current Return number <span class="govuk-!-font-weight-bold">A55</span> Open until <span class="govuk-!-font-weight-bold">17 Mar 2020</span></span></h1>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-top-7">
+        <span class="govuk-!-font-size-19" ><a class="govuk-button govuk-button--secondary" href="ALLF-history">ALLF History</a></span>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <details class="govuk-details" data-module="govuk-details" open>
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Upload ALLF reference data CSV
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <h3 class="govuk-heading-m">Choose ALLF reference data file to upload</h3>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label>
+              <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+            </div>
+            <p>
+              <a href="#"  class="govuk-button yes-pause">Upload</a> </p>
+          </div>
+        </details>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">File</th>
+              <th scope="col" class="govuk-table__header govuk-width-17">Status</th>
+              <th scope="col" class="govuk-table__header">Reports</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#">ALLF-20200217-122234.csv</a></td>
+              <td class="govuk-table__cell govuk-!-font-weight-bold">
+                <p class="green-font govuk-!-margin-bottom-1 govuk-!-font-weight-bold">Job finished</p>
+                <p class="govuk-!-margin-bottom-1 govuk-!-font-weight-bold">23189 records</p>
+                <p class="govuk-!-margin-bottom-0 govuk-!-font-weight-bold">235 Warnings</p>
+              </td>
+              <td class="govuk-table__cell"><a href="#">ALLFRD-202001051533-validation-report-20200101120523.CSV</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell"><a href="#"></a></td>
+              <td class="govuk-table__cell govuk-!-font-weight-bold"><span class="red-font">Job failed</span></td>
+              <td class="govuk-table__cell"><a href="#">ALLFRD-202001051533-validation-report-20200101120523.CSV</a></td>
+            </tr>
+
+          </tbody>
+        </table>
+        <p>
+          <a href="#"  class="govuk-button yes-pause">Start period end</a>
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% include "./includes/auto-js.html" %}
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+
+{% include "./includes/nav.html" %}
+
+<!-- <script src="/public/javascripts/tt.js"></script> -->
+
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="dashboard">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="period-end-dashboard">Period end</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="email-dist">Email distribution</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item" aria-current="page">
+      <a class="govuk-breadcrumbs__link" href="manage-emails">Manage emails</a></li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">Remove</li>
+
+  </ol>
+</div>
+<br>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Remove template</h1>
+
+    <p>Are you sure you want to remove template <strong> Period end started email?</strong></p>
+
+  <a href="manage-emails-removed" class="govuk-button">
+    Remove
+  </a>
+  <p><a href="DCT-mail-list">Cancel</a></p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
