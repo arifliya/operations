@@ -25,8 +25,31 @@
         </ol>
       </div>
       <main class="govuk-main-wrapper app-main-class" id="main-content"  role="main">
+<br>
         <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+              <div id="validRefBanner" class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                  <h2 class="govuk-error-summary__title" id="error-summary-title">
+                    There is a problem
+                  </h2>
+                  <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+                      <li>
+                        <a href="#passport-issued-error">Enter a valid version number</a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-row">
+
+          
+
           <div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
+            
             <h1 class="govuk-heading-xl">FIS reference data</h1>
           </div>
         </div>
@@ -35,9 +58,12 @@
             <label class="govuk-label" for="one-half">
               Enter version number
             </label>
-            <input class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text">
+            <span id="version-number-error" class="govuk-error-message hide">
+                <span class="govuk-visually-hidden">Error:</span> Enter a valid version number
+              </span>
+            <input id="reference-number-input" class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text" placeholder="for example 5">
             &nbsp;
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            <button id="runVersion" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                 Run
               </button>
           </div>
@@ -45,7 +71,7 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
 
-              <table class="govuk-table">
+              <table id="readyToPublish" class="govuk-table">
                   <caption class="govuk-table__caption govuk-!-font-size-27">Ready to publish</caption>
                   <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
