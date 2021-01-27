@@ -1619,6 +1619,14 @@ $("#more").click(function(event) {
   event.stopPropagation();
 });
 
+
+// for ESF there is no input so this extra code is required
+$("#runESF").click(function(){
+  $("#ESFreadyToPublish").show();
+});
+
+
+
 $("#runVersion").click(function(){
 
   // if ($("#reference-number-input").val()) {

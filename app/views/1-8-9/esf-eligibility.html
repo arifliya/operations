@@ -27,15 +27,51 @@
       <main class="govuk-main-wrapper app-main-class" id="main-content"  role="main">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
-            <h1 class="govuk-heading-xl">ESF Eligibility</h1>
+            <h1 class="govuk-heading-xl">ESF Eligibility reference data</h1>
           </div>
         </div>
-        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        
+        <a href="#" id="runESF" class="govuk-button govuk-button--secondary" >
             Run
-          </button>
+        </a>
+
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
-            <table class="govuk-table">
+
+              <table id="ESFreadyToPublish" class="govuk-table">
+                  <caption class="govuk-table__caption govuk-!-font-size-27">Ready to publish</caption>
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th scope="col" class="govuk-table__header govuk-width-15">Date</th>
+                      <th scope="col" class="govuk-table__header">Processed by</th>
+                      <!-- <th scope="col" class="govuk-table__header">File</th> -->
+                      <th scope="col" class="govuk-table__header">Job ID</th>
+                      <th scope="col" class="govuk-table__header govuk-width-17">Status</th>
+                      <th scope="col" class="govuk-table__header">Reports</th>
+                      <th scope="col" class="govuk-table__header">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">20 January 2020 at 15:22pm</th>
+                      <td class="govuk-table__cell">Lynne BURDON</td>
+                      <!-- <td class="govuk-table__cell"><a href="#">ESF-Eligibility-20200217-122234.csv</a></td> -->
+                      <td class="govuk-table__cell">A55</td>
+                      <td class="govuk-table__cell govuk-!-font-weight-bold">
+                        <p class="green-font govuk-!-margin-bottom-1 govuk-!-font-weight-bold">Job finished</p>
+                        
+                      </td>
+                      <td class="govuk-table__cell"><a href="#">ESF-Eligibility-202001051533-validation-report-20200101120523.CSV</a></td>
+                      <td class="govuk-table__cell"><button class="govuk-button" data-module="govuk-button">
+                        Publish
+                      </button></td>
+                      
+                    </tr>
+                  </tbody>
+              </table>
+
+            <table class=" govuk-table">
+                <caption class="govuk-table__caption govuk-!-font-size-27">Jobs completed</caption>
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
                   <th scope="col" class="govuk-table__header govuk-width-15">Date</th>
@@ -48,21 +84,7 @@
                 </tr>
               </thead>
               <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                  <th scope="row" class="govuk-table__header">20 January 2020 at 15:22pm</th>
-                  <td class="govuk-table__cell">Lynne BURDON</td>
-                  <!-- <td class="govuk-table__cell"><a href="#">ESF-Eligibility-20200217-122234.csv</a></td> -->
-                  <td class="govuk-table__cell">A55</td>
-                  <td class="govuk-table__cell govuk-!-font-weight-bold">
-                    <p class="green-font govuk-!-margin-bottom-1 govuk-!-font-weight-bold">Job finished</p>
-                    
-                  </td>
-                  <td class="govuk-table__cell"><a href="#">ESF-Eligibility-202001051533-validation-report-20200101120523.CSV</a></td>
-                  <td class="govuk-table__cell"><button class="govuk-button" data-module="govuk-button">
-                    Publish
-                  </button></td>
-                  
-                </tr>
+                
                 <tr class="govuk-table__row">
                   <th scope="row" class="govuk-table__header">16 December 2019 at 8:00:12am</th>
                   <td class="govuk-table__cell">Lynne BURDON</td>
